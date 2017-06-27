@@ -48,12 +48,12 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 # ダウンロード
 
 ## gnekonium
-<a href="https://github.com/nekonium/go-nekonium">https://github.com/go-nekonium/mist</a> 
+<a href="https://github.com/nekonium/go-nekonium">https://github.com/go-nekonium/go-nekonium</a> 
 
 go-ethereum(geth)を基にしたnekoniumのクライアントソフトウェアです。
 
 ### マイニング
-go-nekoniumからバイナリ、またはソースコードをダウンロードしてください。ソースからビルドする場合はEthereumの取説のgethをgnekoniumに読み替えて頑張ってください。
+go-nekoniumリリースからバイナリ、またはソースコードをダウンロードしてください。ソースからビルドする場合はEthereumの取説のgethをgnekoniumに読み替えて頑張ってください。
 
 gnekoniumのコンソールからマイニングすることができます。
 
