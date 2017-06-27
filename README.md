@@ -29,7 +29,7 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 * DifficultyBoundDivisor 512
 ```
 
-[Premineについて](premine.md "")
+[Premineについて](https://nekonium.github.io/premine.html "")
 
 # 起動スケジュール
 
@@ -43,7 +43,6 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 
 現在はClosed Betaです。ブロックチェーンの巻き戻しが発生する可能性があります。
 
-[Google](http://www.google.co.jp "link title Google")
 
 # ダウンロード
 
@@ -70,5 +69,5 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 # 配布について
 Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布も実施しております。ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファチェット）の設置にも報酬があります。配布と報酬については__Premineについて__を参照してください。
 
-[Premineについて](premine.md "")
+[Premineについて](https://nekonium.github.io/premine.html "")
 
