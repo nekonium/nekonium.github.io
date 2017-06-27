@@ -53,7 +53,7 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 go-ethereum(geth)を基にしたnekoniumのクライアントソフトウェアです。
 
 ### マイニング
-go-nekoniumは<a href="">go-nekonium</a>からバイナリ、またはソースコードをダウンロードしてください。ソースからビルドする場合はEthereumの取説のgethをgnekoniumに読み替えて頑張ってください。
+go-nekoniumからバイナリ、またはソースコードをダウンロードしてください。ソースからビルドする場合はEthereumの取説のgethをgnekoniumに読み替えて頑張ってください。
 
 gnekoniumのコンソールからマイニングすることができます。
 
