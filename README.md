@@ -1,7 +1,9 @@
 <div style="text-align:center;width:100%">
 <img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/nekonium.png" width="30%"/>
 </div>
-
+<br/>
+<br/>
+<br/>
 
 NekoniumはEthereumクローンの分散型アプリケーションプラットフォームです。Ethereumコピーコインの実装例の提示と、Ethereumの機能を学習する目的で起動されました。
 
