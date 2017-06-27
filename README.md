@@ -1,9 +1,9 @@
 <div style="text-align:center;width:100%">
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/nekonium.png" width="30%"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/nekonium.png" width="50%"/>
 </div>
 <br/>
 <br/>
-<br/>
+
 
 NekoniumはEthereumクローンの分散型アプリケーションプラットフォームです。Ethereumコピーコインの実装例の提示と、Ethereumの機能を学習する目的で起動されました。
 
@@ -45,8 +45,10 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 # ダウンロード
 
 ## gnekonium
-<<gnekoniumリリースへのリンク>>
+<<gnekoniumリリースへのリンク>> 
 gethを基にしたnekoniumのクライアントソフトウェアです。
+
+### マイニング
 go-nekoniumは<a href="">go-nekonium</a>からバイナリ、またはソースコードをダウンロードしてください。ソースからビルドする場合はEthereumの取説のgethをgnekoniumに読み替えて頑張ってください。
 
 gnekoniumのコンソールからマイニングすることができます。
@@ -57,8 +59,8 @@ gnekoniumのコンソールからマイニングすることができます。
     :
     >miner.start(2)
 
-# ウォレット
-<<nekonium mistリリースへのリンク>>
+## ウォレット
+<<nekonium mistリリースへのリンク>> 
 Ethereum Mistベースのウォレットです。マイニングはできません。
 
 
