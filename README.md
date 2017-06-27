@@ -1,6 +1,11 @@
+<div style="text-align:center;width:100%">
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/nekonium.png" width="30%"/>
+</div>
+
+
 NekoniumはEthereumクローンの分散型アプリケーションプラットフォームです。Ethereumコピーコインの実装例の提示と、Ethereumの機能を学習する目的で起動されました。
 
-現在のNekoniumはNekonium Projectが管理しています。非中央集権型の投機通貨ではなく、採掘や投資で利益が得られる可能性は低いので注意してください。
+NekoniumはNekonium Projectが管理しています。非中央集権型の投機通貨ではなく、採掘や投資で利益が得られる可能性は低いので注意してください。
 
 
 # スペック
