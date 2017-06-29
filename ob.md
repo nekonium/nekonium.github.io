@@ -60,6 +60,10 @@ $gnekonium console
 > web3.fromWei(eth.getBalance(eth.accounts[0]),"nuko")
 100.968372
 ````
+8. 終了してコマンド画面に戻るにはexitと書きます。
+````
+>exit
+````
 その他コマンドは参考リンクを調べてください。
 
 <b>OpenBetaが終了するまでの間、もしくは5万Blockを採掘するまでの間は、CPUマイニング以外を行わないでください。</b>
