@@ -56,10 +56,10 @@ $gnekonium console
 >miner.stop()
 ````
 7. 現在のバランスを見るにはgetBalance関数を使います。単位を整形するためにfromWei関数を使います。
+````
 > web3.fromWei(eth.getBalance(eth.accounts[5]),"nuko")
 100.968372
->
-
+````
 その他コマンドは参考リンクを調べてください。
 
 <b>OpenBetaが終了するまでの間、もしくは5万Blockを採掘するまでの間は、CPUマイニング以外を行わないでください。</b>
