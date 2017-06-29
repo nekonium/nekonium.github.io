@@ -40,7 +40,7 @@ $gnekonium console
 3. アカウントを作成します。アカウントを作成するためにはパスワードが必要です。
 パスワードを忘れるとアカウントにアクセスできなくなります。大切に保管してください。
 ````
-> personal.newAccount()
+> personal.newAccount("<password>")
 ````
 
 4. 作成したアカウントの一覧はaccounts変数で見ることができます。
@@ -49,7 +49,7 @@ $gnekonium console
 ````
 5. miner.start関数で採掘ができます。引数はスレッド数です。
 ````
->miner.steart(2)
+>miner.start(<スレッド数>)
 ````
 6. 停止はstop関数を使います。
 ````
@@ -57,7 +57,7 @@ $gnekonium console
 ````
 7. 現在のバランスを見るにはgetBalance関数を使います。単位を整形するためにfromWei関数を使います。
 ````
-> web3.fromWei(eth.getBalance(eth.accounts[5]),"nuko")
+> web3.fromWei(eth.getBalance(eth.accounts[0]),"nuko")
 100.968372
 ````
 その他コマンドは参考リンクを調べてください。
@@ -68,8 +68,8 @@ $gnekonium console
 
 リンク先はEthereumの説明ですが、Nekoniumでも同じように操作ができます。gethをgnekoniumに読み替えてください。
 
-* https://book.ethereum-jp.net/what_is_ethereum/
-* https://book.ethereum-jp.net/first_use/mining_ether.html
+* <a href="https://book.ethereum-jp.net/what_is_ethereum/">https://book.ethereum-jp.net/what_is_ethereum/</a>
+* <a href=" https://book.ethereum-jp.net/first_use/mining_ether.html">https://book.ethereum-jp.net/first_use/mining_ether.html</a>
 
 
 # ウォレットの利用
@@ -77,7 +77,7 @@ $gnekonium console
 ウォレットアプリケーションMistWalletを利用できます。Windowsはバイナリがありますが、その他のOSはソースからコンパイルしてください。コンパイル手順はEthereumのMistと同じです。
 オープンベータ期間中はオートアップデートが無効です。先にgnekoniumを起動しておいてください。
 
-https://github.com/nekonium/mist/releases
+<a href="https://github.com/nekonium/mist/releases">https://github.com/nekonium/mist/releases</a>
 
 
 * MistWallet起動の前に、まずgnekoniumを起動しておいてください。
@@ -88,7 +88,7 @@ https://github.com/nekonium/mist/releases
 
 参考リンク
 リンク先はEthereumの説明ですが、Nekoniumでも同じように操作ができます。
-* http://www.intellilink.co.jp/article/column/ethereum01.html
+* <a href="http://www.intellilink.co.jp/article/column/ethereum01.html">http://www.intellilink.co.jp/article/column/ethereum01.html</a>
 
 
 
