@@ -29,7 +29,7 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 * BlockTime	Homestead Based
 *   0 - 0  Block      19sec
 *   - 7776 Block      Homestead 10-20sec target DiffBoundDiv=512
-*   7777 - Block      Homestead 19-29sec target　Without Exp BOM DiffBoundDiv=512
+*   7777 - Block      Homestead 19-29sec target　Without Exp BOM DiffBoundDiv=1024
 * GasLimitBoundDivisor　1024
 * DifficultyBoundDivisor 1024
 ```
