@@ -14,8 +14,8 @@
 
 ## マイニング方法
 
-go-nekoniumを入手してください。Windows 64bitについてはバイナリがあります。
-<a href="https://github.com/go-nekonium/go-nekonium">https://github.com/go-nekonium/go-nekonium</a>
+go-nekoniumを入手してください。Windows 64bitについてはバイナリがあります。　
+<a href="https://github.com/go-nekonium/go-nekonium">https://github.com/go-nekonium/go-nekonium</a>　
 その他のOSはソースからコンパイルしてください。
 
 
