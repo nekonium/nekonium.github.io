@@ -52,8 +52,10 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 # ダウンロード
 
 ## gnekonium
+<s>
 <a href="https://github.com/nekonium/go-nekonium">https://github.com/go-nekonium/go-nekonium</a> 
-
+</s>
+一般配布は停止中です。
 go-ethereum(geth)を基にしたnekoniumのクライアントソフトウェアです。
 
 ### マイニング
@@ -75,7 +77,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 ## コミュニティ
 
-* Discord channel <a href="https://discord.gg/bNjknze">https://discord.gg/bNjknze</a>
+* Discord channel <a href="https://discord.gg/bNjknze">https://discord.gg/tzyFqkC</a>
 
 # 配布について
 Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布も実施しております。ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファーセット）の設置にも報酬があります。配布と報酬については<b>Premineについて</b>を参照してください。
