@@ -22,7 +22,7 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 * Premine 12,448,421 NUKO
 * 採掘上限なし
 * TCPポート番号 28568
-* UDPポート番号 28569
+* UDPポート番号 28568
 * RPC(HTTP) 8293
 * RPC(WS) 8294
 * Reword 7.5NUKO
