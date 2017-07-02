@@ -71,7 +71,7 @@ gnekoniumのコンソールからマイニングすることができます。
 
 <a href="https://github.com/nekonium/mist">https://github.com/nekonium/mist</a> 
 
-Ethereum Mistベースのウォレットです。マイニングはできません。
+Ethereum Mistベースのウォレットです。マイニングはできません。現在はオートアップデートが機能しませんので、gnekoniumを起動してから使用してください。
 
 <img src="https://github.com/nekonium/nekonium.github.io/blob/master/img/mistpreview.png?raw=true" width="50%"></img>
 
