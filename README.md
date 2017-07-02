@@ -77,7 +77,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 ## コミュニティ
 
-* Discord channel <a href="https://discord.gg/bNjknze">https://discord.gg/tzyFqkC</a>
+* Discord channel <a href="https://discord.gg/3Majfvz">https://discord.gg/3Majfvz</a>
 
 # 配布について
 Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布も実施しております。ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファーセット）の設置にも報酬があります。配布と報酬については<b>Premineについて</b>を参照してください。
