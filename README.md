@@ -73,6 +73,8 @@ gnekoniumのコンソールからマイニングすることができます。
 
 Ethereum Mistベースのウォレットです。マイニングはできません。
 
+<img src="https://github.com/nekonium/nekonium.github.io/blob/master/img/mistpreview.png?raw=true" width="50%"></img>
+
 ## コミュニティ
 
 * Discord channel <a href="https://discord.gg/bNjknze">https://discord.gg/tzyFqkC</a>
