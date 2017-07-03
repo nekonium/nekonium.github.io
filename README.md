@@ -74,8 +74,9 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 <img src="https://github.com/nekonium/nekonium.github.io/blob/master/img/mistpreview.png?raw=true" width="50%"></img>
 
-## コミュニティ
+# コミュニティ
 
+* Twitter <a href="https://twitter.com/NekoniumDev">https://twitter.com/NekoniumDev</a>
 * Discord channel <a href="https://discord.gg/jNMzTHy">https://discord.gg/jNMzTHy</a>
 
 # 配布について
