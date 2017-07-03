@@ -86,7 +86,7 @@ $gnekonium console
 
 
 * MistWallet起動の前に、まずgnekoniumを起動しておいてください。
-* Mistを起動します。Windowsの場合はスタートメニューから起動できると思います。
+* Zipファイルの中にあるNekonium Wallet.exeを起動します。
 * Mistの送受信機能を試すことができます。使い方はEthereum版と同じです。
 
 
