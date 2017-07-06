@@ -76,7 +76,8 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 # サービス
 
-* Block exproler <a href="http://tomotomo9696.xyz:3000/home">http://tomotomo9696.xyz:3000/home</a>
+* Block exproler(Temporary) <a href="http://tomotomo9696.xyz:3000/home">http://tomotomo9696.xyz:3000/home</a>
+* Pool <a href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</a>
 
 * Twitter <a href="https://twitter.com/NekoniumDev">https://twitter.com/NekoniumDev</a>
 * Discord channel <a href="https://discord.gg/C8mJg44">https://discord.gg/C8mJg44</a>
