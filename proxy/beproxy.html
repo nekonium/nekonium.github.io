@@ -12,29 +12,25 @@
   <script>
 //-----------------------
 $(function(){
-  var url   = location.href;
-  params    = url.split("?");
-  spparams   = params[1].split("&");
+	var arg = new Object;
+	var pair=location.search.substring(1).split('&');
+	for(var i=0;pair[i];i++) {
+		var kv = pair[i].split('=');
+		arg[kv[0]]=kv[1];
+	}
 
-  var paramArray = [];
-  for ( i = 0; i < spparams.length; i++ ) {
-      vol = spparams[i].split("=");
-      paramArray.push(vol[0]);
-      paramArray[neet[0]] = vol[1];
-  }
-
-  var key=paramArray["key"];
-  switch(key){
-  case "tx":
-    $("#1").show();
-    break;
-  case "b":
-    $("#2").show();
-    break;
-  default:
-    $("#0").show();
-    break;
-  }
+	var key=arg["key"];
+	switch(key){
+	case "tx":
+		$("#1").show();
+		break;
+	case "b":
+		$("#2").show();
+		break;
+	default:
+		$("#0").show();
+		break;
+	}
 });
 //-----------------------
   </script>  
