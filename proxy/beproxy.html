@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<style>
+#d1,#d2{
+  display:none;
+}
+</style>
+<html lang="ja">
+	<head>
+	<title>Nekonium mist proxy</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8;" />
+  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script>
+//-----------------------
+$(function(){
+  var url   = location.href;
+  params    = url.split("?");
+  spparams   = params[1].split("&");
+
+  var paramArray = [];
+  for ( i = 0; i < spparams.length; i++ ) {
+      vol = spparams[i].split("=");
+      paramArray.push(vol[0]);
+      paramArray[neet[0]] = vol[1];
+  }
+
+  var key=paramArray["key"];
+  switch(key){
+  case "tx":
+    $("#1").show();
+    break;
+  case "b":
+    $("#2").show();
+    break;
+  default:
+    $("#0").show();
+    break;
+  }
+});
+//-----------------------
+  </script>  
+	</head>
+
+  <body style="width:100%;height:100%;font-size:16pt">
+    <div id="d0">
+      <h2>nekonium block exproler Proxy<h2>
+      <hr/>
+      <pre>
+      ?key=[tx|b]&v=[blockid|txid]
+      </pre>
+    </div>
+    <div id="d1">
+      <h2>Block search<h2>
+      <hr/>
+    </div>
+    <div id="d2">
+      <h2>Transaction search<h2>
+      <hr/>
+    </div>
+    <div id="field">&nbsp;</div>
+  </body>
+</html>
