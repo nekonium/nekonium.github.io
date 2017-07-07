@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <style>
-#d1,#d2{
+#d0,#d1,#d2{
   display:none;
 }
+#field{
+	font-size:20pt;
+}
+
+.footer{
+	margin-top:100px;
+	font-size:9pt;
+	color:#333333;
+}
+
 </style>
 <html lang="ja">
 	<head>
@@ -18,17 +28,37 @@ $(function(){
 		var kv = pair[i].split('=');
 		arg[kv[0]]=kv[1];
 	}
-
-	var key=arg["key"];
-	switch(key){
-	case "tx":
-		$("#1").show();
+	var v;
+	switch(arg["key"]){
+	case "block":
+		v=arg["v"];
+		if(!v || v.match(/^\d{1,10}$/)==null){
+			$("#d0").show();
+			break;
+		}
+		$("#d1").show();
+		$("#field").html("<a href=\"http://tomotomo9696.xyz:3000/block/"+v+"\">#"+v+"</a>");
 		break;
-	case "b":
-		$("#2").show();
+	case "tx":
+		v=arg["v"];
+		if(!v || v.match(/^0x[0-9a-fA-F]{64}$/)==null){
+			$("#d0").show();
+			break;
+		}
+		$("#d2").show();
+		$("#field").html("<a href=\"http://tomotomo9696.xyz:3000/tx/"+v+"\">"+v+"</a>");
+		break;
+	case "addr":
+		v=arg["v"];
+		if(!v || v.match(/^0x[0-9a-fA-F]{40}$/)==null){
+			$("#d0").show();
+			break;
+		}
+		$("#d2").show();
+		$("#field").html("<a href=\"http://tomotomo9696.xyz:3000/addr/"+v+"\">"+v+"</a>");
 		break;
 	default:
-		$("#0").show();
+		$("#d0").show();
 		break;
 	}
 });
@@ -36,22 +66,25 @@ $(function(){
   </script>  
 	</head>
 
-  <body style="width:100%;height:100%;font-size:12pt">
+  <body style="width:100%;height:100%">
+  <center>
+  <img src="https://nekonium.github.io/proxy/title_proxy.png" />
+    <h1>Blockexproler proxy</h1>
+    <hr/>
     <div id="d0">
-      <h2>Nekonium BLOCKEXPROLER Proxy<h2>
-      <hr/>
       <pre>
-      ?key=[tx|b]&v=[blockid|txid]
+      Parameter:
+      ?key=[tx|b|a]&v=[blockid|txid]
       </pre>
     </div>
     <div id="d1">
-      <h2>Block search<h2>
-      <hr/>
+      <h2>Block search</h2>
     </div>
     <div id="d2">
-      <h2>Transaction search<h2>
-      <hr/>
+      <h2>Transaction search</h2>
     </div>
     <div id="field">&nbsp;</div>
+	<div class="footer">Current Exproler <a href="http://tomotomo9696.xyz:3000">http://tomotomo9696.xyz:3000</a></div>
+    </center>
   </body>
 </html>
