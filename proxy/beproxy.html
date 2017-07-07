@@ -29,7 +29,7 @@ $(function(){
 		arg[kv[0]]=kv[1];
 	}
 	var v;
-	switch(arg["key"]){
+	switch(arg["type"]){
 	case "block":
 		v=arg["v"];
 		if(!v || v.match(/^\d{1,10}$/)==null){
@@ -74,7 +74,7 @@ $(function(){
     <div id="d0">
       <pre>
       Parameter:
-      ?key=[tx|b|a]&v=[blockid|txid]
+      ?type=[tx|block|addr]&v=[blockid|txid]
       </pre>
     </div>
     <div id="d1">
