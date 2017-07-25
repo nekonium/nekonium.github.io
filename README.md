@@ -76,7 +76,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 # サービス
 
-## Block exproler(Temporary)
+## Block exproler
 * <a href="http://tomotomo9696.xyz:3000/home">http://tomotomo9696.xyz:3000/home</a>
 * <a href="http://nukoexplorer.site:3000/home">http://nukoexplorer.site:3000/home</a>
 * <a href="http://explorer.nekonium.org/home/home">http://explorer.nekonium.org/home</a>
@@ -85,9 +85,15 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 * <a href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</a>
 * <a href="http://pool.nekonium.us/">http://pool.nekonium.us/</a>
 
+## Faucet
+* <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
+
 ## SNS
 * Twitter <a href="https://twitter.com/NekoniumDev">https://twitter.com/NekoniumDev</a>
 * Discord channel <a href="https://discord.gg/C8mJg44">https://discord.gg/C8mJg44</a>
+
+
+
 
 # 配布について
 Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布も実施しております。ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファーセット）の設置にも報酬があります。配布と報酬については<b>Premineについて</b>を参照してください。
