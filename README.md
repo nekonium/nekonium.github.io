@@ -92,7 +92,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 ## Contract-Dev
 * Browser-Solidity IDE <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf"/>http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf</a>
-* Nekoniumのコントラクトの作り方 <a href="https://nekonium.github.io//browser-solidity/solidity.JP.html">Nekoniumのコントラクトの作り方</a>
+* <a href="https://nekonium.github.io//browser-solidity/solidity.JP.html">Nekoniumのコントラクトの作り方</a>
 
 
 # 配布について
