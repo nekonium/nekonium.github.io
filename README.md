@@ -86,6 +86,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 ## Faucet
 * <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
+* <a href="http://namuyan.dip.jp/nekoniumFaucet.php">http://namuyan.dip.jp/nekoniumFaucet.php</a>
 
 ## SNS
 * Twitter <a href="https://twitter.com/NekoniumDev">https://twitter.com/NekoniumDev</a>
