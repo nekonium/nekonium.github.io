@@ -82,6 +82,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 ## Pool
 * <a href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</a>
 * <a href="http://pool.nekonium.us/">http://pool.nekonium.us/</a>
+* <a href="http://nukopool.site/">http://nukopool.site/</a>
 
 ## Faucet
 * <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
@@ -89,6 +90,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 ## SNS
 * Twitter <a href="https://twitter.com/NekoniumDev">https://twitter.com/NekoniumDev</a>
 * Discord channel <a href="https://discord.gg/C8mJg44">https://discord.gg/C8mJg44</a>
+
 
 ## Contract-Dev
 * Browser-Solidity IDE <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf"/>http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf</a>
