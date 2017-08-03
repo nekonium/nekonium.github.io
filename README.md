@@ -74,7 +74,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 # サービス
 
-# Webssite
+# Website
 * <a href="http://nekonium.online/">http://nekonium.online/</a>
 
 ## Block exproler
