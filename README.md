@@ -75,7 +75,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 # サービス
 
 # Website
-* <a href="http://nekonium.online/">http://nekonium.online/</a>
+* <a href="http://nekonium.online/">http://nekonium.online/</a> (unofficiall landing page)
 
 ## Block exproler
 * <a href="http://tomotomo9696.xyz:3000/home">http://tomotomo9696.xyz:3000/home</a>
