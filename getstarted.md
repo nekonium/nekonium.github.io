@@ -6,7 +6,7 @@ Ethereumウォレットを同一PCに保持している場合は、未知の問�
 ## マイニング方法
 
 go-nekoniumを入手してください。Windows 64bitについてはバイナリがあります。　
-<a href="https://github.com/go-nekonium/go-nekonium">https://github.com/go-nekonium/go-nekonium</a>　
+<a href="https://github.com/nekonium/go-nekonium">https://github.com/nekonium/go-nekonium</a>　
 その他のOSはソースからコンパイルしてください。
 
 
