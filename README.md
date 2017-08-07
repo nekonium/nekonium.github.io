@@ -102,7 +102,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 ## libraries
 
-* <a href="https://twitter.com/PHPNekonium">https://github.com/Cupmouse/PHPNekonium</a>
+* <a href="https://github.com/Cupmouse/PHPNekonium">https://github.com/Cupmouse/PHPNekonium</a>
 
 
 # 配布について
