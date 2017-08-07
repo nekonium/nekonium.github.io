@@ -96,11 +96,13 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 * Twitter <a href="https://twitter.com/NekoniumDev">https://twitter.com/NekoniumDev</a>
 * Discord channel <a href="https://discord.gg/C8mJg44">https://discord.gg/C8mJg44</a>
 
-
 ## Contract-Dev
 * Browser-Solidity IDE <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf">http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf</a>
 * <a href="https://nekonium.github.io//browser-solidity/solidity.JP.html">Nekoniumのコントラクトの作り方</a>
 
+## libraries
+
+* <a href="https://twitter.com/PHPNekonium">https://github.com/Cupmouse/PHPNekonium</a>
 
 
 # 配布について
