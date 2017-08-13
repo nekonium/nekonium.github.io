@@ -64,7 +64,7 @@ gnekoniumのコンソールからマイニングすることができます。
     :
     >miner.start(2)
 
-## ウォレット
+## ウォレットアプリケーション
 
 <a href="https://github.com/nekonium/mist">https://github.com/nekonium/mist</a> 
 
