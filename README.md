@@ -103,6 +103,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 ## Libraries
 
 * <a href="https://github.com/Cupmouse/PHPNekonium">https://github.com/Cupmouse/PHPNekonium</a>
+* <a href="https://github.com/nicholas-xinhuang/nekoniumJava">https://github.com/nicholas-xinhuang/nekoniumJava</a>
 
 ## Website
 * <a href="http://nekonium.online/">http://nekonium.online/</a> (unofficiall landing page)
