@@ -79,13 +79,13 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 ## Block exproler
 * <a href="http://tomotomo9696.xyz:3000/home">http://tomotomo9696.xyz:3000/home</a>
-* <a href="http://nukoexplorer.site:3000/home">http://nukoexplorer.site:3000/home</a>
+* <s><a href="http://nukoexplorer.site:3000/home">http://nukoexplorer.site:3000/home</a></s>
 * <a href="http://explorer.nekonium.org/home/home">http://explorer.nekonium.org/home</a>
 
 ## Pool
 * <a href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</a>
 * <a href="http://pool.nekonium.us/">http://pool.nekonium.us/</a>
-* <a href="http://nukopool.site/">http://nukopool.site/</a>
+* <s><a href="http://nukopool.site/">http://nukopool.site/</a></s>
 
 ## Faucet
 * <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
