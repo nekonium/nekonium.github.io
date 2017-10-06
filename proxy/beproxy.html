@@ -22,6 +22,7 @@
   <script>
 //-----------------------
 $(function(){
+	var URL= "http://explorer.nekonium.org";
 	var arg = new Object;
 	var pair=location.search.substring(1).split('&');
 	for(var i=0;pair[i];i++) {
@@ -37,7 +38,7 @@ $(function(){
 			break;
 		}
 		$("#d1").show();
-		$("#field").html("<a http://explorer.nekonium.org/home/block/"+v+"\">#"+v+"</a>");
+		$("#field").html("<a href=\""+URL+"/block/""+v+"\">#"+v+"</a>");
 		break;
 	case "tx":
 		v=arg["v"];
@@ -46,7 +47,7 @@ $(function(){
 			break;
 		}
 		$("#d2").show();
-		$("#field").html("<a href=\"http://explorer.nekonium.org/home/block/tx/"+v+"\">"+v+"</a>");
+		$("#field").html("<a href=\""+URL+"/block/tx/"+v+"\">"+v+"</a>");
 		break;
 	case "addr":
 		v=arg["v"];
@@ -55,11 +56,12 @@ $(function(){
 			break;
 		}
 		$("#d2").show();
-		$("#field").html("<a href=\"http://explorer.nekonium.org/home/block/addr/"+v+"\">"+v+"</a>");
+		$("#field").html("<a href=\""+URL+"/addr/"+v+"\">"+v+"</a>");
 		break;
 	default:
 		$("#d0").show();
 		break;
+        $("#footer").html("Current Explorer <a \"+URL+"\">"+URL+"</a>");
 	}
 });
 //-----------------------
@@ -84,7 +86,7 @@ $(function(){
       <h2>Transaction search</h2>
     </div>
     <div id="field">&nbsp;</div>
-	<div class="footer">Current Explorer <a http://explorer.nekonium.org/home/block/">http://explorer.nekonium.org/home/block/</a></div>
+	<div id="footer" class="footer"></div>
     </center>
   </body>
 </html>
