@@ -102,17 +102,15 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 * Browser-Solidity IDE <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf">http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf</a>
 * <a href="https://nekonium.github.io//browser-solidity/solidity.JP.html">Nekoniumのコントラクトの作り方</a>
 
-## Libraries
-
-* <a href="https://github.com/Cupmouse/PHPNekonium">https://github.com/Cupmouse/PHPNekonium</a>
-* <a href="https://github.com/nicholas-xinhuang/nekoniumJava">https://github.com/nicholas-xinhuang/nekoniumJava</a>
-
-## Website
-* <a href="http://nekonium.online/">http://nekonium.online/</a> (unofficiall landing page)
-
-
 # 配布について
 Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布も実施しております。ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファーセット）の設置にも報酬があります。配布と報酬については<b>Premineについて</b>を参照してください。
 
 <a href="https://nekonium.github.io/premine.html">Premineについて</a>
 
+# 開発メンバー
+
+* てばさき
+* ふとん
+* hxcoin
+* なむやんぐ
+* かばやき
