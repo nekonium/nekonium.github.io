@@ -109,7 +109,7 @@ Nekoniumは採掘で手に入れることもできますが、事前に確保し
 
 # Resources
 
-<a href="https://nekonium.github.io/resources.html">Premineについて</a>
+<a href="https://nekonium.github.io/resources.html">Resources</a>
 
 # 開発メンバー
 
