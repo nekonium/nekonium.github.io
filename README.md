@@ -98,7 +98,8 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 * Bitcointalk <a href="http://askmona.org/5387">https://bitcointalk.org/index.php?topic=2012213.0</a>
 
 ## Contract-Dev
-* Browser-Solidity IDE <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf">http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf</a>
+* Browser-Solidity IDE (NEW) <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf">http://nekonium.org/browser-solidity/02/</a>
+* (OLD) <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf">http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf</a>
 * <a href="https://nekonium.github.io//browser-solidity/solidity.JP.html">Nekoniumのコントラクトの作り方</a>
 
 # 配布について
