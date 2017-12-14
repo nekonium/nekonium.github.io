@@ -83,9 +83,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 ## Pool
 * <a href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</a>
-* <a href="http://pool.nekonium.us/">http://pool.nekonium.us/</a>
-* <s><a href="http://nukopool.site/">http://nukopool.site/</a></s>
-
+* <a href="http://nuko.ftlpool.com/#/">http://nuko.ftlpool.com/#/</a>
 ## Faucet
 * <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
 * <a href="http://namuyan.dip.jp/nekoniumFaucet.php">http://namuyan.dip.jp/nekoniumFaucet.php</a>
