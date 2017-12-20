@@ -76,7 +76,6 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 ## Wallet
 * <a href="http://www.nukowallet.com/">http://www.nukowallet.com/</a> officiall webwallet
 
-
 ## Block exproler
 * <a href="http://explorer.nekonium.org/home/home">http://explorer.nekonium.org/home</a>
 * <a href="http://nukoexplorer.oldbeyond.com/">http://nukoexplorer.oldbeyond.com/</a>
@@ -87,6 +86,7 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 * <a href="http://nuko.coinminer.space/#/">http://nuko.coinminer.space/#/</a>
 * <a href="http://www.nekonium-pool.com/">http://www.nekonium-pool.com/</a>
 * <a href="http://nuko.cep-k.work/">http://nuko.cep-k.work/</a>
+* <a href="http://nuko.mofumofu.me/">http://nuko.mofumofu.me/</a>
 
 ## Faucet
 * <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
@@ -98,6 +98,12 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 * Discord channel <a href="https://discord.gg/C8mJg44">https://discord.gg/C8mJg44</a>
 * ASKmona <a href="http://askmona.org/5387">http://askmona.org/5387</a>
 * Bitcointalk <a href="http://askmona.org/5387">https://bitcointalk.org/index.php?topic=2012213.0</a>
+
+## etc
+* <a href="http://stats.nekonium.io/">http://stats.nekonium.io/</a> Network status
+* <a href="http://stuff.cuppadev.co.uk/nuko-report.html">http://stuff.cuppadev.co.uk/nuko-report.html</a> rich list
+
+
 
 ## Contract-Dev
 * Browser-Solidity IDE (NEW) <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf">http://nekonium.org/browser-solidity/02/</a>
