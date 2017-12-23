@@ -79,6 +79,8 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 ## Block exproler
 * <a href="http://explorer.nekonium.org/home/home">http://explorer.nekonium.org/home</a>
 * <a href="http://nukoexplorer.oldbeyond.com/">http://nukoexplorer.oldbeyond.com/</a>
+* <a href="http://nekonium.network/">http://nekonium.network/</a>
+
 
 ## Pool
 * <a href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</a>
