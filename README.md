@@ -105,6 +105,9 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 * <a href="http://stats.nekonium.io/">http://stats.nekonium.io/</a> Network status
 * <a href="http://stuff.cuppadev.co.uk/nuko-report.html">http://stuff.cuppadev.co.uk/nuko-report.html</a> rich list
 
+## QR generator
+* <a href="http://qr.nekonium.info/">http://qr.nekonium.info/</a>
+* <a href="https://nuko-qr.azurewebsites.net/">https://nuko-qr.azurewebsites.net/</a>
 
 
 ## Contract-Dev
