@@ -96,6 +96,7 @@ Android用のモバイルウォレットです。
 * <a href="http://www.nekonium-pool.com/">http://www.nekonium-pool.com/</a>
 * <a href="http://nuko.cep-k.work/">http://nuko.cep-k.work/</a>
 * <a href="http://nuko.mofumofu.me/">http://nuko.mofumofu.me/</a>
+* <a href="https://minerpool.net/">https://minerpool.net/</a>
 
 ## Faucet
 * <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
@@ -111,6 +112,8 @@ Android用のモバイルウォレットです。
 ## etc
 * <a href="http://stats.nekonium.io/">http://stats.nekonium.io/</a> Network status
 * <a href="http://stuff.cuppadev.co.uk/nuko-report.html">http://stuff.cuppadev.co.uk/nuko-report.html</a> rich list
+* <a href="https://minerpool.net/pools/nekonium/">https://minerpool.net/pools/nekonium/</a> Active Pool list
+
 
 ## QR generator
 * <a href="http://qr.nekonium.info/">http://qr.nekonium.info/</a>
