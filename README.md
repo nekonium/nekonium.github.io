@@ -25,7 +25,7 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 * UDPポート番号 28566
 * RPC(HTTP) 8293
 * RPC(WS) 8294
-* Reword 7.5NUKO
+* Reward 7.5NUKO
 * BlockTime	
 *   0 - 0  Block      Frontier 19sec
 *   - 7776 Block      Homestead 10-20sec target DiffBoundDiv=512
@@ -141,3 +141,4 @@ Nekoniumは採掘で手に入れることもできますが、事前に確保し
 * hxcoin
 * なむやんぐ
 * かばやき
+* 7Zz
