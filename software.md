@@ -1,6 +1,6 @@
-# Sourcecode Repository
+# Sourcecodes
 
-## Nekonium Project
+## Nekonium Project Repository
 
 ### go-nekonium
 Nekonium 公式クライアント
@@ -59,7 +59,7 @@ Nekonium用クライアント。Ethereum クライアントParityからのフォ
 > https://github.com/nekonium/browser-solidity
 
 
-## Contributor 
+## Contributor Repository
 
 ### discord-tipbot(tipnuko)
 NekoniumのDiscord用TipBot
