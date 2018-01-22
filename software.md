@@ -61,9 +61,15 @@ Nekonium用クライアント。Ethereum クライアントParityからのフォ
 
 ## Contributor Repository
 
+### Nem tip-bot-peg-system
+tipnemとのペグトークン交換システム。
+>https://github.com/namuyan/nem-tip-bot-peg-system
+
 ### discord-tipbot(tipnuko)
 NekoniumのDiscord用TipBot
 > https://github.com/mike-theminer/discord-tipbot/
+
 ### discord-tipbot(manekinuko)
 NekoniumのDiscord用TipBot
 > https://github.com/Ken-BeKan/manekinuko
+
