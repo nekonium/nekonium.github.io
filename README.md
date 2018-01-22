@@ -128,11 +128,11 @@ Android用のモバイルウォレットです。
 # 配布について
 Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布も実施しております。ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファーセット）の設置にも報酬があります。配布と報酬については<b>Premineについて</b>を参照してください。
 
-<a href="https://nekonium.github.io/premine.html">Premineについて</a>
+<a href="https://github.com/nekonium/nekonium.github.io/blob/master/premine.md">Premineについて</a>
 
 # Resources
 
-<a href="https://nekonium.github.io/resources.html">Resources</a>
+<a href="https://github.com/nekonium/nekonium.github.io/blob/master/resources.md">Resources</a>
 
 # 開発メンバー
 
