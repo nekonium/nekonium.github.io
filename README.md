@@ -132,7 +132,9 @@ Nekoniumは採掘で手に入れることもできますが、事前に確保し
 
 # Resources
 
-<a href="https://github.com/nekonium/nekonium.github.io/blob/master/resources.md">Resources</a>
+* <a href="https://github.com/nekonium/nekonium.github.io/blob/master/resources.md">Logo/Images etc</a>
+* <a href="https://github.com/nekonium/nekonium.github.io/blob/master/software.md">Source codes</a>
+* <a href="https://github.com/nekonium/nekonium.github.io/blob/master/documents.md">Documents</a>
 
 # 開発メンバー
 
