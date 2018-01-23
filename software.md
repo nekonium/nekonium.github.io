@@ -61,9 +61,13 @@ Nekonium用クライアント。Ethereum クライアントParityからのフォ
 
 ## Contributor Repository
 
+### Nukojya extension
+Metamask 拡張のNekonium版
+> https://github.com/mike-theminer/nukoja-extension
+
 ### Nem tip-bot-peg-system
 tipnemとのペグトークン交換システム。
->https://github.com/namuyan/nem-tip-bot-peg-system
+> https://github.com/namuyan/nem-tip-bot-peg-system
 
 ### discord-tipbot(tipnuko)
 NekoniumのDiscord用TipBot
