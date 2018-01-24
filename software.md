@@ -61,7 +61,7 @@ Nekonium用クライアント。Ethereum クライアントParityからのフォ
 
 ## Contributor Repository
 
-### Nukojya extension
+### Nukoja Browser Extension
 Metamask 拡張のNekonium版
 > https://github.com/mike-theminer/nukoja-extension
 
