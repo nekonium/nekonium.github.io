@@ -1,7 +1,7 @@
 # Resources
 
-Nekonium�v���W�F�N�g�̉摜�̓N���G�C�e�B�u�R�����Y���C�Z���X�ɏ]�����ƂŎg�p���邱�Ƃ��ł��܂��B
-���C�Z���X�̃��x���͉摜���ƂɈقȂ�܂��B
+Nekoniumプロジェクトの画像はクリエイティブコモンズライセンスに従うことで使用することができます。
+ライセンスのレベルは画像ごとに異なります。
 
-+ ����Nekonium���S
-+ Nukoja�L�����N�^�[
++ <a href="https://github.com/nekonium/nekonium.github.io/blob/master/resources.image/logo/logo.md">公式Nekoniumロゴ</a>
++ Nukojaキャラクター
