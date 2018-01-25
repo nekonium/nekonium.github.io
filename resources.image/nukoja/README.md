@@ -1,20 +1,27 @@
-# Nekonium Logo
+# Nukoja
 
-Nekoniumプロジェクトのロゴ画像は、利用規約に基づいて利用することができます。
 
+## Author
+kobene https://twitter.com/kobene_
 
 
 ## 利用規約
 
-- 非公式に利用する場合、CC-BYで利用できます。
-- 公式グッズとして使用したい場合、またはCC-BYでは不都合がある場合は個別にご相談ください。discord chat、もしくはtwitterなどでお知らせください。
+マスコットキャラクターのNukoja君の画像は、表示 - 非営利 4.0 国際 (CC BY-NC 4.0)のライセンスの条件に従って使用することができます。
+
+https://creativecommons.org/licenses/by-nc/4.0/deed.ja
+
+
 
 ## リソース
-1. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/logo/nekonium-logo.ai">nekonium-logo.ai</a>
-2. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/logo/nekonium_512x512.png">nekonium_512x512.png</a>
-3. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/logo/nekonium_512x512_alpha.png">nekonium_512x512_alpha.png</a>
-4. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/logo/nekonium_1024x1024.png">nekonium_1024x1024.png</a>
-5. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/logo/nekonium_1024x1024_alpha.png">nekonium_1024x1024_alpha.png</a>
+1. 白Nukoja.ai
+1. 黒Nukoja.ai
+3.
 
 
 
+## フォントデータ
+
+フォントデータは別ライセンスで公開しています。
+
+https://kobene.booth.pm/items/722252
