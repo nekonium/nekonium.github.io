@@ -1,6 +1,6 @@
 # Nukoja
 
-<img width="33%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/wnukoja.png"/><img width="33%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/bnukoja.png"/>
+<img width="33%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/WhiteNukoja.png"/><img width="33%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/BlackNukoja.png"/>
 
 
 ## 利用規約
@@ -16,7 +16,7 @@ kobene
 ## ダウンロード
 1. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/WhiteNukoja.ai">WhiteNukoja.ai</a> - 白Nukoja.png
 2. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/BlackNukoja.ai">BlackNukoja.ai</a> - 黒Nukoja.png
-3. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/WhiteNukoja.png">wnukoja.png</a> - 白Nukoja.png
+3. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/WhiteNukoja.png">WhiteNukoja.png</a> - 白Nukoja.png
 4. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/BlackNukoja.png">BlackNukoja.png</a> - 黒Nukoja.png
 
 
