@@ -9,7 +9,7 @@ NekoniumはEthereum1.6.6からできているので、Ethereumのコントラク
 コントラクトを作成するにはブラウザで動作するbrowser-solidityが便利です。
 Ethereum向けのものも利用できますが、Nekonium向けに調整したものがあります。
 
-<img width="50%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/1.png"/>
+<img width="50%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/1.png"/>
 
 
 ### browser-solidityを起動する
@@ -22,7 +22,7 @@ Ethereum向けのものも利用できますが、Nekonium向けに調整した�
 コードを書いて挙動をチェックするところまでは、ネットワークに接続せずにエミュレータで開発ができます。
 
 
-<img width="50%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/2.png"/>
+<img width="50%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/2.png"/>
 
 
 
@@ -39,14 +39,14 @@ Accountには利用可能なユーザアカウントアドレスと、その残�
 
 起動時点ではエディタにballot.solというサンプルがあります。よくわからないので×ボタンで閉じます。
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/3.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/3.png"/>
 
 
 代わりに<a href="https://book.ethereum-jp.net/first_use/contract.html">Ethereum入門</a>にある簡単なコントラクトを使いましょう。
 
 左上の＋ボタンで新しいファイルを追加して、次のコードを入力します。
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/4.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/4.png"/>
 
 このコードはstoredDataに整数値を格納したり読み出したりできるコードです。
 
@@ -77,16 +77,16 @@ contract SingleNumRegister {
 ソースコードができたらコンパイルです。Createボタンを押します。
 ちょっとだけ警告ができますが大体よさそうです。
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/5.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/5.png"/>
 
 
 よく見るとget関数とset関数がありますね。set関数に値を入力してボタンをクリック後、getボタンを押すとget関数の返す値が変わるのが確認できました。
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/6.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/6.png"/>
 
 また、画面中央下にはコンソールがあります。Detailsをクリックすると使用したGasなどがわかります。
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/7.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/7.png"/>
 
 ## テスト環境で試してみる
 
@@ -128,7 +128,7 @@ gnekonium --networkid "10" --rpc --rpcaddr "localhost"  --rpccorsdomain "*" --no
 
 ここまでで、作業ディレクトリには３個のファイルがあるはずです。(privatenetディレクトリは作らなくてもかまいません。)
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/8.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/8.png"/>
 
 
 ### ジェネシスブロックの作成
@@ -142,14 +142,14 @@ $gnekonium --datadir ./privatenet init ./genesis_private.json
 
 ログが流れてプライベートネットのデータがprivatenetフォルダに生成されます。
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/11.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/11.png"/>
 
 
 ### プライベートネットの起動
 
 ファイルのあるディレクトリで、コマンドラインからバッチファイルでプライベートネットを起動します。
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/9.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/9.png"/>
 
 
 gnekoniumが起動したら、テスト用のユーザーアカウントの作成して、アカウントのアンロックしておきます。
@@ -176,7 +176,7 @@ browser-solidityのEnvironmentから、Web3 Providerを選択してください�
 
 接続に成功すると、Accountの残高とアドレスが更新されます。
 
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/10.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/10.png"/>
 
 
 接続に失敗すると、Accountの残高が更新されずに右側のパネルの下にエラーが表示されます。
@@ -204,12 +204,12 @@ null
 browser-solidityのAccountの残高が溜まるまで少し待ちます。
 
 Createボタンを押すと、プライベートネットへトランザクションが送信されてるので、マイニングされるまでしばらく待ちます。
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/12.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/12.png"/>
 
 マイニングされればブロックチェーンへのコントラクトの登録は完了です。
 
 コントラクタのアドレスは、Copy addressで得ることができます。
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/13.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/13.png"/>
 
 
 
@@ -233,7 +233,7 @@ gnekonium --rpc --rpcaddr "localhost"  --rpccorsdomain "*" console
 Environmentを一度JavascriptVMに戻して、もう一度Web3Providerを選択します。
 
 接続が完了したら、Accountsから登録を行うユーザアカウントを選択してください。
-<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/browser-solidity/img/14.png"/>
+<img src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/documents/browser-solidity/img/14.png"/>
 
 選択したアカウントは、テストと同じ要領でアンロックしておきます。
 
