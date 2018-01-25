@@ -2,7 +2,7 @@
 
 
 ## Author
-kobene https://twitter.com/kobene_
+kobene 
 
 
 ## 利用規約
