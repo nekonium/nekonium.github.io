@@ -14,8 +14,8 @@ kobene
 
 
 ## リソース
-1. 白Nukoja.ai <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/wnukoja.png">wnukoja.png</a>
-2. 黒Nukoja.ai <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/bnukoja.png">bnukoja.png</a>
+1. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/wnukoja.png">wnukoja.png</a> - 白Nukoja.png
+2. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/bnukoja.png">bnukoja.png</a> - 黒Nukoja.png
 3.
 
 
