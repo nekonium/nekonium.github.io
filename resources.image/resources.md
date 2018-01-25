@@ -4,4 +4,4 @@ Nekoniumプロジェクトの画像はクリエイティブコモンズライセ
 ライセンスのレベルは画像ごとに異なります。
 
 + <a href="https://github.com/nekonium/nekonium.github.io/blob/master/resources.image/logo/README.md">公式Nekoniumロゴ</a>
-+ Nukojaキャラクター
++ <a href="https://github.com/nekonium/nekonium.github.io/blob/master/resources.image/nukoja/README.md">Nukojaキャラクター</a>
