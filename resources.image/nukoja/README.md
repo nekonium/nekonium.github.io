@@ -1,8 +1,6 @@
 # Nukoja
 
-
-## Author
-kobene 
+<img width="33%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/wnukoja.png"/><img width="33%" src="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/bnukoja.png"/>
 
 
 ## 利用規約
@@ -11,11 +9,13 @@ kobene
 
 https://creativecommons.org/licenses/by-nc/4.0/deed.ja
 
+### Author
+kobene 
 
 
 ## リソース
-1. 白Nukoja.ai
-1. 黒Nukoja.ai
+1. 白Nukoja.ai <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/wnukoja.png">wnukoja.png</a>
+2. 黒Nukoja.ai <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/bnukoja.png">bnukoja.png</a>
 3.
 
 
