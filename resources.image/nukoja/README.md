@@ -13,10 +13,12 @@ https://creativecommons.org/licenses/by-nc/4.0/deed.ja
 kobene 
 
 
-## リソース
-1. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/wnukoja.png">wnukoja.png</a> - 白Nukoja.png
-2. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/bnukoja.png">bnukoja.png</a> - 黒Nukoja.png
-3.
+## ダウンロード
+1. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/WhiteNukoja.ai">WhiteNukoja.ai</a> - 白Nukoja.png
+2. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/BlackNukoja.ai">BlackNukoja.ai</a> - 黒Nukoja.png
+3. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/WhiteNukoja.png">wnukoja.png</a> - 白Nukoja.png
+4. <a href="https://raw.githubusercontent.com/nekonium/nekonium.github.io/master/resources.image/nukoja/BlackNukoja.png">BlackNukoja.png</a> - 黒Nukoja.png
+
 
 
 
