@@ -10,11 +10,13 @@ Solidityの使い方
 
 
 ## Contributor Repository
-Nekoniumのパブリックノードを立ててみよう その1,2,3
-> 1
+Nekoniumのパブリックノードを立ててみよう その1
+> https://qiita.com/ROZ-mofumofu-me/private/f9490e4bd23922b62e54
 
-> 2
+Nekoniumのパブリックノードを立ててみよう その2 SSL対応編
+> https://qiita.com/ROZ-mofumofu-me/private/cb7f09dde7b25eeba996
 
-> 3
+Nekoniumのパブリックノードを立ててみよう その3 Let's Encrypt+Nginxで簡単にSSL対応編
+> https://qiita.com/ROZ-mofumofu-me/private/4f15a530f7d9cdd671f2
 
 
