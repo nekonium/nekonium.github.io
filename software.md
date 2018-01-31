@@ -77,3 +77,8 @@ NekoniumのDiscord用TipBot
 NekoniumのDiscord用TipBot
 > https://github.com/Ken-BeKan/manekinuko
 
+### twitter faucet bot
+NekoniumのTwitter faucet
+> https://github.com/mike-theminer/nukofaucet
+
+
