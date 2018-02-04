@@ -19,5 +19,5 @@ Nekoniumのパブリックノードを立ててみよう その2 SSL対応編
 Nekoniumのパブリックノードを立ててみよう その3 Let's Encrypt+Nginxで簡単にSSL対応編
 > https://qiita.com/ROZ-mofumofu-me/item/4f15a530f7d9cdd671f2
 
->Nekoniumのパブリックノードを立ててみよう その4 Let's Encrypt+Caddyで簡単にSSL対応編
-https://qiita.com/ohac/items/4f7b26d04e197a78ea51
+Nekoniumのパブリックノードを立ててみよう その4 Let's Encrypt+Caddyで簡単にSSL対応編
+> https://qiita.com/ohac/items/4f7b26d04e197a78ea51
