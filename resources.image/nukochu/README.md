@@ -12,6 +12,6 @@ https://creativecommons.org/licenses/by-nc/4.0/deed.ja
 
 
 ## ダウンロード
-1. <a href="hhttps://github.com/nekonium/nekonium.github.io/raw/master/resources.image/nukochu/nekonium-cat_2-1-17-1.png">nekonium-cat_2-1-17-1.png</a>
+1. <a href="https://github.com/nekonium/nekonium.github.io/raw/master/resources.image/nukochu/nekonium-cat_2-1-17-1.png">nekonium-cat_2-1-17-1.png</a>
 
 
