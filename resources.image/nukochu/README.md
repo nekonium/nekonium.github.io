@@ -5,7 +5,7 @@
 
 ## 利用規約
 
-Nukochu君の画像は、表示 - 非営利 4.0 国際 (CC BY-NC 4.0)のライセンスの条件に従って使用することができます。
+Nukocu 君の画像は、表示 - 非営利 4.0 国際 (CC BY-NC 4.0)のライセンスの条件に従って使用することができます。
 
 https://creativecommons.org/licenses/by-nc/4.0/deed.ja
 
