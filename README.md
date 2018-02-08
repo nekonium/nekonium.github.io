@@ -121,7 +121,7 @@ Android用のモバイルウォレットです。
 
 
 ## Contract-Dev
-* Browser-Solidity IDE (NEW) <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf">http://nekonium.org/browser-solidity/02/</a>
+* Browser-Solidity IDE (NEW) <a href="http://nekonium.org/browser-solidity/02/">http://nekonium.org/browser-solidity/02/</a>
 * (OLD) <a href="http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf">http://nekonium.org/browser-solidity/01.85884478a57de99508250b0e1b625e9afd1e7eaf</a>
 * <a href="https://github.com/nekonium/nekonium.github.io/blob/master/documents/browser-solidity/solidity.JP.md">Nekoniumのコントラクトの作り方</a>
 
