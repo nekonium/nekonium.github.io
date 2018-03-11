@@ -84,3 +84,7 @@ NekoniumのTwitter faucet
 ### Nekono Tankentai
 ブロックエクスプローラ
 > https://github.com/Cupmouse/NekoNoTankentai
+
+### Nekonium Web Appkit
+ウェブアプリケーションの構築セット(NodeWatch)
+> https://github.com/nyatla/NekoniumWebApp
