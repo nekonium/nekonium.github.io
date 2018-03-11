@@ -115,6 +115,7 @@ Android用のモバイルウォレットです。
 * <a href="http://stats.nekonium.io/">http://stats.nekonium.io/</a> Network status
 * <a href="http://stuff.cuppadev.co.uk/nuko-report.html">http://stuff.cuppadev.co.uk/nuko-report.html</a> rich list
 * <a href="https://minerpool.net/pools/nekonium/">https://minerpool.net/pools/nekonium/</a> Active Pool list
+* <a href="http://nekonium.org/nodewatch/web/summary.html">http://nekonium.org/nodewatch/web/summary.html</a> Node watch
 
 
 ## QR generator
