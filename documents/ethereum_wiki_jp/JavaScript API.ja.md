@@ -9,7 +9,7 @@ Ethereumで動作するアプリケーションを作るには、[web3.js librar
 
 `web3` contains the `eth` object - `web3.eth` (for specifically Ethereum blockchain interactions) and the `shh` object - `web3.shh` (for Whisper interaction). Over time we'll introduce other objects for each of the other web3 protocols. Working  [examples can be found here](https://github.com/ethereum/web3.js/tree/master/example).
 
-If you want to look at some more sophisticated examples using web3.js check out these [useful app patterns](https://github.com/ethereum/wiki/wiki/Useful-Ðapp-Patterns).
+If you want to look at some more sophisticated examples using web3.js check out these [useful app patterns](https://github.com/ethereum/wiki/wiki/Useful-Dapp-Patterns).
 
 ## Getting Started
 
@@ -374,14 +374,14 @@ web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); // 8
 
     web3.currentProvider
 
-Will contain the current provider, if one is set. This can be used to check if mist etc. has set already a provider.
+現在のプロバイダがあればセットされます。これはMistなどで、すでにプロバイダがセットされているかを調べることができます。
+です。
 
-
-##### Returns
+##### 戻り値
 
 `Object` - The provider set or `null`;
 
-##### Example
+##### 使用例
 
 ```js
 // Check if mist etc. already set a provider
@@ -396,17 +396,17 @@ if(!web3.currentProvider)
 
     web3.reset(keepIsSyncing)
 
-Should be called to reset state of web3. Resets everything except manager. Uninstalls all filters. Stops polling.
+Web3の状態をリセットするときに使います。マネージャーを除くものをリセットします。ポーリング、フィルタは削除されます。
 
-##### Parameters
+##### パラメータ
 
-1. `Boolean` - If `true` it will uninstall all filters, but will keep the [web3.eth.isSyncing()](#web3ethissyncing) polls
+1. `Boolean` - `true`の場合はフィルタが削除されます。しかし、 [web3.eth.isSyncing()](#web3ethissyncing) にプールされている分は維持されます。
 
-##### Returns
+##### 戻り値
 
 `undefined`
 
-##### Example
+##### 使用例
 
 ```js
 web3.reset();
@@ -418,16 +418,16 @@ web3.reset();
 
     web3.sha3(string [, options])
 
-##### Parameters
+##### パラメータ
 
-1. `String` - The string to hash using the Keccak-256 SHA3 algorithm
-1. `Object` - (optional) Set `encoding` to `hex` if the string to hash is encoded in hex. A leading `0x` will be automatically ignored.
+1. `String` - Keccak-256 SHA3アルゴリズムでハッシュ化する文字列です。
+1. `Object` - (optional) 16進数文字列としてハッシュを得る場合は、`encoding` に `hex`を指定します。 先頭の `0x` は自動で無視します。
 
-##### Returns
+##### 戻り値
 
-`String` - The Keccak-256 SHA3 of the given data.
+`String` - Keccak-256 SHA3ハッシュ値
 
-##### Example
+##### 使用例
 
 ```js
 var hash = web3.sha3("Some string to be hashed");
@@ -443,17 +443,17 @@ console.log(hashOfHash); // "0x85dd39c91a64167ba20732b228251e67caed1462d4bcf036a
 
     web3.toHex(mixed);
  
-Converts any value into HEX.
+あらゆる数値を１６進数に変換します。
 
-##### Parameters
+##### パラメータ
 
 1. `String|Number|Object|Array|BigNumber` - The value to parse to HEX. If its an object or array it will be `JSON.stringify` first. If its a BigNumber it will make it the HEX value of a number.
 
-##### Returns
+##### 戻り値
 
 `String` - The hex string of `mixed`.
 
-##### Example
+##### 使用例
 
 ```js
 var str = web3.toHex({test: 'test'});
@@ -468,15 +468,15 @@ console.log(str); // '0x7b2274657374223a2274657374227d'
 
 Converts a HEX string into a ASCII string.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - A HEX string to be converted to ascii.
 
-##### Returns
+##### 戻り値
 
 `String` - An ASCII string made from the given `hexString`.
 
-##### Example
+##### 使用例
 
 ```js
 var str = web3.toAscii("0x657468657265756d000000000000000000000000000000000000000000000000");
@@ -491,16 +491,16 @@ console.log(str); // "ethereum"
 
 Converts any ASCII string to a HEX string.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - An ASCII string to be converted to HEX.
 2. `Number` - (optional) The number of bytes the returned HEX string should have. 
 
-##### Returns
+##### 戻り値
 
 `String` - The converted HEX string.
 
-##### Example
+##### 使用例
 
 ```js
 var str = web3.fromAscii('ethereum');
@@ -518,16 +518,16 @@ console.log(str2); // "0x657468657265756d000000000000000000000000000000000000000
 
 Converts a HEX string to its number representation.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - An HEX string to be converted to a number.
 
 
-##### Returns
+##### 戻り値
 
 `Number` - The number representing the data `hexString`.
 
-##### Example
+##### 使用例
 
 ```js
 var number = web3.toDecimal('0x15');
@@ -542,15 +542,15 @@ console.log(number); // 21
 
 Converts a number or number string to its HEX representation.
 
-##### Parameters
+##### パラメータ
 
 1. `Number|String` - A number to be converted to a HEX string.
 
-##### Returns
+##### 戻り値
 
 `String` - The HEX string representing of the given `number`.
 
-##### Example
+##### 使用例
 
 ```js
 var value = web3.fromDecimal('21');
@@ -579,17 +579,17 @@ Converts a number of wei into the following ethereum units:
 - `tether`
 - `wei`
 
-##### Parameters
+##### パラメータ
 
 1. `Number|String|BigNumber` - A number or BigNumber instance.
 2. `String` - One of the above ether units.
 
 
-##### Returns
+##### 戻り値
 
 `String|BigNumber` - Either a number string, or a BigNumber instance, depending on the given `number` parameter.
 
-##### Example
+##### 使用例
 
 ```js
 var value = web3.fromWei('21000000000000', 'finney');
@@ -615,16 +615,16 @@ Converts an ethereum unit into wei. Possible units are:
 - `gether`
 - `tether`
 
-##### Parameters
+##### パラメータ
 
 1. `Number|String|BigNumber` - A number or BigNumber instance.
 2. `String` - One of the above ether units.
 
-##### Returns
+##### 戻り値
 
 `String|BigNumber` - Either a number string, or a BigNumber instance, depending on the given `number` parameter.
 
-##### Example
+##### 使用例
 
 ```js
 var value = web3.toWei('1', 'ether');
@@ -641,15 +641,15 @@ Converts a given number into a BigNumber instance.
 
 See the [note on BigNumber](#a-note-on-big-numbers-in-web3js).
 
-##### Parameters
+##### パラメータ
 
 1. `Number|String` - A number, number string or HEX string of a number.
 
-##### Returns
+##### 戻り値
 
 `BigNumber` - A BigNumber instance representing the given value.
 
-##### Example
+##### 使用例
 
 ```js
 var value = web3.toBigNumber('200000000000000000000001');
@@ -666,15 +666,15 @@ console.log(value.toString(10)); // '200000000000000000000001'
 
 Checks if the given string is an address.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - An HEX string.
 
-##### Returns
+##### 戻り値
 
 `Boolean` - `false` if it's not on a valid address format. Returns `true` if it's an all lowercase or all uppercase valid address. If it's a mixed case address, it checks using `web3.isChecksumAddress()`.
 
-##### Example
+##### 使用例
 
 ```js
 var isAddress = web3.isAddress("0x8888f1f195afa192cfee860698584c030f4c9db1");
@@ -693,11 +693,11 @@ console.log(isAddress); // true
 
 This property is read only and says whether the node is actively listening for network connections or not.
 
-##### Returns
+##### 戻り値
 
 `Boolean` - `true` if the client is actively listening for network connections, otherwise `false`.
 
-##### Example
+##### 使用例
 
 ```js
 var listening = web3.net.listening;
@@ -714,11 +714,11 @@ console.log(listening); // true of false
 
 This property is read only and returns the number of connected peers.
 
-##### Returns
+##### 戻り値
 
 `Number` - The number of peers currently connected to the client.
 
-##### Example
+##### 使用例
 
 ```js
 var peerCount = web3.net.peerCount;
@@ -729,9 +729,9 @@ console.log(peerCount); // 4
 
 ### web3.eth
 
-Contains the ethereum blockchain related methods.
+Ethereumブロックチェーンに関するメソッドを含みます。
 
-##### Example
+##### 使用例
 
 ```js
 var eth = web3.eth;
@@ -754,11 +754,11 @@ This default address is used for the following methods (optionally you can overw
 
 *Default is* `undefined`.
 
-##### Returns
+##### 戻り値
 
 `String`, 20 Bytes - The currently set default address.
 
-##### Example
+##### 使用例
 
 ```js
 var defaultAccount = web3.eth.defaultAccount;
@@ -795,11 +795,11 @@ Default block parameters can be one of the following:
 
 *Default is* `latest`
 
-##### Returns
+##### 戻り値
 
 `Number|String` - The default block number to use when querying a state.
 
-##### Example
+##### 使用例
 
 ```js
 var defaultBlock = web3.eth.defaultBlock;
@@ -819,14 +819,14 @@ web3.eth.defaultBlock = 231;
 
 This property is read only and returns the either a sync object, when the node is syncing or `false`.
 
-##### Returns
+##### 戻り値
 
 `Object|Boolean` - A sync object as follows, when the node is currently syncing or `false`:
    - `startingBlock`: `Number` - The block number where the sync started.
    - `currentBlock`: `Number` - The block number where at which block the node currently synced to already.
    - `highestBlock`: `Number` - The estimated block number to sync to.
 
-##### Example
+##### 使用例
 
 ```js
 var sync = web3.eth.syncing;
@@ -848,7 +848,7 @@ console.log(sync);
 
 This convenience function calls the `callback` everytime a sync starts, updates and stops.
 
-##### Returns
+##### 戻り値
 
 `Object` - a isSyncing object with the following methods:
 
@@ -864,7 +864,7 @@ This convenience function calls the `callback` everytime a sync starts, updates 
    - `highestBlock`: `Number` - The estimated block number to sync to.
 
 
-##### Example
+##### 使用例
 
 ```js
 web3.eth.isSyncing(function(error, sync){
@@ -896,11 +896,11 @@ web3.eth.isSyncing(function(error, sync){
 
 This property is read only and returns the coinbase address where the mining rewards go to.
 
-##### Returns
+##### 戻り値
 
 `String` - The coinbase address of the client.
 
-##### Example
+##### 使用例
 
 ```js
 var coinbase = web3.eth.coinbase;
@@ -919,11 +919,11 @@ console.log(coinbase); // "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
 This property is read only and says whether the node is mining or not.
 
 
-##### Returns
+##### 戻り値
 
 `Boolean` - `true` if the client is mining, otherwise `false`.
 
-##### Example
+##### 使用例
 
 ```js
 var mining = web3.eth.mining;
@@ -941,11 +941,11 @@ console.log(mining); // true or false
 This property is read only and returns the number of hashes per second that the node is mining with.
 
 
-##### Returns
+##### 戻り値
 
 `Number` - number of hashes per second.
 
-##### Example
+##### 使用例
 
 ```js
 var hashrate = web3.eth.hashrate;
@@ -964,13 +964,13 @@ console.log(hashrate); // 493736
 This property is read only and returns the current gas price.
 The gas price is determined by the x latest blocks median gas price.
 
-##### Returns
+##### 戻り値
 
 `BigNumber` - A BigNumber instance of the current gas price in wei.
 
 See the [note on BigNumber](#a-note-on-big-numbers-in-web3js).
 
-##### Example
+##### 使用例
 
 ```js
 var gasPrice = web3.eth.gasPrice;
@@ -987,11 +987,11 @@ console.log(gasPrice.toString(10)); // "10000000000000"
 
 This property is read only and returns a list of accounts the node controls.
 
-##### Returns
+##### 戻り値
 
 `Array` - An array of addresses controlled by client.
 
-##### Example
+##### 使用例
 
 ```js
 var accounts = web3.eth.accounts;
@@ -1008,11 +1008,11 @@ console.log(accounts); // ["0x407d73d8a49eeb85d32cf465507dd71d507100c1"]
 
 This property is read only and returns the current block number.
 
-##### Returns
+##### 戻り値
 
 `Number` - The number of the most recent block.
 
-##### Example
+##### 使用例
 
 ```js
 var number = web3.eth.blockNumber;
@@ -1028,18 +1028,18 @@ console.log(number); // 2744
 (Not Implemented yet)
 Registers the given address to be included in `web3.eth.accounts`. This allows non-private-key owned accounts to be associated as an owned account (e.g., contract wallets).
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The address to register
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
 
-##### Returns
+##### 戻り値
 
 ?
 
 
-##### Example
+##### 使用例
 
 ```js
 web3.eth.register("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
@@ -1055,18 +1055,18 @@ web3.eth.register("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
 (Not Implemented yet)
 Unregisters a given address.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The address to unregister.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
 
-##### Returns
+##### 戻り値
 
 ?
 
 
-##### Example
+##### 使用例
 
 ```js
 web3.eth.unregister("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
@@ -1080,19 +1080,19 @@ web3.eth.unregister("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
 
 Get the balance of an address at a given block.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The address to get the balance of.
 2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
 3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - A BigNumber instance of the current balance for the given address in wei.
 
 See the [note on BigNumber](#a-note-on-big-numbers-in-web3js).
 
-##### Example
+##### 使用例
 
 ```js
 var balance = web3.eth.getBalance("0x407d73d8a49eeb85d32cf465507dd71d507100c1");
@@ -1109,7 +1109,7 @@ console.log(balance.toNumber()); // 1000000000000
 
 Get the storage at a specific position of an address.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The address to get the storage from.
 2. `Number` - The index position of the storage.
@@ -1117,11 +1117,11 @@ Get the storage at a specific position of an address.
 4. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
 
-##### Returns
+##### 戻り値
 
 `String` - The value in storage at the given position.
 
-##### Example
+##### 使用例
 
 ```js
 var state = web3.eth.getStorageAt("0x407d73d8a49eeb85d32cf465507dd71d507100c1", 0);
@@ -1136,17 +1136,17 @@ console.log(state); // "0x03"
 
 Get the code at a specific address.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The address to get the code from.
 2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
 3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - The data at given address `addressHexString`.
 
-##### Example
+##### 使用例
 
 ```js
 var code = web3.eth.getCode("0xd5677cf67b5aa051bb40496e68ad359eb97cfbf8");
@@ -1161,13 +1161,13 @@ console.log(code); // "0x600160008035811a818181146012578301005b601b6001356025565
 
 Returns a block matching the block number or block hash.
 
-##### Parameters
+##### パラメータ
 
 1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
 2. `Boolean` - (optional, default `false`) If `true`, the returned block will contain all transactions as objects, if `false` it will only contains the transaction hashes.
 3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Object` - The block object:
 
@@ -1190,7 +1190,7 @@ Returns a block matching the block number or block hash.
   - `transactions`: `Array` - Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter.
   - `uncles`: `Array` - Array of uncle hashes.
 
-##### Example
+##### 使用例
 
 ```js
 var info = web3.eth.getBlock(3150);
@@ -1229,16 +1229,16 @@ console.log(info);
 
 Returns the number of transaction in a given block.
 
-##### Parameters
+##### パラメータ
 
 1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Number` - The number of transactions in the given block.
 
-##### Example
+##### 使用例
 
 ```js
 var number = web3.eth.getBlockTransactionCount("0x407d73d8a49eeb85d32cf465507dd71d507100c1");
@@ -1253,7 +1253,7 @@ console.log(number); // 1
 
 Returns a blocks uncle by a given uncle index position.
 
-##### Parameters
+##### パラメータ
 
 1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
 2. `Number` - The index position of the uncle.
@@ -1261,13 +1261,13 @@ Returns a blocks uncle by a given uncle index position.
 4. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
 
-##### Returns
+##### 戻り値
 
 `Object` - the returned uncle. For a return value see [web3.eth.getBlock()](#web3ethgetblock).
 
 **Note**: An uncle doesn't contain individual transactions.
 
-##### Example
+##### 使用例
 
 ```js
 var uncle = web3.eth.getUncle(500, 0);
@@ -1283,13 +1283,13 @@ console.log(uncle); // see web3.eth.getBlock
 
 Returns a transaction matching the given transaction hash.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The transaction hash.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
 
-##### Returns
+##### 戻り値
 
 `Object` - A transaction object its hash `transactionHash`:
 
@@ -1306,7 +1306,7 @@ Returns a transaction matching the given transaction hash.
   - `input`: `String` - the data sent along with the transaction.
 
 
-##### Example
+##### 使用例
 
 ```js
 var transaction = web3.eth.getTransaction('0x9fc76417374aa880d4449a1f7f31ec597f00b1f6f3dd2d66f4c9c6c445836d8b');
@@ -1337,18 +1337,18 @@ console.log(transaction);
 
 Returns a transaction based on a block hash or number and the transactions index position.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - A block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
 2. `Number` - The transactions index position.
 3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Object` - A transaction object, see [web3.eth.getTransaction](#web3ethgettransaction):
 
 
-##### Example
+##### 使用例
 
 ```js
 var transaction = web3.eth.getTransactionFromBlock('0x4534534534', 2);
@@ -1367,12 +1367,12 @@ Returns the receipt of a transaction by transaction hash.
 **Note** That the receipt is not available for pending transactions.
 
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The transaction hash.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Object` - A transaction receipt object, or `null` when no receipt was found:
 
@@ -1388,7 +1388,7 @@ Returns the receipt of a transaction by transaction hash.
   - `logs `:  `Array` - Array of log objects, which this transaction generated.
   - `status `:  `Number` - 0 indicates transaction failure , 1 indicates transaction succeeded. 
 
-##### Example
+##### 使用例
 ```js
 var receipt = web3.eth.getTransactionReceipt('0x9fc76417374aa880d4449a1f7f31ec597f00b1f6f3dd2d66f4c9c6c445836d8b');
 console.log(receipt);
@@ -1415,17 +1415,17 @@ console.log(receipt);
 
 Get the numbers of transactions sent from this address.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The address to get the numbers of transactions from.
 2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
 3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Number` - The number of transactions sent from the given address.
 
-##### Example
+##### 使用例
 
 ```js
 var number = web3.eth.getTransactionCount("0x407d73d8a49eeb85d32cf465507dd71d507100c1");
@@ -1440,7 +1440,7 @@ console.log(number); // 1
 
 Sends a transaction to the network.
 
-##### Parameters
+##### パラメータ
 
 1. `Object` - The transaction object to send:
   - `from`: `String` - The address for the sending account. Uses the [web3.eth.defaultAccount](#web3ethdefaultaccount) property, if not specified.
@@ -1452,13 +1452,13 @@ Sends a transaction to the network.
   - `nonce`: `Number`  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - The 32 Bytes transaction hash as HEX string.
 
 If the transaction was a contract creation use [web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) to get the contract address, after the transaction was mined.
 
-##### Example
+##### 使用例
 
 ```js
 
@@ -1479,18 +1479,18 @@ web3.eth.sendTransaction({data: code}, function(err, transactionHash) {
 
 Sends an already signed transaction. For example can be signed using: https://github.com/SilentCicero/ethereumjs-accounts
 
-##### Parameters
+##### パラメータ
 
 1. `String` - Signed transaction data in HEX format
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - The 32 Bytes transaction hash as HEX string.
 
 If the transaction was a contract creation use [web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) to get the contract address, after the transaction was mined.
 
-##### Example
+##### 使用例
 
 ```js
 var Tx = require('ethereumjs-tx');
@@ -1528,13 +1528,13 @@ web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, h
 
 Signs data from a specific account. This account needs to be unlocked.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - Address to sign with.
 2. `String` - Data to sign.
 3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - The signed data.
 
@@ -1547,7 +1547,7 @@ v = signature[128:130]
 
 Note that if you are using `ecrecover`, `v` will be either `"00"` or `"01"`. As a result, in order to use this value, you will have to parse it to an integer and then add `27`. This will result in either a `27` or a `28`.
 
-##### Example
+##### 使用例
 
 ```js
 var result = web3.eth.sign("0x135a7de83802408321b74c322f8558db1679ac20",
@@ -1563,17 +1563,17 @@ console.log(result); // "0x30755ed65396facf86c53e6217c52b4daebe72aa4941d89635409
 
 Executes a message call transaction, which is directly executed in the VM of the node, but never mined into the blockchain.
 
-##### Parameters
+##### パラメータ
 
 1. `Object` - A transaction object see [web3.eth.sendTransaction](#web3ethsendtransaction), with the difference that for calls the `from` property is optional as well.
 2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
 3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - The returned data of the call, e.g. a codes functions return value.
 
-##### Example
+##### 使用例
 
 ```js
 var result = web3.eth.call({
@@ -1591,15 +1591,15 @@ console.log(result); // "0x00000000000000000000000000000000000000000000000000000
 
 Executes a message call or transaction, which is directly executed in the VM of the node, but never mined into the blockchain and returns the amount of the gas used.
 
-##### Parameters
+##### パラメータ
 
 See [web3.eth.sendTransaction](#web3ethsendtransaction), except that all properties are optional.
 
-##### Returns
+##### 戻り値
 
 `Number` - the used gas for the simulated call/transaction.
 
-##### Example
+##### 使用例
 
 ```js
 var result = web3.eth.estimateGas({
@@ -1632,7 +1632,7 @@ web3.eth.filter(options, function(error, result){
 });
 ```
 
-##### Parameters
+##### パラメータ
 
 1. `String|Object` - The string `"latest"` or `"pending"` to watch for changes in the latest block or pending transactions respectively. Or a filter options object as follows:
   * `fromBlock`: `Number|String` - The number of the earliest block (`latest` may be given to mean the most recent and `pending` currently mining, block). By default `latest`.
@@ -1640,7 +1640,7 @@ web3.eth.filter(options, function(error, result){
   * `address`: `String` - An address or a list of addresses to only get logs from particular account(s).
   * `topics`: `Array of Strings` - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use `null`, e.g. `[null, '0x00...']`. You can also pass another array for each topic with options for that topic e.g. `[null, ['option1', 'option2']]`
 
-##### Returns
+##### 戻り値
 
 `Object` - A filter object with the following methods:
 
@@ -1664,7 +1664,7 @@ web3.eth.filter(options, function(error, result){
 
 **Note** For event filter return values see [Contract Events](#contract-events)
 
-##### Example
+##### 使用例
 
 ```js
 var filter = web3.eth.filter('pending');
@@ -1692,11 +1692,11 @@ filter.stopWatching();
 Creates a contract object for a solidity contract, which can be used to initiate contracts on an address.
 You can read more about events [here](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI#example-javascript-usage).
 
-##### Parameters
+##### パラメータ
 
 1. `Array` - ABI array with descriptions of functions and events of the contract.
 
-##### Returns
+##### 戻り値
 
 `Object` - A contract object, which can be initiated as follows:
 
@@ -1765,7 +1765,7 @@ myContractInstance.transactionHash // The hash of the transaction, which created
 myContractInstance.address // undefined at start, but will be auto-filled later
 ```
 
-##### Example
+##### 使用例
 
 ```js
 // contract abi
@@ -1840,19 +1840,19 @@ var myCallData = myContractInstance.myMethod.getData(param1 [, param2, ...]);
 
 The contract object exposes the contract's methods, which can be called using parameters and a transaction object.
 
-##### Parameters
+##### パラメータ
 
 - `String|Number|BigNumber` - (optional) Zero or more parameters of the function. If passing in a string, it must be formatted as a hex number, e.g. "0xdeadbeef" If you have already created BigNumber object, then you can just pass it too.
 - `Object` - (optional) The (previous) last parameter can be a transaction object, see [web3.eth.sendTransaction](#web3ethsendtransaction) parameter 1 for more. **Note**: `data` and `to` properties will not be taken into account.
 - `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
 - `Function` - (optional) If you pass a callback as the last parameter the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - If its a call the result data, if its a send transaction a created contract address, or the transaction hash, see [web3.eth.sendTransaction](#web3ethsendtransaction) for details.
 
 
-##### Example
+##### 使用例
 
 ```js
 // creation of contract object
@@ -1891,7 +1891,7 @@ var event = myContractInstance.MyEvent([{valueA: 23}] [, additionalFilterObject]
 
 You can use events like [filters](#web3ethfilter) and they have the same methods, but you pass different objects to create the event filter.
 
-##### Parameters
+##### パラメータ
 
 1. `Object` - Indexed return values you want to filter the logs by, e.g. `{'valueA': 1, 'valueB': [myFirstAddress, mySecondAddress]}`. By default all filter values are set to `null`. It means, that they will match any event of given type sent from this contract.
 2. `Object` - Additional filter options, see [filters](#web3ethfilter) parameter 1 for more. By default filterObject has field 'address' set to address of the contract. Also first topic is the signature of event.
@@ -1912,7 +1912,7 @@ You can use events like [filters](#web3ethfilter) and they have the same methods
 - `transactionIndex`: `Number` - integer of the transactions index position log was created from.
 - `transactionHash`: `String`, 32 Bytes - hash of the transactions this log was created from.
 
-##### Example
+##### 使用例
 
 ```js
 var MyContract = web3.eth.contract(abi);
@@ -1956,7 +1956,7 @@ var events = myContractInstance.allEvents([additionalFilterObject,] function(err
 
 Will call the callback for all events which are created by this contract.
 
-##### Parameters
+##### パラメータ
 
 1. `Object` - Additional filter options, see [filters](#web3ethfilter) parameter 1 for more. By default filterObject has field 'address' set to address of the contract. This method sets the topic to the signature of event, and does not support additional topics.
 2. `Function` - (optional) If you pass a callback as the last parameter it will immediately start watching and you don't need to call `myEvent.watch(function(){})`. See [this note](#using-callbacks) for details.
@@ -1966,7 +1966,7 @@ Will call the callback for all events which are created by this contract.
 
 `Object` - See [Contract Events](#contract-events) for more.
 
-##### Example
+##### 使用例
 
 ```js
 var MyContract = web3.eth.contract(abi);
@@ -1995,15 +1995,15 @@ events.stopWatching();
 
 Gets a list of available compilers.
 
-##### Parameters
+##### パラメータ
 
 1. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Array` - An array of strings of available compilers.
 
-##### Example
+##### 使用例
 
 ```js
 var number = web3.eth.getCompilers();
@@ -2018,17 +2018,17 @@ console.log(number); // ["lll", "solidity", "serpent"]
 
 Compiles solidity source code.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The solidity source code.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Object` - Contract and compiler info.
 
 
-##### Example
+##### 使用例
 
 ```js
 var source = "" + 
@@ -2085,17 +2085,17 @@ console.log(compiled);
 
 Compiles LLL source code.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The LLL source code.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - The compiled LLL code as HEX string.
 
 
-##### Example
+##### 使用例
 
 ```js
 var source = "...";
@@ -2112,12 +2112,12 @@ console.log(code); // "0x603880600c6000396000f3006001600060e060020a600035048063c
 
 Compiles serpent source code.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The serpent source code.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `String` - The compiled serpent code as HEX string.
 
@@ -2137,7 +2137,7 @@ console.log(code); // "0x603880600c6000396000f3006001600060e060020a600035048063c
 
 Returns GlobalRegistrar object.
 
-##### Usage
+##### 使い方
 
 see [namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.html) example.
 
@@ -2151,17 +2151,17 @@ see [namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.ht
 
 This method should be called, when we want to store a string in the local leveldb database.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The database to store to.
 2. `String` - The name of the store.
 3. `String` - The string value to store.
 
-##### Returns
+##### 戻り値
 
 `Boolean` - `true` if successfull, otherwise `false`.
 
-##### Example
+##### 使用例
 
  param is db name, second is the key, and third is the string value.
 ```js
@@ -2176,16 +2176,16 @@ web3.db.putString('testDB', 'key', 'myString') // true
 
 This method should be called, when we want to get string from the local leveldb database.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The database string name to retrieve from.
 2. `String` - The name of the store.
 
-##### Returns
+##### 戻り値
 
 `String` - The stored value.
 
-##### Example
+##### 使用例
  param is db name and second is the key of string value.
 ```js
 var value = web3.db.getString('testDB', 'key');
@@ -2200,17 +2200,17 @@ console.log(value); // "myString"
 
 This method should be called, when we want to store binary data in HEX form in the local leveldb database.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The database to store to.
 2. `String` - The name of the store.
 3. `String` - The HEX string to store.
 
-##### Returns
+##### 戻り値
 
 `Boolean` - `true` if successfull, otherwise `false`.
 
-##### Example
+##### 使用例
 ```js
 web3.db.putHex('testDB', 'key', '0x4f554b443'); // true
 
@@ -2224,17 +2224,17 @@ web3.db.putHex('testDB', 'key', '0x4f554b443'); // true
 
 This method should be called, when we want to get a binary data in HEX form from the local leveldb database.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The database to store to.
 2. `String` - The name of the store.
 
-##### Returns
+##### 戻り値
 
 `String` - The stored HEX value.
 
 
-##### Example
+##### 使用例
  param is db name and second is the key of value.
 ```js
 var value = web3.db.getHex('testDB', 'key');
@@ -2247,7 +2247,7 @@ console.log(value); // "0x4f554b443"
 
 [Whisper  Overview](https://github.com/ethereum/wiki/wiki/Whisper-Overview)
 
-##### Example
+##### 使用例
 
 ```js
 var shh = web3.shh;
@@ -2261,7 +2261,7 @@ var shh = web3.shh;
 
 This method should be called, when we want to post whisper message to the network.
 
-##### Parameters
+##### パラメータ
 
 1. `Object` - The post object:
   - `from`: `String`, 60 Bytes HEX - (optional) The identity of the sender.
@@ -2272,12 +2272,12 @@ This method should be called, when we want to post whisper message to the networ
   - `ttl`: `Number` - integer of the time to live in seconds.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Boolean` - returns `true` if the message was sent, otherwise `false`.
 
 
-##### Example
+##### 使用例
 
 ```js
 var identity = web3.shh.newIdentity();
@@ -2303,17 +2303,17 @@ web3.shh.post(message);
 
 Should be called to create new identity.
 
-##### Parameters
+##### パラメータ
 
 1. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
 
-##### Returns
+##### 戻り値
 
 `String` - A new identity HEX string.
 
 
-##### Example
+##### 使用例
 
 ```js
 var identity = web3.shh.newIdentity();
@@ -2328,17 +2328,17 @@ console.log(identity); // "0xc931d93e97ab07fe42d923478ba2465f283f440fd6cabea4dd7
 
 Should be called, if we want to check if user has given identity.
 
-##### Parameters
+##### パラメータ
 
 1. `String` - The identity to check.
 2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
 
-##### Returns
+##### 戻り値
 
 `Boolean` - returns `true` if the identity exists, otherwise `false`.
 
 
-##### Example
+##### 使用例
 
 ```js
 var identity = web3.shh.newIdentity();
@@ -2353,7 +2353,7 @@ console.log(result2); // false
 
 #### web3.shh.newGroup
 
-##### Example
+##### 使用例
 ```js
 // TODO: not implemented yet
 ```
@@ -2362,7 +2362,7 @@ console.log(result2); // false
 
 #### web3.shh.addToGroup
 
-##### Example
+##### 使用例
 ```js
 // TODO: not implemented yet
 ```
@@ -2383,7 +2383,7 @@ filter.watch(function(error, result){
 
 Watch for incoming whisper messages.
 
-##### Parameters
+##### パラメータ
 
 1. `Object` - The filter options:
   * `topics`: `Array of Strings` - Filters messages by this topic(s). You can use the following combinations:
@@ -2416,7 +2416,7 @@ var txHash = web3.eth.sendIBANTransaction('0x00c5496aee77c1ba1f0854206a26dda82a8
 
 Sends IBAN transaction from user account to destination IBAN address.
 
-##### Parameters
+##### パラメータ
 
 - `string` - address from which we want to send transaction
 - `string` - IBAN address to which we want to send transaction
