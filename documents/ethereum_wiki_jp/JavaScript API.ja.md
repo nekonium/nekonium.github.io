@@ -692,14 +692,14 @@ console.log(isAddress); // true
 #### web3.net.listening
 
     web3.net.listening
-    // or async
-    web3.net.getListening(callback(error, result){ ... })
+    // 非同期
+    web3.net.getListening(callback(error, result){ ... })
 
-This property is read only and says whether the node is actively listening for network connections or not.
+このプロパティは読み出し専用です。ノードがネットワーク接続をアクティブに受信待ちしているかどうかを示します。
 
 ##### 戻り値
 
-`Boolean` - `true` if the client is actively listening for network connections, otherwise `false`.
+`Boolean` - `true` クライアントがネットワーク接続を受信待ちしている。`false` それ以外。
 
 ##### 使用例
 
@@ -716,11 +716,11 @@ console.log(listening); // true of false
     // or async
     web3.net.getPeerCount(callback(error, result){ ... })
 
-This property is read only and returns the number of connected peers.
+読み出し専用プロパティです。接続してルピアノードの数を返します。
 
 ##### 戻り値
 
-`Number` - The number of peers currently connected to the client.
+`Number` - 現在接続しているピアの数です。
 
 ##### 使用例
 
@@ -747,20 +747,20 @@ var eth = web3.eth;
 
     web3.eth.defaultAccount
 
-This default address is used for the following methods (optionally you can overwrite it by specifying the `from` property):
+このデフォルトアドレスが、次のメソッドで使われます。（メソッドのオプション引数`from`でプロパティで上書きすることができます。）
 
 - [web3.eth.sendTransaction()](#web3ethsendtransaction)
 - [web3.eth.call()](#web3ethcall)
 
 ##### Values
 
-`String`, 20 Bytes - Any address you own, or where you have the private key for.
+`String`, 20 Bytes - 所有する秘密鍵を持つアドレスのひとつです。
 
 *Default is* `undefined`.
 
 ##### 戻り値
 
-`String`, 20 Bytes - The currently set default address.
+`String`, 20 Bytes - 現在のデフォルトアドレスです。
 
 ##### 使用例
 
@@ -778,7 +778,7 @@ web3.eth.defaultAccount = '0x8888f1f195afa192cfee860698584c030f4c9db1';
 
     web3.eth.defaultBlock
 
-This default block is used for the following methods (optionally you can override it by passing the defaultBlock parameter):
+デフォルトブロックは以下のメソッドで使います。(メソッドのオプション引数`defaultBlock`でプロパティで上書きすることができます。）
 
 - [web3.eth.getBalance()](#web3ethgetbalance)
 - [web3.eth.getCode()](#web3ethgetcode)
@@ -790,18 +790,18 @@ This default block is used for the following methods (optionally you can overrid
 
 ##### Values
 
-Default block parameters can be one of the following:
+デフォルトブロック引数には、以下のいずれかが使用できます:
 
-- `Number` - a block number
-- `String` - `"earliest"`, the genesis block
-- `String` - `"latest"`, the latest block (current head of the blockchain)
-- `String` - `"pending"`, the currently mined block (including pending transactions)
+- `Number` - ブロック番号の数値
+- `String` - `"earliest"`, ジェネシスブロック
+- `String` - `"latest"`, 最終ブロック(ブロックチェーンの現在の先頭)
+- `String` - `"pending"`, 採掘中のブロック(保留中のトランザクションを含む)
 
 *Default is* `latest`
 
 ##### 戻り値
 
-`Number|String` - The default block number to use when querying a state.
+`Number|String` - 状態を照会するときに使うブロック番号。
 
 ##### 使用例
 
@@ -809,7 +809,7 @@ Default block parameters can be one of the following:
 var defaultBlock = web3.eth.defaultBlock;
 console.log(defaultBlock); // 'latest'
 
-// set the default block
+// デフォルトブロックの番号を設定する。
 web3.eth.defaultBlock = 231;
 ```
 
@@ -818,8 +818,8 @@ web3.eth.defaultBlock = 231;
 #### web3.eth.syncing
 
     web3.eth.syncing
-    // or async
-    web3.eth.getSyncing(callback(error, result){ ... })
+    // 非同期
+    web3.eth.getSyncing(callback(error, result){ ... })
 
 This property is read only and returns the either a sync object, when the node is syncing or `false`.
 
