@@ -443,15 +443,15 @@ console.log(hashOfHash); // "0x85dd39c91a64167ba20732b228251e67caed1462d4bcf036a
 
     web3.toHex(mixed);
  
-あらゆる数値を１６進数に変換します。
+あらゆる値をHEX文字列に変換します。
 
 ##### パラメータ
 
-1. `String|Number|Object|Array|BigNumber` - The value to parse to HEX. If its an object or array it will be `JSON.stringify` first. If its a BigNumber it will make it the HEX value of a number.
+1. `String|Number|Object|Array|BigNumber` - HEX文字列に変換する値。これがオブジェクトや配列だった場合、先に`JSON.stringify`で文字列化します。BigNumberであるなら、数値として扱います。
 
 ##### 戻り値
 
-`String` - The hex string of `mixed`.
+`String` - `mixed`のHEX文字列。
 
 ##### 使用例
 
@@ -466,15 +466,15 @@ console.log(str); // '0x7b2274657374223a2274657374227d'
 
     web3.toAscii(hexString);
 
-Converts a HEX string into a ASCII string.
+HEX文字列をASCII文字列に戻します。
 
 ##### パラメータ
 
-1. `String` - A HEX string to be converted to ascii.
+1. `String` - ASCII文字列に変換するHEX文字列。
 
 ##### 戻り値
 
-`String` - An ASCII string made from the given `hexString`.
+`String` - `hexString`から復元したASCII文字列。
 
 ##### 使用例
 
@@ -489,16 +489,16 @@ console.log(str); // "ethereum"
 
     web3.fromAscii(string [, padding]);
 
-Converts any ASCII string to a HEX string.
+任意のASCII文字列をHEX文字列にします。
 
 ##### パラメータ
 
-1. `String` - An ASCII string to be converted to HEX.
-2. `Number` - (optional) The number of bytes the returned HEX string should have. 
+1. `String` - HEX文字列に変換するASCII文字列
+2. `Number` - (optional) 出力するHEX文字列のバイト数。
 
 ##### 戻り値
 
-`String` - The converted HEX string.
+`String` - 変換したHEX文字列。
 
 ##### 使用例
 
