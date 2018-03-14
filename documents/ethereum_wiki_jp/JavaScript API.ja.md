@@ -516,16 +516,16 @@ console.log(str2); // "0x657468657265756d000000000000000000000000000000000000000
 
     web3.toDecimal(hexString);
 
-Converts a HEX string to its number representation.
+HEX文字列を十進数表記の数値に変換します。
 
 ##### パラメータ
 
-1. `String` - An HEX string to be converted to a number.
+1. `String` - 変換した十進数の値
 
 
 ##### 戻り値
 
-`Number` - The number representing the data `hexString`.
+`Number` - `hexString`の数値表現
 
 ##### 使用例
 
@@ -540,15 +540,15 @@ console.log(number); // 21
 
     web3.fromDecimal(number);
 
-Converts a number or number string to its HEX representation.
+数値をHEX文字列に変換します。
 
 ##### パラメータ
 
-1. `Number|String` - A number to be converted to a HEX string.
+1. `Number|String` - 10新数文字列を変換したHEX文字列
 
 ##### 戻り値
 
-`String` - The HEX string representing of the given `number`.
+`String` - `number`のHEX文字列。
 
 ##### 使用例
 
@@ -563,7 +563,7 @@ console.log(value); // "0x15"
 
     web3.fromWei(number, unit)
 
-Converts a number of wei into the following ethereum units:
+数値(wei単位)を以下のethereum単位の数値に変換します。
 
 - `Gwei`
 - `Kwei`
@@ -579,15 +579,17 @@ Converts a number of wei into the following ethereum units:
 - `tether`
 - `wei`
 
+※Nekoniumの単位nukoはetherと同じ単位です。補助単位はありません。
+
 ##### パラメータ
 
-1. `Number|String|BigNumber` - A number or BigNumber instance.
-2. `String` - One of the above ether units.
+1. `Number|String|BigNumber` - 数値、またはBigNumberの値
+2. `String` - 上記リストにあるEthereum単位。
 
 
 ##### 戻り値
 
-`String|BigNumber` - Either a number string, or a BigNumber instance, depending on the given `number` parameter.
+`String|BigNumber` - 指定したEthereum単位の数値文字列、またはBigNumberの値。値の種類は`number`引数の種類で変わります。
 
 ##### 使用例
 
@@ -602,7 +604,7 @@ console.log(value); // "0.021"
 
     web3.toWei(number, unit)
 
-Converts an ethereum unit into wei. Possible units are:
+Ethereum単位の数値を、wei単位の数値に変換します。
 
 - `kwei`/`ada`
 - `mwei`/`babbage`
@@ -615,14 +617,16 @@ Converts an ethereum unit into wei. Possible units are:
 - `gether`
 - `tether`
 
+※Nekoniumの単位nukoはetherと同じ単位です。補助単位はありません。
+
 ##### パラメータ
 
-1. `Number|String|BigNumber` - A number or BigNumber instance.
-2. `String` - One of the above ether units.
+1. `Number|String|BigNumber` - 数値、またはBigNumberの値
+2. `String` - 上記リストにあるEthereum単位。
 
 ##### 戻り値
 
-`String|BigNumber` - Either a number string, or a BigNumber instance, depending on the given `number` parameter.
+`String|BigNumber` - wei単位の数値文字列、またはBigNumberの値。値の種類は`number`引数の種類で変わります。
 
 ##### 使用例
 
@@ -637,17 +641,17 @@ console.log(value); // "1000000000000000000"
 
     web3.toBigNumber(numberOrHexString);
 
-Converts a given number into a BigNumber instance.
+数値をBigNumberに変換します。
 
-See the [note on BigNumber](#a-note-on-big-numbers-in-web3js).
+参照 [note on BigNumber](#a-note-on-big-numbers-in-web3js).
 
 ##### パラメータ
 
-1. `Number|String` - A number, number string or HEX string of a number.
+1. `Number|String` - 数値、または数値文字列、数値から作成したHEX文字列
 
 ##### 戻り値
 
-`BigNumber` - A BigNumber instance representing the given value.
+`BigNumber` - 変換した数値を格納したBigNumber
 
 ##### 使用例
 
@@ -664,15 +668,15 @@ console.log(value.toString(10)); // '200000000000000000000001'
 
     web3.isAddress(HexString);
 
-Checks if the given string is an address.
+与えた文字列がEthereumアドレスのフォーマットであるか確認します。
 
 ##### パラメータ
 
-1. `String` - An HEX string.
+1. `String` - HEX文字列
 
 ##### 戻り値
 
-`Boolean` - `false` if it's not on a valid address format. Returns `true` if it's an all lowercase or all uppercase valid address. If it's a mixed case address, it checks using `web3.isChecksumAddress()`.
+`Boolean` - `false` Ethereumアドレスのフォーマットではない。 `true` 全てが小文字、または大文字の正しいフォーマットのアドレス。大文字、小文字が混在したアドレスは、`web3.isChecksumAddress()`関数でチェックしてください。
 
 ##### 使用例
 
