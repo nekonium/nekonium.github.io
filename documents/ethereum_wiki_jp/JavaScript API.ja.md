@@ -818,8 +818,8 @@ web3.eth.defaultBlock = 231;
 #### web3.eth.syncing
 
     web3.eth.syncing
-    // 非同期
-    web3.eth.getSyncing(callback(error, result){ ... })
+    //async
+    web3.eth.getSyncing(callback(error, result){ ... })
 
 This property is read only and returns the either a sync object, when the node is syncing or `false`.
 
