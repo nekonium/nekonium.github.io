@@ -1,8 +1,11 @@
+From https://github.com/ethereum/wiki/wiki/JavaScript-API
+
 # Web3 JavaScript app API for 0.2x.x
 
-**NOTE: These docs are for web3.js version 0.2x.x. If you’re using web3.js 1.0 please refer to [this documentation](http://web3js.readthedocs.io/en/1.0/index.html).**
+**注意: このドキュメントは、web3.js version 0.2x.x向けです。もしweb3.js 1.0 を使うなら、こちらのドキュメントを見てください。(http://web3js.readthedocs.io/en/1.0/index.html).**
 
-To make your app work on Ethereum, you can use the `web3` object provided by the [web3.js library](https://github.com/ethereum/web3.js). Under the hood it communicates to a local node through [RPC calls](https://github.com/ethereum/wiki/wiki/JSON-RPC). web3.js works with any Ethereum node, which exposes an RPC layer.
+Ethereumで動作するアプリケーションを作るには、[web3.js library]の`web3`オブジェクトプロバイダを使うことができます。
+(https://github.com/ethereum/web3.js). ローカルノードとの通信を隠蔽します。 [RPC calls](https://github.com/ethereum/wiki/wiki/JSON-RPC). web3.jsはEthereumノードとともに動作し、RPCレイヤーを公開します。
 
 `web3` contains the `eth` object - `web3.eth` (for specifically Ethereum blockchain interactions) and the `shh` object - `web3.shh` (for Whisper interaction). Over time we'll introduce other objects for each of the other web3 protocols. Working  [examples can be found here](https://github.com/ethereum/web3.js/tree/master/example).
 
@@ -196,12 +199,12 @@ name, key)](#web3dbgetstring)
       * [stopWatching(callback)](#web3shhfilter)
       * [get(callback)](#web3shhfilter)
 
-### Usage
+### 使い方
 
 #### web3
-The `web3` object provides all methods.
+`web3` オブジェクトプロバイダの全メソッド
 
-##### Example
+##### 使用例
 
 ```js
 var Web3 = require('web3');
@@ -210,7 +213,7 @@ var Web3 = require('web3');
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 ```
 
-###### Example using HTTP Basic Authentication
+###### HTTP Basic Authenticationの使用例
 ```js
 var Web3 = require('web3');
 var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545", 0, BasicAuthUsername, BasicAuthPassword));
@@ -225,11 +228,11 @@ var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545", 0, 
 web3.version.api
 ```
 
-##### Returns
+##### 戻り値
 
-`String` - The ethereum js api version.
+`String` - EthereumのjsAPIのバージョン
 
-##### Example
+##### 使用例
 
 ```js
 var version = web3.version.api;
@@ -241,15 +244,15 @@ console.log(version); // "0.2.0"
 #### web3.version.node
 
     web3.version.node
-    // or async
+    // 非同期呼び出し
     web3.version.getNode(callback(error, result){ ... })
 
 
-##### Returns
+##### 戻り値
 
-`String` - The client/node version.
+`String` - クライアント/ノードのバージョン
 
-##### Example
+##### 使用例
 
 ```js
 var version = web3.version.node;
@@ -265,11 +268,11 @@ console.log(version); // "Mist/v0.9.3/darwin/go1.4.1"
     web3.version.getNetwork(callback(error, result){ ... })
 
 
-##### Returns
+##### 戻り値
 
-`String` - The network protocol version.
+`String` - ネットワークプロトコルのバージョン
 
-##### Example
+##### 使用例
 
 ```js
 var version = web3.version.network;
@@ -285,11 +288,11 @@ console.log(version); // 54
     web3.version.getEthereum(callback(error, result){ ... })
 
 
-##### Returns
+##### 戻り値
 
-`String` - The ethereum protocol version.
+`String` - Ethereumプロトコルのバージョン
 
-##### Example
+##### 使用例
 
 ```js
 var version = web3.version.ethereum;
@@ -305,11 +308,11 @@ console.log(version); // 60
     web3.version.getWhisper(callback(error, result){ ... })
 
 
-##### Returns
+##### 戻り値
 
-`String` - The whisper protocol version.
+`String` - whisper protocolのバージョン
 
-##### Example
+##### 使用例
 
 ```js
 var version = web3.version.whisper;
@@ -321,25 +324,25 @@ console.log(version); // 20
 
     web3.isConnected()
 
-Should be called to check if a connection to a node exists
+他のノードへ接続しているかチェックするために使います。
 
-##### Parameters
-none
+##### パラメータ
+なし
 
-##### Returns
+##### 戻り値
 
 `Boolean`
 
-##### Example
+##### 使用例
 
 ```js
 if(!web3.isConnected()) {
   
-   // show some dialog to ask the user to start a node
+   // 例えばユーザーがノードを起動したかを尋ねるダイアログを表示する。
 
 } else {
  
-   // start web3 filters, calls, etc
+   // web3を使った様々な処理を行う。
   
 }
 ```
@@ -350,16 +353,16 @@ if(!web3.isConnected()) {
 
     web3.setProvider(provider)
 
-Should be called to set provider.
+プロバイダをセットします。
 
-##### Parameters
-none
+##### パラメータ
+なし
 
-##### Returns
+##### 戻り値
 
 `undefined`
 
-##### Example
+##### 使用例
 
 ```js
 web3.setProvider(new web3.providers.HttpProvider('http://localhost:8545')); // 8080 for cpp/AZ, 8545 for go/mist
