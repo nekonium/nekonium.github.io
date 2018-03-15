@@ -1114,18 +1114,18 @@ console.log(balance.toNumber()); // 1000000000000
 
     web3.eth.getStorageAt(addressHexString, position [, defaultBlock] [, callback])
 
-Get the storage at a specific position of an address.
+指定アドレスのストレージを読み出します。（ストレージは、そのアドレスにあるコントラクトが保存した情報です。[参考](https://ethereum.stackexchange.com/questions/5865/what-does-web3-eth-getstorageat-return)）
 
 ##### パラメータ
 
-1. `String` - The address to get the storage from.
-2. `Number` - The index position of the storage.
-3. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
+1. `String` - ストレージを読み出すアドレス文字列。
+2. `Number` - 読みだすストレージの位置(position)
+3. `Number|String` - (optional) 調査するブロックの番号。省略するとデフォルトブロック番号を使います。[web3.eth.defaultBlock](#web3ethdefaultblock).
 4. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`String` - The value in storage at the given position.
+`String` - 読みだしたストレージの値。
 
 ##### 使用例
 
@@ -1140,12 +1140,12 @@ console.log(state); // "0x03"
 
     web3.eth.getCode(addressHexString [, defaultBlock] [, callback])
 
-Get the code at a specific address.
+指定アドレスのコード(EVMバイトコード)を読み出します。
 
 ##### パラメータ
 
-1. `String` - The address to get the code from.
-2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
+1. `String` - コードを読み出すアドレス文字列。
+2. `Number|String` - (optional) 調査するブロックの番号。省略するとデフォルトブロック番号を使います。[web3.eth.defaultBlock](#web3ethdefaultblock).
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 ##### 戻り値
 
@@ -1164,35 +1164,35 @@ console.log(code); // "0x600160008035811a818181146012578301005b601b6001356025565
 
      web3.eth.getBlock(blockHashOrBlockNumber [, returnTransactionObjects] [, callback])
 
-Returns a block matching the block number or block hash.
+ブロック番号、またはブロックハッシュに一致するブロックを返します。
 
 ##### パラメータ
 
-1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
-2. `Boolean` - (optional, default `false`) If `true`, the returned block will contain all transactions as objects, if `false` it will only contains the transaction hashes.
+1. `String|Number` - ブロック番号、またはブロックのハッシュ。または、次の文字列 `"earliest"`, `"latest"` or `"pending"` これらは[default block parameter](#web3ethdefaultblock)を参照してください。
+2. `Boolean` - (optional, 省略時 `false`) `true`ならトランザクションオブジェクトを戻り値に含みます。`false`ならトランザクションのハッシュのみを返します。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 ##### 戻り値
 
-`Object` - The block object:
+`Object` - ブロックオブジェクト:
 
-  - `number`: `Number` - the block number. `null` when its pending block.
-  - `hash`: `String`, 32 Bytes - hash of the block. `null` when its pending block.
-  - `parentHash`: `String`, 32 Bytes - hash of the parent block.
-  - `nonce`: `String`, 8 Bytes - hash of the generated proof-of-work. `null` when its pending block.
-  - `sha3Uncles`: `String`, 32 Bytes - SHA3 of the uncles data in the block.
-  - `logsBloom`: `String`, 256 Bytes - the bloom filter for the logs of the block. `null` when its pending block.
-  - `transactionsRoot`: `String`, 32 Bytes - the root of the transaction trie of the block
-  - `stateRoot`: `String`, 32 Bytes - the root of the final state trie of the block.
-  - `miner`: `String`, 20 Bytes - the address of the beneficiary to whom the mining rewards were given.
-  - `difficulty`: `BigNumber` - integer of the difficulty for this block.
-  - `totalDifficulty`: `BigNumber` - integer of the total difficulty of the chain until this block.
-  - `extraData`: `String` - the "extra data" field of this block.
-  - `size`: `Number` - integer the size of this block in bytes.
-  - `gasLimit`: `Number` - the maximum gas allowed in this block.
-  - `gasUsed`: `Number` - the total used gas by all transactions in this block.
-  - `timestamp`: `Number` - the unix timestamp for when the block was collated.
-  - `transactions`: `Array` - Array of transaction objects, or 32 Bytes transaction hashes depending on the last given parameter.
-  - `uncles`: `Array` - Array of uncle hashes.
+  - `number`: `Number` - ブロック番号。`null`の場合は保留ブロック。
+  - `hash`: `String`, 32 Bytes - ブロックのハッシュ。`null`の場合は保留ブロック。
+  - `parentHash`: `String`, 32 Bytes - 親ブロックのハッシュ。
+  - `nonce`: `String`, 8 Bytes - PoWで生成したハッシュ。`null`の場合は保留ブロック。
+  - `sha3Uncles`: `String`, 32 Bytes - このブロックにあるuncles dataのSHA3ハッシュ
+  - `logsBloom`: `String`, 256 Bytes - ブロックのログのためのブルームフィルタ。 `null`の場合は保留ブロック。
+  - `transactionsRoot`: `String`, 32 Bytes - ブロックのトランザクション木？(transaction trie)のルート。
+  - `stateRoot`: `String`, 32 Bytes - ブロックの最終状態木？(state trie)のルート。
+  - `miner`: `String`, 20 Bytes - ブロックの採掘報酬を得たアドレス。
+  - `difficulty`: `BigNumber` - このブロックの難易度。
+  - `totalDifficulty`: `BigNumber` - このブロックまでの難易度の合計
+  - `extraData`: `String` - このブロックの"extra data"フィールドの値
+  - `size`: `Number` - ブロックのbytes単位でのサイズ。
+  - `gasLimit`: `Number` - このブロックで使用できる最大gas量。
+  - `gasUsed`: `Number` - このブロックで使用したgasの合計。
+  - `timestamp`: `Number` - ブロックを照合したunix時刻。
+  - `transactions`: `Array` - トランザクションオブジェクトの配列。または、トランザクションハッシュの配列。
+  - `uncles`: `Array` - uncleブロックのハッシュのリスト。
 
 ##### 使用例
 
