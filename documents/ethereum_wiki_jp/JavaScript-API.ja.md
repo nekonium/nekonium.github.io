@@ -23,15 +23,15 @@ Web3を使ったより実用的なサンプルはこちらです。 [useful app 
 
 ### Adding web3
 
-First you need to get web3.js into your project. This can be done using the following methods:
+web3.jsを自分のプロジェクトにセットアップする方法です。以下の方法を使います。:
 
 - npm: `npm install web3`
 - bower: `bower install web3`
 - meteor: `meteor add ethereum:web3`
 - vanilla: link the `dist./web3.min.js`
 
-Then you need to create a web3 instance, setting a provider.
-To make sure you don't overwrite the already set provider when in mist, check first if the web3 is available:
+つぎに、web3インスタンスを作成してproviderの設定をします。
+Mistでは既にセットアップされているproviderを上書きしないようにしてください。web3をアクティブにする前に確認します。
 
 ```js
 if (typeof web3 !== 'undefined') {
@@ -42,7 +42,7 @@ if (typeof web3 !== 'undefined') {
 }
 ```
 
-After that you can use the [API](web3js-api-reference) of the `web3` object.
+以上で、web3オブジェクトの[API](web3js-api-reference)を使う準備は完了です。
 
 ### Using callbacks
 
