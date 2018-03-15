@@ -693,9 +693,11 @@ console.log(isAddress); // true
 
 #### web3.net.listening
 
-    web3.net.listening
-    // 非同期
-    web3.net.getListening(callback(error, result){ ... })
+```js
+web3.net.listening
+// 非同期.
+web3.net.getListening(callback(error, result){ ... })
+```
 
 このプロパティは読み出し専用です。ノードがネットワーク接続をアクティブに受信待ちしているかどうかを示します。
 
@@ -713,10 +715,11 @@ console.log(listening); // true of false
 ***
 
 #### web3.net.peerCount
-
-    web3.net.peerCount
-    // or async
-    web3.net.getPeerCount(callback(error, result){ ... })
+```js
+web3.net.peerCount
+// or async
+web3.net.getPeerCount(callback(error, result){ ... })
+```
 
 読み出し専用プロパティです。接続してルピアノードの数を返します。
 
@@ -747,7 +750,9 @@ var eth = web3.eth;
 
 #### web3.eth.defaultAccount
 
-    web3.eth.defaultAccount
+```js
+web3.eth.defaultAccount
+```
 
 このデフォルトアドレスが、次のメソッドで使われます。（メソッドのオプション引数`from`でプロパティで上書きすることができます。）
 
@@ -778,7 +783,9 @@ web3.eth.defaultAccount = '0x8888f1f195afa192cfee860698584c030f4c9db1';
 
 #### web3.eth.defaultBlock
 
-    web3.eth.defaultBlock
+```js
+web3.eth.defaultBlock
+```
 
 デフォルトブロックは以下のメソッドで使います。(メソッドのオプション引数`defaultBlock`でプロパティで上書きすることができます。）
 
@@ -819,18 +826,21 @@ web3.eth.defaultBlock = 231;
 
 #### web3.eth.syncing
 
-    web3.eth.syncing
-    //async
-    web3.eth.getSyncing(callback(error, result){ ... })
+```js
+web3.eth.syncing
+//async
+web3.eth.getSyncing(callback(error, result){ ... })
+```
 
 読み取り専用のプロパティです。ノードが同期していれば、syncオブジェクトを返します。それ以外は`false`を返します。
 
 ##### 戻り値
 
 `Object|Boolean` - ノードが現在同期していれば以下の要素を持つオブジェクトを返します。それ以外は`false`です。:
-   - `startingBlock`: `Number` - 同期を開始したブロック番号。
-   - `currentBlock`: `Number` - すでに同期が完了しているブロック番号。
-   - `highestBlock`: `Number` - 最終的に同期できるブロック番号の予測値。
+
+- `startingBlock`: `Number` - 同期を開始したブロック番号。
+- `currentBlock`: `Number` - すでに同期が完了しているブロック番号。
+- `highestBlock`: `Number` - 最終的に同期できるブロック番号の予測値。
 
 ##### 使用例
 
@@ -850,7 +860,9 @@ console.log(sync);
 
 #### web3.eth.isSyncing
 
-    web3.eth.isSyncing(callback);
+```js
+web3.eth.isSyncing(callback);
+```
 
 この関数は同期の開始、更新、停止を`callback`に通知する関数です。
 
@@ -858,17 +870,17 @@ console.log(sync);
 
 `Object` - 以下の関数を持つisSincingオブジェクト:
 
-  * `syncing.addCallback()`: 他のコールバックを追加します。ノードが開始、または停止した時も呼び出されます。
-  * `syncing.stopWatching()`: このコールバックを停止します。
+* `syncing.addCallback()`: 他のコールバックを追加します。ノードが開始、または停止した時も呼び出されます。
+* `syncing.stopWatching()`: このコールバックを停止します。
 
 ##### Callback の引数
 ※二番目の引数に、２種類のオブジェクとが渡されます。
 
 - `Boolean` - コールバックが開始したときは`true`。停止するときは`false`です。
 - `Object` - 同期中はsyncingオブジェクトです。:
-   - `startingBlock`: `Number` - 同期を開始したブロック番号。
-   - `currentBlock`: `Number` - すでに同期が完了しているブロック番号。
-   - `highestBlock`: `Number` - 最終的に同期できるブロック番号の予測値。
+  - `startingBlock`: `Number` - 同期を開始したブロック番号。
+  - `currentBlock`: `Number` - すでに同期が完了しているブロック番号。
+  - `highestBlock`: `Number` - 最終的に同期できるブロック番号の予測値。
 
 
 ##### 使用例
@@ -897,9 +909,11 @@ web3.eth.isSyncing(function(error, sync){
 
 #### web3.eth.coinbase
 
-    web3.eth.coinbase
-    // or async
-    web3.eth.getCoinbase(callback(error, result){ ... })
+```js
+web3.eth.coinbase
+// or async
+web3.eth.getCoinbase(callback(error, result){ ... })
+```
 
 読み出し専用のプロパティです。マイニング報酬を受け取るcoinbaseのアドレスを返します。
 
@@ -918,10 +932,11 @@ console.log(coinbase); // "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
 
 #### web3.eth.mining
 
-    web3.eth.mining
-    // or async
-    web3.eth.getMining(callback(error, result){ ... })
-
+```js
+web3.eth.mining
+// or async
+web3.eth.getMining(callback(error, result){ ... })
+```
 
 読み出し専用のプロパティです。ノードがマイニング中かどうかを返します。
 
@@ -941,9 +956,11 @@ console.log(mining); // true or false
 
 #### web3.eth.hashrate
 
-    web3.eth.hashrate
-    // or async
-    web3.eth.getHashrate(callback(error, result){ ... })
+```js
+web3.eth.hashrate
+// or async
+web3.eth.getHashrate(callback(error, result){ ... })
+```
 
 読み取り専用のプロパティです。ノードのハッシュレート(hash/sec)の数値を返します。
 
@@ -963,10 +980,11 @@ console.log(hashrate); // 493736
 
 #### web3.eth.gasPrice
 
-    web3.eth.gasPrice
-    // or async
-    web3.eth.getGasPrice(callback(error, result){ ... })
-
+```js
+web3.eth.gasPrice
+// or async
+web3.eth.getGasPrice(callback(error, result){ ... })
+```
 
 読み取り専用のプロパティです。現在のGas priceを返します。
 Gas priceは、最終ブロックのカス価格の平均値から計算します。
@@ -975,7 +993,7 @@ Gas priceは、最終ブロックのカス価格の平均値から計算しま�
 
 `BigNumber` - 現在のgas priceをweiで格納したBigNumberです。
 
-[note on BigNumber]を参照してください。(#a-note-on-big-numbers-in-web3js).
+[note on BigNumber](#a-note-on-big-numbers-in-web3js)を参照してください。
 
 ##### 使用例
 
@@ -988,9 +1006,11 @@ console.log(gasPrice.toString(10)); // "10000000000000"
 
 #### web3.eth.accounts
 
-    web3.eth.accounts
-    // or async
-    web3.eth.getAccounts(callback(error, result){ ... })
+```js
+web3.eth.accounts
+// or async
+web3.eth.getAccounts(callback(error, result){ ... })
+```
 
 読み取り専用のプロパティです。ノードの制御下にあるアカウントのリストを返します。
 
@@ -1009,9 +1029,11 @@ console.log(accounts); // ["0x407d73d8a49eeb85d32cf465507dd71d507100c1"]
 
 #### web3.eth.blockNumber
 
-    web3.eth.blockNumber
-    // or async
-    web3.eth.getBlockNumber(callback(error, result){ ... })
+```js
+web3.eth.blockNumber
+// or async
+web3.eth.getBlockNumber(callback(error, result){ ... })
+```
 
 読み取り専用のプロパティです。現在のブロック番号を返します。
 
@@ -1030,7 +1052,9 @@ console.log(number); // 2744
 
 #### web3.eth.register
 
-    web3.eth.register(addressHexString [, callback])
+```js
+web3.eth.register(addressHexString [, callback])
+```
 
 (未実装です)
 アドレスを`web3.eth.accounts`へ登録します。この機能は、PrivateKeyを所有しないアカウント（例えばコントラクトウォレット）をaccountsに関連付けるために使います。
@@ -1056,8 +1080,9 @@ web3.eth.register("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
 
 #### web3.eth.unRegister
 
-     web3.eth.unRegister(addressHexString [, callback])
-
+```js
+web3.eth.unRegister(addressHexString [, callback])
+```
 
 (未実装)
 指定したアドレスをaccountsリストから削除します。
@@ -1083,7 +1108,9 @@ web3.eth.unregister("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
 
 #### web3.eth.getBalance
 
-    web3.eth.getBalance(addressHexString [, defaultBlock] [, callback])
+```js
+web3.eth.getBalance(addressHexString [, defaultBlock] [, callback])
+```
 
 指定したブロックについて、そのアドレスの残高を得ます。
 
@@ -1112,7 +1139,9 @@ console.log(balance.toNumber()); // 1000000000000
 
 #### web3.eth.getStorageAt
 
-    web3.eth.getStorageAt(addressHexString, position [, defaultBlock] [, callback])
+```js
+web3.eth.getStorageAt(addressHexString, position [, defaultBlock] [, callback])
+```
 
 指定アドレスのストレージを読み出します。（ストレージは、そのアドレスにあるコントラクトが保存した情報です。[参考](https://ethereum.stackexchange.com/questions/5865/what-does-web3-eth-getstorageat-return)）
 
@@ -1138,7 +1167,9 @@ console.log(state); // "0x03"
 
 #### web3.eth.getCode
 
-    web3.eth.getCode(addressHexString [, defaultBlock] [, callback])
+```js
+web3.eth.getCode(addressHexString [, defaultBlock] [, callback])
+```
 
 指定アドレスのコード(EVMバイトコード)を読み出します。
 
@@ -1162,7 +1193,9 @@ console.log(code); // "0x600160008035811a818181146012578301005b601b6001356025565
 
 #### web3.eth.getBlock
 
-     web3.eth.getBlock(blockHashOrBlockNumber [, returnTransactionObjects] [, callback])
+```js
+web3.eth.getBlock(blockHashOrBlockNumber [, returnTransactionObjects] [, callback])
+```
 
 ブロック番号、またはブロックハッシュに一致するブロックを返します。
 
@@ -1175,24 +1208,24 @@ console.log(code); // "0x600160008035811a818181146012578301005b601b6001356025565
 
 `Object` - ブロックオブジェクト:
 
-  - `number`: `Number` - ブロック番号。`null`の場合は保留ブロック。
-  - `hash`: `String`, 32 Bytes - ブロックのハッシュ。`null`の場合は保留ブロック。
-  - `parentHash`: `String`, 32 Bytes - 親ブロックのハッシュ。
-  - `nonce`: `String`, 8 Bytes - PoWで生成したハッシュ。`null`の場合は保留ブロック。
-  - `sha3Uncles`: `String`, 32 Bytes - このブロックにあるuncles dataのSHA3ハッシュ
-  - `logsBloom`: `String`, 256 Bytes - ブロックのログのためのブルームフィルタ。 `null`の場合は保留ブロック。
-  - `transactionsRoot`: `String`, 32 Bytes - ブロックのトランザクション木？(transaction trie)のルート。
-  - `stateRoot`: `String`, 32 Bytes - ブロックの最終状態木？(state trie)のルート。
-  - `miner`: `String`, 20 Bytes - ブロックの採掘報酬を得たアドレス。
-  - `difficulty`: `BigNumber` - このブロックの難易度。
-  - `totalDifficulty`: `BigNumber` - このブロックまでの難易度の合計
-  - `extraData`: `String` - このブロックの"extra data"フィールドの値
-  - `size`: `Number` - ブロックのbytes単位でのサイズ。
-  - `gasLimit`: `Number` - このブロックで使用できる最大gas量。
-  - `gasUsed`: `Number` - このブロックで使用したgasの合計。
-  - `timestamp`: `Number` - ブロックを照合したunix時刻。
-  - `transactions`: `Array` - トランザクションオブジェクトの配列。または、トランザクションハッシュの配列。
-  - `uncles`: `Array` - uncleブロックのハッシュのリスト。
+- `number`: `Number` - ブロック番号。`null`の場合は保留ブロック。 
+- `hash`: `String`, 32 Bytes - ブロックのハッシュ。`null`の場合は保留ブロック。 
+- `parentHash`: `String`, 32 Bytes - 親ブロックのハッシュ。 
+- `nonce`: `String`, 8 Bytes - PoWで生成したハッシュ。`null`の場合は保留ブロック。 
+- `sha3Uncles`: `String`, 32 Bytes - このブロックにあるuncles dataのSHA3ハッシュ 
+- `logsBloom`: `String`, 256 Bytes - ブロックのログのためのブルームフィルタ。 `null`の場合は保留ブロック。 
+- `transactionsRoot`: `String`, 32 Bytes - ブロックのトランザクション木？(transaction trie)のルート。 
+- `stateRoot`: `String`, 32 Bytes - ブロックの最終状態木？(state trie)のルート。 
+- `miner`: `String`, 20 Bytes - ブロックの採掘報酬を得たアドレス。 
+- `difficulty`: `BigNumber` - このブロックの難易度。 
+- `totalDifficulty`: `BigNumber` - このブロックまでの難易度の合計 
+- `extraData`: `String` - このブロックの"extra data"フィールドの値 
+- `size`: `Number` - ブロックのbytes単位でのサイズ。 
+- `gasLimit`: `Number` - このブロックで使用できる最大gas量。 
+- `gasUsed`: `Number` - このブロックで使用したgasの合計。 
+- `timestamp`: `Number` - ブロックを照合したunix時刻。 
+- `transactions`: `Array` - トランザクションオブジェクトの配列。または、トランザクションハッシュの配列。 
+- `uncles`: `Array` - uncleブロックのハッシュのリスト。 
 
 ##### 使用例
 
@@ -1252,7 +1285,9 @@ console.log(number); // 1
 
 #### web3.eth.getUncle
 
-    web3.eth.getUncle(blockHashStringOrNumber, uncleNumber [, returnTransactionObjects] [, callback])
+```js
+web3.eth.getUncle(blockHashStringOrNumber, uncleNumber [, returnTransactionObjects] [, callback])
+```
 
 Returns a blocks uncle by a given uncle index position.
 
@@ -1281,7 +1316,9 @@ console.log(uncle); // see web3.eth.getBlock
 
 ##### web3.eth.getTransaction
 
-    web3.eth.getTransaction(transactionHash [, callback])
+```js
+web3.eth.getTransaction(transactionHash [, callback])
+```
 
 Returns a transaction matching the given transaction hash.
 
@@ -1294,17 +1331,17 @@ Returns a transaction matching the given transaction hash.
 
 `Object` - A transaction object its hash `transactionHash`:
 
-  - `hash`: `String`, 32 Bytes - hash of the transaction.
-  - `nonce`: `Number` - the number of transactions made by the sender prior to this one.
-  - `blockHash`: `String`, 32 Bytes - hash of the block where this transaction was in. `null` when its pending.
-  - `blockNumber`: `Number` - block number where this transaction was in. `null` when its pending.
-  - `transactionIndex`: `Number` - integer of the transactions index position in the block. `null` when its pending.
-  - `from`: `String`, 20 Bytes - address of the sender.
-  - `to`: `String`, 20 Bytes - address of the receiver. `null` when its a contract creation transaction.
-  - `value`: `BigNumber` - value transferred in Wei.
-  - `gasPrice`: `BigNumber` - gas price provided by the sender in Wei.
-  - `gas`: `Number` - gas provided by the sender.
-  - `input`: `String` - the data sent along with the transaction.
+- `hash`: `String`, 32 Bytes - hash of the transaction.
+- `nonce`: `Number` - the number of transactions made by the sender prior to this one.
+- `blockHash`: `String`, 32 Bytes - hash of the block where this transaction was in. `null` when its pending.
+- `blockNumber`: `Number` - block number where this transaction was in. `null` when its pending.
+- `transactionIndex`: `Number` - integer of the transactions index position in the block. `null` when its pending.
+- `from`: `String`, 20 Bytes - address of the sender.
+- `to`: `String`, 20 Bytes - address of the receiver. `null` when its a contract creation transaction.
+- `value`: `BigNumber` - value transferred in Wei.
+- `gasPrice`: `BigNumber` - gas price provided by the sender in Wei.
+- `gas`: `Number` - gas provided by the sender.
+- `input`: `String` - the data sent along with the transaction.
 
 
 ##### 使用例
