@@ -1289,21 +1289,20 @@ console.log(number); // 1
 ```js
 web3.eth.getUncle(blockHashStringOrNumber, uncleNumber [, returnTransactionObjects] [, callback])
 ```
-
-Returns a blocks uncle by a given uncle index position.
+ブロックの持つuncleブロックを得ます。どのuncleを得るかはindexで指定します。
 
 ##### パラメータ
 
-1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
-2. `Number` - The index position of the uncle.
-3. `Boolean` - (optional, default `false`) If `true`, the returned block will contain all transactions as objects, if `false` it will only contains the transaction hashes.
+1. `String|Number` - Tブロック番号、またはブロックのハッシュ。または定義済の文字列値 `"earliest"`, `"latest"` or `"pending"`  [default block parameter](#web3ethdefaultblock)を参照してください。
+2. `Number` - uncleのインデクス番号を指定します。
+3. `Boolean` - (optional, 省略時 `false`) `true`ならトランザクションオブジェクトを戻り値に含みます。`false`ならトランザクションのハッシュのみを返します。
 4. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`Object` - the returned uncle. For a return value see [web3.eth.getBlock()](#web3ethgetblock).
+`Object` - uncleブロックです。[web3.eth.getBlock()](#web3ethgetblock)を参照してください。
 
-**Note**: An uncle doesn't contain individual transactions.
+**Note**: uncleは個々のトランザクションを含みません。
 
 ##### 使用例
 
