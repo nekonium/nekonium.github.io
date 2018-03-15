@@ -7,10 +7,11 @@ From https://github.com/ethereum/wiki/wiki/JavaScript-API
 Ethereumで動作するアプリケーションを作るには、[web3.js library]の`web3`オブジェクトプロバイダを使うことができます。
 (https://github.com/ethereum/web3.js). ローカルノードとの通信を隠蔽します。 [RPC calls](https://github.com/ethereum/wiki/wiki/JSON-RPC). web3.jsはEthereumノードとともに動作し、RPCレイヤーを公開します。
 
-`web3` は`eth`オブジェクトを持ちます。 - `web3.eth` オブジェクト(Ethereumブロックチェイン操作に使用) 、 `shh` オブジェクト - `web3.shh` (Whisper操作に使用). 今後、web3の他のオブジェクトについても紹介していきます。場所は、`eth`[examples can be found here](https://github.com/ethereum/web3.js/tree/master/example)です。
+`web3` は`eth`オブジェクトを持ちます。 - `web3.eth` オブジェクト(Ethereumブロックチェイン操作に使用) 、 `shh` オブジェクト - `web3.shh` (Whisper操作に使用). 今後、web3の他のオブジェクトについても紹介していきます。
+使用例が、[examples can be found here](https://github.com/ethereum/web3.js/tree/master/example)にあります。
 
 
-If you want to look at some more sophisticated examples using web3.js check out these [useful app patterns](https://github.com/ethereum/wiki/wiki/Useful-Dapp-Patterns).
+Web3を使ったより実用的なサンプルはこちらです。 [useful app patterns](https://github.com/ethereum/wiki/wiki/Useful-Dapp-Patterns).
 
 ## Getting Started
 
