@@ -8,7 +8,7 @@ category:
 
 これは、スマートコントラクトを開発するために一般化されたブロックチェーンである Ethereum を含む ÐΞV によって構築された次世代 P2P 技術プラットフォーム及び、プライベートな低レベルデータグラム通信プラットフォームである Whisper についてあらゆる種類の情報をカバーする、コミュニティーが管理する wiki です。
 
-GitHub でログインしたユーザーは [browser](https://help.github.com/articles/editing-wiki-pages-via-the-online-interface) または[locally](https://help.github.com/articles/adding-and-editing-wiki-pages-locally) を使用してページを編集および追加できます。
+GitHub でログインしたユーザーは [browser](https://help.github.com/articles/editing-wiki-pages-via-the-online-interface) または [locally](https://help.github.com/articles/adding-and-editing-wiki-pages-locally) を使用してページを編集および追加できます。
 
 ## Status 
 
