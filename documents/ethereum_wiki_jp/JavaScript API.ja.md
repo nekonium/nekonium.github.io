@@ -968,14 +968,14 @@ console.log(hashrate); // 493736
     web3.eth.getGasPrice(callback(error, result){ ... })
 
 
-This property is read only and returns the current gas price.
-The gas price is determined by the x latest blocks median gas price.
+読み取り専用のプロパティです。現在のGas priceを返します。
+Gas priceは、最終ブロックのカス価格の平均値から計算します。
 
 ##### 戻り値
 
-`BigNumber` - A BigNumber instance of the current gas price in wei.
+`BigNumber` - 現在のgas priceをweiで格納したBigNumberです。
 
-See the [note on BigNumber](#a-note-on-big-numbers-in-web3js).
+[note on BigNumber]を参照してください。(#a-note-on-big-numbers-in-web3js).
 
 ##### 使用例
 
@@ -992,11 +992,11 @@ console.log(gasPrice.toString(10)); // "10000000000000"
     // or async
     web3.eth.getAccounts(callback(error, result){ ... })
 
-This property is read only and returns a list of accounts the node controls.
+読み取り専用のプロパティです。ノードの制御下にあるアカウントのリストを返します。
 
 ##### 戻り値
 
-`Array` - An array of addresses controlled by client.
+`Array` - ノードの制御下にあるアカウントのリスト。
 
 ##### 使用例
 
@@ -1013,11 +1013,11 @@ console.log(accounts); // ["0x407d73d8a49eeb85d32cf465507dd71d507100c1"]
     // or async
     web3.eth.getBlockNumber(callback(error, result){ ... })
 
-This property is read only and returns the current block number.
+読み取り専用のプロパティです。現在のブロック番号を返します。
 
 ##### 戻り値
 
-`Number` - The number of the most recent block.
+`Number` - 最新のブロック番号です。
 
 ##### 使用例
 
@@ -1032,13 +1032,13 @@ console.log(number); // 2744
 
     web3.eth.register(addressHexString [, callback])
 
-(Not Implemented yet)
-Registers the given address to be included in `web3.eth.accounts`. This allows non-private-key owned accounts to be associated as an owned account (e.g., contract wallets).
+(未実装です)
+アドレスを`web3.eth.accounts`へ登録します。この機能は、PrivateKeyを所有しないアカウント（例えばコントラクトウォレット）をaccountsに関連付けるために使います。
 
 ##### パラメータ
 
-1. `String` - The address to register
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+1. `String` - 登録するアドレス。
+2. `Function` - (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。参照 [this note](#using-callbacks).
 
 
 ##### 戻り値
@@ -1059,13 +1059,13 @@ web3.eth.register("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
      web3.eth.unRegister(addressHexString [, callback])
 
 
-(Not Implemented yet)
-Unregisters a given address.
+(未実装)
+指定したアドレスをaccountsリストから削除します。
 
 ##### パラメータ
 
-1. `String` - The address to unregister.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+1. `String` - 削除するアドレス。
+2. `Function` - (optional)(optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。参照 [this note](#using-callbacks).
 
 
 ##### 戻り値
