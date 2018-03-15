@@ -1,6 +1,7 @@
 ---
 name: Home
 category: 
+from: https://github.com/ethereum/wiki/blob/master/Home.md
 ---
 
 # Welcome to the Ethereum Wiki
