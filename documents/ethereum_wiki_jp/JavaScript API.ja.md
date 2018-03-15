@@ -1038,7 +1038,7 @@ console.log(number); // 2744
 ##### パラメータ
 
 1. `String` - 登録するアドレス。
-2. `Function` - (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。参照 [this note](#using-callbacks).
+2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 
 ##### 戻り値
@@ -1065,7 +1065,7 @@ web3.eth.register("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
 ##### パラメータ
 
 1. `String` - 削除するアドレス。
-2. `Function` - (optional)(optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。参照 [this note](#using-callbacks).
+2. `Function` - (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 
 ##### 戻り値
@@ -1085,19 +1085,19 @@ web3.eth.unregister("0x407d73d8a49eeb85d32cf465507dd71d507100ca")
 
     web3.eth.getBalance(addressHexString [, defaultBlock] [, callback])
 
-Get the balance of an address at a given block.
+指定したブロックについて、そのアドレスの残高を得ます。
 
 ##### パラメータ
 
-1. `String` - The address to get the balance of.
-2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
-3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+1. `String` - バランスを調べるNekoniumアドレス
+2. `Number|String` - (optional) 対象のブロック番号。省略するとデフォルトブロックを使います。 [web3.eth.defaultBlock](#web3ethdefaultblock).
+3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`String` - A BigNumber instance of the current balance for the given address in wei.
+`String` - wei単位で、そのブロックにおけるアドレスのバランスを返します。
 
-See the [note on BigNumber](#a-note-on-big-numbers-in-web3js).
+ [note on BigNumber](#a-note-on-big-numbers-in-web3js)を参照してください。
 
 ##### 使用例
 
@@ -1121,8 +1121,7 @@ Get the storage at a specific position of an address.
 1. `String` - The address to get the storage from.
 2. `Number` - The index position of the storage.
 3. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
-4. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
-
+4. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1147,8 +1146,7 @@ Get the code at a specific address.
 
 1. `String` - The address to get the code from.
 2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
-3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
-
+3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 ##### 戻り値
 
 `String` - The data at given address `addressHexString`.
@@ -1172,8 +1170,7 @@ Returns a block matching the block number or block hash.
 
 1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
 2. `Boolean` - (optional, default `false`) If `true`, the returned block will contain all transactions as objects, if `false` it will only contains the transaction hashes.
-3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
-
+3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 ##### 戻り値
 
 `Object` - The block object:
@@ -1239,8 +1236,7 @@ Returns the number of transaction in a given block.
 ##### パラメータ
 
 1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
-
+2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 ##### 戻り値
 
 `Number` - The number of transactions in the given block.
@@ -1265,8 +1261,7 @@ Returns a blocks uncle by a given uncle index position.
 1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
 2. `Number` - The index position of the uncle.
 3. `Boolean` - (optional, default `false`) If `true`, the returned block will contain all transactions as objects, if `false` it will only contains the transaction hashes.
-4. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
-
+4. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1293,8 +1288,7 @@ Returns a transaction matching the given transaction hash.
 ##### パラメータ
 
 1. `String` - The transaction hash.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
-
+2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1348,7 +1342,7 @@ Returns a transaction based on a block hash or number and the transactions index
 
 1. `String` - A block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
 2. `Number` - The transactions index position.
-3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1377,7 +1371,7 @@ Returns the receipt of a transaction by transaction hash.
 ##### パラメータ
 
 1. `String` - The transaction hash.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1426,7 +1420,7 @@ Get the numbers of transactions sent from this address.
 
 1. `String` - The address to get the numbers of transactions from.
 2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
-3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1457,7 +1451,7 @@ Sends a transaction to the network.
   - `gasPrice`: `Number|String|BigNumber` - (optional, default: To-Be-Determined) The price of gas for this transaction in wei, defaults to the mean network gas price.
   - `data`: `String` - (optional) Either a [byte string](https://github.com/ethereum/wiki/wiki/Solidity,-Docs-and-ABI) containing the associated data of the message, or in the case of a contract-creation transaction, the initialisation code.
   - `nonce`: `Number`  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1489,7 +1483,7 @@ Sends an already signed transaction. For example can be signed using: https://gi
 ##### パラメータ
 
 1. `String` - Signed transaction data in HEX format
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1539,7 +1533,7 @@ Signs data from a specific account. This account needs to be unlocked.
 
 1. `String` - Address to sign with.
 2. `String` - Data to sign.
-3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
@@ -1574,7 +1568,7 @@ Executes a message call transaction, which is directly executed in the VM of the
 
 1. `Object` - A transaction object see [web3.eth.sendTransaction](#web3ethsendtransaction), with the difference that for calls the `from` property is optional as well.
 2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
-3. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
