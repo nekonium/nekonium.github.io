@@ -7,7 +7,8 @@ From https://github.com/ethereum/wiki/wiki/JavaScript-API
 Ethereumで動作するアプリケーションを作るには、[web3.js library]の`web3`オブジェクトプロバイダを使うことができます。
 (https://github.com/ethereum/web3.js). ローカルノードとの通信を隠蔽します。 [RPC calls](https://github.com/ethereum/wiki/wiki/JSON-RPC). web3.jsはEthereumノードとともに動作し、RPCレイヤーを公開します。
 
-`web3` contains the `eth` object - `web3.eth` (for specifically Ethereum blockchain interactions) and the `shh` object - `web3.shh` (for Whisper interaction). Over time we'll introduce other objects for each of the other web3 protocols. Working  [examples can be found here](https://github.com/ethereum/web3.js/tree/master/example).
+`web3` は`eth`オブジェクトを持ちます。 - `web3.eth` オブジェクト(Ethereumブロックチェイン操作に使用) 、 `shh` オブジェクト - `web3.shh` (Whisper操作に使用). 今後、web3の他のオブジェクトについても紹介していきます。場所は、`eth`[examples can be found here](https://github.com/ethereum/web3.js/tree/master/example)です。
+
 
 If you want to look at some more sophisticated examples using web3.js check out these [useful app patterns](https://github.com/ethereum/wiki/wiki/Useful-Dapp-Patterns).
 
@@ -821,14 +822,14 @@ web3.eth.defaultBlock = 231;
     //async
     web3.eth.getSyncing(callback(error, result){ ... })
 
-This property is read only and returns the either a sync object, when the node is syncing or `false`.
+読み取り専用のプロパティです。ノードが同期していれば、syncオブジェクトを返します。それ以外は`false`を返します。
 
 ##### 戻り値
 
-`Object|Boolean` - A sync object as follows, when the node is currently syncing or `false`:
-   - `startingBlock`: `Number` - The block number where the sync started.
-   - `currentBlock`: `Number` - The block number where at which block the node currently synced to already.
-   - `highestBlock`: `Number` - The estimated block number to sync to.
+`Object|Boolean` - ノードが現在同期していれば以下の要素を持つオブジェクトを返します。それ以外は`false`です。:
+   - `startingBlock`: `Number` - 同期を開始したブロック番号。
+   - `currentBlock`: `Number` - すでに同期が完了しているブロック番号。
+   - `highestBlock`: `Number` - 最終的に同期できるブロック番号の予測値。
 
 ##### 使用例
 
@@ -850,22 +851,23 @@ console.log(sync);
 
     web3.eth.isSyncing(callback);
 
-This convenience function calls the `callback` everytime a sync starts, updates and stops.
+この関数は同期の開始、更新、停止を`callback`に通知する関数です。
 
 ##### 戻り値
 
-`Object` - a isSyncing object with the following methods:
+`Object` - 以下の関数を持つisSincingオブジェクト:
 
-  * `syncing.addCallback()`: Adds another callback, which will be called when the node starts or stops syncing.
-  * `syncing.stopWatching()`: Stops the syncing callbacks.
+  * `syncing.addCallback()`: 他のコールバックを追加します。ノードが開始、または停止した時も呼び出されます。
+  * `syncing.stopWatching()`: このコールバックを停止します。
 
-##### Callback return value
+##### Callback の引数
+※二番目の引数に、２種類のオブジェクとが渡されます。
 
-- `Boolean` - The callback will be fired with `true` when the syncing starts and with `false` when it stopped.
-- `Object` - While syncing it will return the syncing object:
-   - `startingBlock`: `Number` - The block number where the sync started.
-   - `currentBlock`: `Number` - The block number where at which block the node currently synced to already.
-   - `highestBlock`: `Number` - The estimated block number to sync to.
+- `Boolean` - コールバックが開始したときは`true`。停止するときは`false`です。
+- `Object` - 同期中はsyncingオブジェクトです。:
+   - `startingBlock`: `Number` - 同期を開始したブロック番号。
+   - `currentBlock`: `Number` - すでに同期が完了しているブロック番号。
+   - `highestBlock`: `Number` - 最終的に同期できるブロック番号の予測値。
 
 
 ##### 使用例
@@ -898,11 +900,11 @@ web3.eth.isSyncing(function(error, sync){
     // or async
     web3.eth.getCoinbase(callback(error, result){ ... })
 
-This property is read only and returns the coinbase address where the mining rewards go to.
+読み出し専用のプロパティです。マイニング報酬を受け取るcoinbaseのアドレスを返します。
 
 ##### 戻り値
 
-`String` - The coinbase address of the client.
+`String` - 現在のクライアントのcoinbaseアドレスです。
 
 ##### 使用例
 
@@ -920,12 +922,12 @@ console.log(coinbase); // "0x407d73d8a49eeb85d32cf465507dd71d507100c1"
     web3.eth.getMining(callback(error, result){ ... })
 
 
-This property is read only and says whether the node is mining or not.
+読み出し専用のプロパティです。ノードがマイニング中かどうかを返します。
 
 
 ##### 戻り値
 
-`Boolean` - `true` if the client is mining, otherwise `false`.
+`Boolean` - マイニング中なら`true`です。マイニングが停止していれば`false`です。
 
 ##### 使用例
 
@@ -942,12 +944,12 @@ console.log(mining); // true or false
     // or async
     web3.eth.getHashrate(callback(error, result){ ... })
 
-This property is read only and returns the number of hashes per second that the node is mining with.
+読み取り専用のプロパティです。ノードのハッシュレート(hash/sec)の数値を返します。
 
 
 ##### 戻り値
 
-`Number` - number of hashes per second.
+`Number` - ハッシュレート(hash/sec)の数値
 
 ##### 使用例
 
