@@ -1262,17 +1262,18 @@ console.log(info);
 
 #### web3.eth.getBlockTransactionCount
 
-    web3.eth.getBlockTransactionCount(hashStringOrBlockNumber [, callback])
-
-Returns the number of transaction in a given block.
+```js
+web3.eth.getBlockTransactionCount(hashStringOrBlockNumber [, callback])
+```
+ブロックに含まれるトランザクションの数を返します。
 
 ##### パラメータ
 
-1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
+1. `String|Number` - ブロック番号、またはブロックのハッシュ。または定義済の文字列値 `"earliest"`, `"latest"` or `"pending"`  [default block parameter](#web3ethdefaultblock)を参照してください。
 2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 ##### 戻り値
 
-`Number` - The number of transactions in the given block.
+`Number` - 指定したブロックに含まれるトランザクションの数。
 
 ##### 使用例
 
