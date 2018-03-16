@@ -1688,10 +1688,10 @@ web3.eth.filter(options, function(error, result){
 ##### パラメータ
 
 1. `String|Object` - `"latest"`か`"pending"`を指定します。 最新のブロック、または保留中のトランザクションを監視します。また、以下のフィルタオプションをもつオブrジェクトを指定できます。:
- * `fromBlock`: `Number|String` - 最も古いブロックを示すハッシュ、またはブロック番号。(`latest` は最新のブロック、`pending` は現在マイニング中のブロックを示します。). 省略時は`latest`です。
- * `toBlock`: `Number|String` - もっとも新しいブロックを示すハッシュ、またはブロック番号です。(`latest` は最新のブロック、`pending` は現在マイニング中のブロックを示します。). 省略時は`latest`です。
+  * `fromBlock`: `Number|String` - 最も古いブロックを示すハッシュ、またはブロック番号。(`latest` は最新のブロック、`pending` は現在マイニング中のブロックを示します。). 省略時は`latest`です。
+  * `toBlock`: `Number|String` - もっとも新しいブロックを示すハッシュ、またはブロック番号です。(`latest` は最新のブロック、`pending` は現在マイニング中のブロックを示します。). 省略時は`latest`です。
   * `address`: `String` - 特定のアカウントからログを得る場合に、アドレスか、アドレスのリストを指定します。
-  * `topics`: `Array of Strings` - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use `null`, e.g. `[null, '0x00...']`. You can also pass another array for each topic with options for that topic e.g. `[null, ['option1', 'option2']]`
+  * `topics`: `Array of Strings` - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use `null`, e.g. `[null, '0x00...']`. You can also pass another array for each topic with options for that topic e.g. `[null, ['option1', 'option2']]`
 
 ##### 戻り値
 
@@ -1740,44 +1740,45 @@ filter.stopWatching();
 
 #### web3.eth.contract
 
-    web3.eth.contract(abiArray)
-
-Creates a contract object for a solidity contract, which can be used to initiate contracts on an address.
-You can read more about events [here](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI#example-javascript-usage).
+```js
+web3.eth.contract(abiArray)
+```
+Solidityコントラクトのコントラクトオブジェクトを作成します。アドレスにあるコントラクトを使うために使用できます。
+イベントについての詳細は[here](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI#example-javascript-usage)を参照してください。
 
 ##### パラメータ
 
-1. `Array` - ABI array with descriptions of functions and events of the contract.
+1. `Array` - コントラクトのイベントと関数を記述したABI配列。
 
 ##### 戻り値
 
-`Object` - A contract object, which can be initiated as follows:
+`Object` - コントラクトオブジェクト。ｔ卯木のように使用することができます。:
 
 ```js
 var MyContract = web3.eth.contract(abiArray);
 
-// instantiate by address
+// アドレスで初期化する。
 var contractInstance = MyContract.at(address);
 
-// deploy new contract
+// 新しくコントラクトを作成する。
 var contractInstance = MyContract.new([constructorParam1] [, constructorParam2], {data: '0x12345...', from: myAccount, gas: 1000000});
 
-// Get the data to deploy the contract manually
+// 手作業でコントラクトをデプロイするデータを作成する。
 var contractData = MyContract.new.getData([constructorParam1] [, constructorParam2], {data: '0x12345...'});
 // contractData = '0x12345643213456000000000023434234'
 ```
 
-And then you can either initiate an existing contract on an address,
-or deploy the contract using the compiled byte code:
+既に存在するアドレスのコントラクトや、コンパイルされたバイトコードを使用してコントラクトをデプロイできます。
+
 
 ```js
-// Instantiate from an existing address:
+// 存在するアドレスからコントラクトを作成:
 var myContractInstance = MyContract.at(myContractAddress);
 
 
-// Or deploy a new contract:
+// 新しくコントラクトを作成:
 
-// Deploy the contract asynchronous from Solidity file:
+// Soloidityファイルから非同期でコントラクトを作成（この方法は今は使えない）:
 ...
 const fs = require("fs");
 const solc = require('solc')
@@ -1794,20 +1795,19 @@ var myContractReturned = MyContract.new(param1, param2, {
    data:bytecode,
    gas:gasEstimate}, function(err, myContract){
     if(!err) {
-       // NOTE: The callback will fire twice!
-       // Once the contract has the transactionHash property set and once its deployed on an address.
+       // NOTE: コールバックは2度呼ばれます。
+       // 一度目はコントラクトのトランザクションハッシュがセットされた時で、２度目はデプロイされアドレスされた時です。
 
-       // e.g. check tx hash on the first call (transaction send)
+       // e.g. 一度目の呼び出しでトランザクションのハッシュをチェックする。(transaction send)
        if(!myContract.address) {
-           console.log(myContract.transactionHash) // The hash of the transaction, which deploys the contract
-       
-       // check address on the second call (contract deployed)
+           console.log(myContract.transactionHash) // トランザクションのハッシュが得られれば、コントラクトはデプロイされている。       
+       // ２度目のコールでアドレスをチェックする。(contract deployed)
        } else {
-           console.log(myContract.address) // the contract address
-       }
+           console.log(myContract.address) // コントラクトのアドレス
+       }
 
-       // Note that the returned "myContractReturned" === "myContract",
-       // so the returned "myContractReturned" object will also get the address set.
+       // Note that 戻り値の"myContractReturned" === "myContract"、２つの値は同じです。
+       // "myContractReturned"に返されたオブジェクトにもアドレスを得られます。
     }
   });
 
@@ -1821,7 +1821,7 @@ myContractInstance.address // undefined at start, but will be auto-filled later
 ##### 使用例
 
 ```js
-// contract abi
+// コントラクトの abi
 var abi = [{
      name: 'myConstantMethod',
      type: 'function',
@@ -1840,23 +1840,23 @@ var abi = [{
      inputs: [{name: 'a', type: 'int', indexed: true},{name: 'b', type: 'bool', indexed: false}]
 }];
 
-// creation of contract object
+// コントラクトオブジェクトの作成
 var MyContract = web3.eth.contract(abi);
 
-// initiate contract for an address
+// アドレスでコントラクトを初期化
 var myContractInstance = MyContract.at('0xc4abd0339eb8d57087278718986382264244252f');
 
-// call constant function
+// コントラクトの関数を実行
 var result = myContractInstance.myConstantMethod('myParam');
 console.log(result) // '0x25434534534'
 
-// send a transaction to a function
+// 関数にトランアクションを送信
 myContractInstance.myStateChangingMethod('someParam1', 23, {value: 200, gas: 2000});
 
-// short hand style
+// 短縮表記
 web3.eth.contract(abi).at(address).myAwesomeMethod(...);
 
-// create filter
+// フィルタの作成
 var filter = myContractInstance.myEvent({a: 5}, function (error, result) {
   if (!error)
     console.log(result);
@@ -1876,22 +1876,21 @@ var filter = myContractInstance.myEvent({a: 5}, function (error, result) {
 #### Contract Methods
 
 ```js
-// Automatically determines the use of call or sendTransaction based on the method type
+// call/sendTransactionのどちらを使用するかは、メソッドタイプから自動決定します。
 myContractInstance.myMethod(param1 [, param2, ...] [, transactionObject] [, defaultBlock] [, callback]);
 
-// Explicitly calling this method
+// callを明示的に呼び出す。
 myContractInstance.myMethod.call(param1 [, param2, ...] [, transactionObject] [, defaultBlock] [, callback]);
 
-// Explicitly sending a transaction to this method
+// sendTransactionを明示的に呼び出します。
 myContractInstance.myMethod.sendTransaction(param1 [, param2, ...] [, transactionObject] [, callback]);
 
-// Get the call data, so you can call the contract through some other means
+// callのデータを得ます。コントラクトの呼び出しはいくつかの方法があります。
 // var myCallData = myContractInstance.myMethod.request(param1 [, param2, ...]);
 var myCallData = myContractInstance.myMethod.getData(param1 [, param2, ...]);
 // myCallData = '0x45ff3ff6000000000004545345345345..'
 ```
-
-The contract object exposes the contract's methods, which can be called using parameters and a transaction object.
+コントラクトオブジェクトは、コントラクトのメソッドを公開します。これらは引数とトランザクションオブジェクトを使って呼び出せます。
 
 ##### パラメータ
 
@@ -2043,9 +2042,11 @@ events.stopWatching();
 ****
 
 #### web3.eth.getCompilers
-## Compiling features being deprecated https://github.com/ethereum/EIPs/issues/209
-    web3.eth.getCompilers([callback])
+## コンパイル機能は将来的に使えなくなります。 https://github.com/ethereum/EIPs/issues/209
 
+```js
+web3.eth.getCompilers([callback])
+```
 Gets a list of available compilers.
 
 ##### パラメータ
