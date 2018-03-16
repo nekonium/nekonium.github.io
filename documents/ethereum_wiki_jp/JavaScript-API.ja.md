@@ -1450,19 +1450,21 @@ console.log(receipt);
 
 #### web3.eth.getTransactionCount
 
-    web3.eth.getTransactionCount(addressHexString [, defaultBlock] [, callback])
+```js
+web3.eth.getTransactionCount(addressHexString [, defaultBlock] [, callback])
+```
 
-Get the numbers of transactions sent from this address.
+指定したアドレスから送信したトランザクションの数を返します。
 
 ##### パラメータ
 
-1. `String` - The address to get the numbers of transactions from.
-2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
+1. `String` - 送信したトランザクション数を得るアドレス。
+2. `Number|String` - (optional) 調べるブロック番号、またはハッシュを指定します。省略するとデフォルトブロックを使います。[web3.eth.defaultBlock](#web3ethdefaultblock)を参照してください。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`Number` - The number of transactions sent from the given address.
+`Number` - ブロックに含まれる、指定したアドレスから送信されたトランザクションの数。
 
 ##### 使用例
 
@@ -1475,27 +1477,29 @@ console.log(number); // 1
 
 #### web3.eth.sendTransaction
 
-    web3.eth.sendTransaction(transactionObject [, callback])
+```js
+web3.eth.sendTransaction(transactionObject [, callback])
+```
 
-Sends a transaction to the network.
+トランザクションをネットワークに送信します。
 
 ##### パラメータ
 
-1. `Object` - The transaction object to send:
-  - `from`: `String` - The address for the sending account. Uses the [web3.eth.defaultAccount](#web3ethdefaultaccount) property, if not specified.
-  - `to`: `String` - (optional) The destination address of the message, left undefined for a contract-creation transaction.
-  - `value`: `Number|String|BigNumber` - (optional) The value transferred for the transaction in Wei, also the endowment if it's a contract-creation transaction.
-  - `gas`: `Number|String|BigNumber` - (optional, default: To-Be-Determined) The amount of gas to use for the transaction (unused gas is refunded).
-  - `gasPrice`: `Number|String|BigNumber` - (optional, default: To-Be-Determined) The price of gas for this transaction in wei, defaults to the mean network gas price.
-  - `data`: `String` - (optional) Either a [byte string](https://github.com/ethereum/wiki/wiki/Solidity,-Docs-and-ABI) containing the associated data of the message, or in the case of a contract-creation transaction, the initialisation code.
-  - `nonce`: `Number`  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
+1. `Object` - 送信するトランザクションオブジェクト:
+- `from`: `String` - 送信先のアドレス。省略時は、[web3.eth.defaultAccount](#web3ethdefaultaccount)プロパティの値を使います。
+- `to`: `String` - (optional) 送信先のアドレス。コントラクト作成の場合は省略します。
+- `value`: `Number|String|BigNumber` - (optional) Wei単位の送信額。コントラクトの作成トランザクションの場合は、付与金額。
+- `gas`: `Number|String|BigNumber` - (optional, default:自動設定) トランザクションで使用するgasの量。(未使用分は返却される。)
+- `gasPrice`: `Number|String|BigNumber` - (optional, default: 自動設定) Wei単位のgas価格。デフォルトではネットワークのガス価格。
+- `data`: `String` - (optional) [byte string](https://github.com/ethereum/wiki/wiki/Solidity,-Docs-and-ABI) メッセージか、コントラクトの作成の場合は初期化コード。
+- `nonce`: `Number`  - (optional) 整数のnonce値。同一な値の保留中のトランザクションを上書きすることができる。
 2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`String` - The 32 Bytes transaction hash as HEX string.
+`String` - 32BytesのトランザクションハッシュのJEX文字列
 
-If the transaction was a contract creation use [web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) to get the contract address, after the transaction was mined.
+もしトランザクションがコントラクト作成のものであれば、採掘後に[web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) を使ってコントラクトのアドレスを得られる。
 
 ##### 使用例
 
@@ -1514,9 +1518,11 @@ web3.eth.sendTransaction({data: code}, function(err, transactionHash) {
 
 #### web3.eth.sendRawTransaction
 
-    web3.eth.sendRawTransaction(signedTransactionData [, callback])
-
-Sends an already signed transaction. For example can be signed using: https://github.com/SilentCicero/ethereumjs-accounts
+```js
+web3.eth.sendRawTransaction(signedTransactionData [, callback])
+```
+署名済のトランザクションを送信します。署名については以下を参照してください。
+https://github.com/SilentCicero/ethereumjs-accounts
 
 ##### パラメータ
 
@@ -1525,9 +1531,9 @@ Sends an already signed transaction. For example can be signed using: https://gi
 
 ##### 戻り値
 
-`String` - The 32 Bytes transaction hash as HEX string.
+`String` - 32Bytesのトランザクションハッシュ
 
-If the transaction was a contract creation use [web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) to get the contract address, after the transaction was mined.
+もしトランザクションがコントラクト作成のものであれば、採掘後に[web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) を使ってコントラクトのアドレスを得られる。
 
 ##### 使用例
 
@@ -1563,20 +1569,23 @@ web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, h
 
 #### web3.eth.sign
 
-    web3.eth.sign(address, dataToSign, [, callback])
+```js
+web3.eth.sign(address, dataToSign, [, callback])
+```
 
-Signs data from a specific account. This account needs to be unlocked.
+指定したアカウントでデータに署名します。アカウントはアンロックする必要があります。
 
 ##### パラメータ
 
-1. `String` - Address to sign with.
-2. `String` - Data to sign.
+1. `String` - 署名するアカウント。
+2. `String` - 署名するデータ。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`String` - The signed data.
+`String` - 署名済みのデータ。
 
+HEXプレフィックスの後の文字は、ECDSA値に対応します。
 After the hex prefix, characters correspond to ECDSA values like this:
 ```
 r = signature[0:64]
