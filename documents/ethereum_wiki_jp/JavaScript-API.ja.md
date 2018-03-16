@@ -1683,37 +1683,39 @@ web3.eth.filter(options, function(error, result){
 });
 ```
 
+条件に合致したイベントをログとして取り出します。
+
 ##### パラメータ
 
-1. `String|Object` - The string `"latest"` or `"pending"` to watch for changes in the latest block or pending transactions respectively. Or a filter options object as follows:
-  * `fromBlock`: `Number|String` - The number of the earliest block (`latest` may be given to mean the most recent and `pending` currently mining, block). By default `latest`.
-  * `toBlock`: `Number|String` - The number of the latest block (`latest` may be given to mean the most recent and `pending` currently mining, block). By default `latest`.
-  * `address`: `String` - An address or a list of addresses to only get logs from particular account(s).
-  * `topics`: `Array of Strings` - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use `null`, e.g. `[null, '0x00...']`. You can also pass another array for each topic with options for that topic e.g. `[null, ['option1', 'option2']]`
+1. `String|Object` - `"latest"`か`"pending"`を指定します。 最新のブロック、または保留中のトランザクションを監視します。また、以下のフィルタオプションをもつオブrジェクトを指定できます。:
+ * `fromBlock`: `Number|String` - 最も古いブロックを示すハッシュ、またはブロック番号。(`latest` は最新のブロック、`pending` は現在マイニング中のブロックを示します。). 省略時は`latest`です。
+ * `toBlock`: `Number|String` - もっとも新しいブロックを示すハッシュ、またはブロック番号です。(`latest` は最新のブロック、`pending` は現在マイニング中のブロックを示します。). 省略時は`latest`です。
+  * `address`: `String` - 特定のアカウントからログを得る場合に、アドレスか、アドレスのリストを指定します。
+  * `topics`: `Array of Strings` - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use `null`, e.g. `[null, '0x00...']`. You can also pass another array for each topic with options for that topic e.g. `[null, ['option1', 'option2']]`
 
 ##### 戻り値
 
-`Object` - A filter object with the following methods:
+`Object` - フィルタオブジェクトです。以下のメソッドがあります。:
 
-  * `filter.get(callback)`: Returns all of the log entries that fit the filter.
-  * `filter.watch(callback)`: Watches for state changes that fit the filter and calls the callback. See [this note](#using-callbacks) for details.
-  * `filter.stopWatching()`: Stops the watch and uninstalls the filter in the node. Should always be called once it is done.
-
+* `filter.get(callback)`: フィルタに合致したすべてのログエントリを返します。
+* `filter.watch(callback)`: コールバック関数でフィルタ条件に一致したか、状態の変化を監視します。[this note](#using-callbacks)を参照してください。
+* `filter.stopWatching()`: 監視を停止し、ノード内でのフィルタを削除します。使用後に必ず呼び出してください。
+  
 ##### Watch callback return value
 
-- `String` - When using the `"latest"` parameter, it returns the block hash of the last incoming block.
-- `String` - When using the `"pending"` parameter, it returns a transaction hash of the most recent pending transaction.
-- `Object` - When using manual filter options, it returns a log object as follows:
-    - `logIndex`: `Number` - integer of the log index position in the block. `null` when its pending log.
-    - `transactionIndex`: `Number` - integer of the transactions index position log was created from. `null` when its pending log.
-    - `transactionHash`: `String`, 32 Bytes - hash of the transactions this log was created from. `null` when its pending log.
-    - `blockHash`: `String`, 32 Bytes - hash of the block where this log was in. `null` when its pending. `null` when its pending log.
-    - `blockNumber`: `Number` - the block number where this log was in. `null` when its pending. `null` when its pending log.
-    - `address`: `String`, 32 Bytes - address from which this log originated.
-    - `data`: `String` - contains one or more 32 Bytes non-indexed arguments of the log.
-    - `topics`: `Array of Strings` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. (In *solidity*: The first topic is the *hash* of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except if you declared the event with the `anonymous` specifier.)
+- `String` - `"latest"`をパラメータに指定した場合、最後に得たブロックのハッシュ値です。
+- `String` - `"pending"`をパラメータに設定した場合、最後に得た保留トランザクションの値です。
+- `Object` -マニュアルフィルタオブジェクトをした場合は、以下のログオブジェクトを返します。:
+  - `logIndex`: `Number` - ログの作成したブロック内でのインデクス位置。保留中のログなら`null`。
+  - `transactionIndex`: `Number` - ログを作成したトランザクションのインデクス位置。保留中のログなら`null`。
+  - `transactionHash`: `String`, 32 Bytes - ログを作成したトランザクションのハッシュ値。保留中のログなら`null`
+  - `blockHash`: `String`, 32 Bytes - ログを作成したブロックのハッシュ値。保留中のログなら`null`
+  - `blockNumber`: `Number` - ログを含むブロックの番号。 保留中なら`null`。また、保留中のログでも `null`.
+  - `address`: `String`, 32 Bytes -　このログの発信元アドレス。
+  - `data`: `String` - contains one or more 32 Bytes non-indexed arguments of the log.
+  - `topics`: `Array of Strings` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. (In *solidity*: The first topic is the *hash* of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except if you declared the event with the `anonymous` specifier.)
 
-**Note** For event filter return values see [Contract Events](#contract-events)
+**Note** イベントフィルタについては、 [Contract Events](#contract-events)を参照。
 
 ##### 使用例
 
