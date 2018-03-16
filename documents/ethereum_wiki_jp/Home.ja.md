@@ -2,7 +2,7 @@ From https://github.com/ethereum/wiki/wiki/Home/e6e1572963a37a327a9a55e604c6db3e
 
 # Welcome to the Ethereum Wiki
 
-これは、Ethereum Foundation によって構築された次世代ピアツーピア・テクノロジ・プラットフォームに関するあらゆる種類の情報をカバーするコミュニティ管理の Wiki です。_スマートコントラクト開発のための一般的なブロックチェーンである_ **Ethereum** 、_姉妹プロトコルでありプライベートな低レベルデータグラム通信プラットフォームである_ **[Whisper](https://github.com/ethereum/wiki/wiki/Whisper-pages)** 、分散ストレージプラットフォームとコンテンツ配信サービスである **[Swarm](http://swarm-gateways.net/bzz:/theswarm.eth/)** を提供しています。
+これは、Ethereum Foundation によって構築された次世代ピアツーピア・テクノロジ・プラットフォームに関するあらゆる種類の情報をカバーするコミュニティ管理の Wiki です。_スマートコントラクト開発のための一般的なブロックチェーン_ である **Ethereum** 、姉妹プロトコルであり _プライベートな低レベルデータグラム通信プラットフォーム_ である **[Whisper](https://github.com/ethereum/wiki/wiki/Whisper-pages)** 、分散ストレージプラットフォームとコンテンツ配信サービスである **[Swarm](http://swarm-gateways.net/bzz:/theswarm.eth/)** を提供しています。
 
 ## Contribution guidelines
 
