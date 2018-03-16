@@ -2,7 +2,7 @@ From https://github.com/ethereum/wiki/wiki/Home/e6e1572963a37a327a9a55e604c6db3e
 
 # Welcome to the Ethereum Wiki
 
-This is the community maintained wiki covering all sorts of information on the next-generation peer-to-peer technology platform built by the Ethereum Foundation, including **Ethereum**, _the generalized blockchain for smart contract development_, as well as sister protocols like **[Whisper](https://github.com/ethereum/wiki/wiki/Whisper-pages)**, _the private low-level datagram communication platform_, and **[Swarm](http://swarm-gateways.net/bzz:/theswarm.eth/)**, a distributed storage platform and content distribution service.
+これは、Ethereum Foundation によって構築された次世代ピアツーピア・テクノロジ・プラットフォームに関するあらゆる種類の情報をカバーするコミュニティ管理の Wiki です。_スマートコントラクト開発のための一般的なブロックチェーンである_ **Ethereum** 、_姉妹プロトコルでありプライベートな低レベルデータグラム通信プラットフォームである_ **[Whisper](https://github.com/ethereum/wiki/wiki/Whisper-pages)** 、分散ストレージプラットフォームとコンテンツ配信サービスである **[Swarm](http://swarm-gateways.net/bzz:/theswarm.eth/)** を提供しています。
 
 ## Contribution guidelines
 
