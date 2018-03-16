@@ -1586,14 +1586,13 @@ web3.eth.sign(address, dataToSign, [, callback])
 `String` - 署名済みのデータ。
 
 HEXプレフィックスの後の文字は、ECDSA値に対応します。
-After the hex prefix, characters correspond to ECDSA values like this:
+
 ```
 r = signature[0:64]
 s = signature[64:128]
 v = signature[128:130]
 ```
-
-Note that if you are using `ecrecover`, `v` will be either `"00"` or `"01"`. As a result, in order to use this value, you will have to parse it to an integer and then add `27`. This will result in either a `27` or a `28`.
+`ecrecover`を使用した場合、`v`の値は`"00"`または`"01"`です。この値を使うためには、一度整数に変換してから`27`を加算して、`27`、または`28`にする必要があります。
 
 ##### 使用例
 
@@ -1607,19 +1606,21 @@ console.log(result); // "0x30755ed65396facf86c53e6217c52b4daebe72aa4941d89635409
 
 #### web3.eth.call
 
-    web3.eth.call(callObject [, defaultBlock] [, callback])
+```js
+web3.eth.call(callObject [, defaultBlock] [, callback])
+```
 
-Executes a message call transaction, which is directly executed in the VM of the node, but never mined into the blockchain.
+メッセージ呼び出しトランザクションをノードのVMでで直接実行します。ブロックチェーンでマイニングされることはありません。
 
 ##### パラメータ
 
-1. `Object` - A transaction object see [web3.eth.sendTransaction](#web3ethsendtransaction), with the difference that for calls the `from` property is optional as well.
-2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
+1. `Object` - トランザクションオブジェクト。[web3.eth.sendTransaction](#web3ethsendtransaction)を参照してください。, `from`プロパティがオプションである違いがあります。
+2. `Number|String` - (optional) ブロック番号、またはハッシュを指定します。省略時はデフォルトブロックを使います。[web3.eth.defaultBlock](#web3ethdefaultblock)を参照してください。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`String` - The returned data of the call, e.g. a codes functions return value.
+`String` - callの返した値。例：関数の戻り価など。
 
 ##### 使用例
 
@@ -1635,17 +1636,19 @@ console.log(result); // "0x00000000000000000000000000000000000000000000000000000
 
 #### web3.eth.estimateGas
 
-    web3.eth.estimateGas(callObject [, callback])
+```js
+web3.eth.estimateGas(callObject [, callback])
+```
 
-Executes a message call or transaction, which is directly executed in the VM of the node, but never mined into the blockchain and returns the amount of the gas used.
+メッセージ呼び出し、またはトランザクションをノードのVMでで直接実行します。ブロックチェーンではマイニングされず、使用したガスの量を返します。
 
 ##### パラメータ
 
-See [web3.eth.sendTransaction](#web3ethsendtransaction), except that all properties are optional.
+[web3.eth.sendTransaction](#web3ethsendtransaction)と同じです。
 
 ##### 戻り値
 
-`Number` - the used gas for the simulated call/transaction.
+`Number` - トランザクション、または送信につかわれたgasの量。
 
 ##### 使用例
 
