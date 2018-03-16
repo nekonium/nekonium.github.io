@@ -1319,29 +1319,28 @@ console.log(uncle); // see web3.eth.getBlock
 ```js
 web3.eth.getTransaction(transactionHash [, callback])
 ```
-
-Returns a transaction matching the given transaction hash.
+トランザクションハッシュ値に一致するトランザクションを得ます。
 
 ##### パラメータ
 
-1. `String` - The transaction hash.
+1. `String` - トランザクションのハッシュ値
 2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`Object` - A transaction object its hash `transactionHash`:
+`Object` - `transactionHash`のハッシュを持つトランザクション:
 
-- `hash`: `String`, 32 Bytes - hash of the transaction.
-- `nonce`: `Number` - the number of transactions made by the sender prior to this one.
-- `blockHash`: `String`, 32 Bytes - hash of the block where this transaction was in. `null` when its pending.
-- `blockNumber`: `Number` - block number where this transaction was in. `null` when its pending.
-- `transactionIndex`: `Number` - integer of the transactions index position in the block. `null` when its pending.
-- `from`: `String`, 20 Bytes - address of the sender.
-- `to`: `String`, 20 Bytes - address of the receiver. `null` when its a contract creation transaction.
-- `value`: `BigNumber` - value transferred in Wei.
-- `gasPrice`: `BigNumber` - gas price provided by the sender in Wei.
-- `gas`: `Number` - gas provided by the sender.
-- `input`: `String` - the data sent along with the transaction.
+- `hash`: `String`, 32 Bytes - トランザクションのハッシュ値。
+- `nonce`: `Number` - 事前に送信者が作成した数値。
+- `blockHash`: `String`, 32 Bytes - このトランザクションのあるブロックのハッシュ値。保留中ならば`null`。
+- `blockNumber`: `Number` - このトランザクションのあるブロックの番号。保留中ならば`null`
+- `transactionIndex`: `Number` - ブロックの中でのトランザクションのインデックス番号。保留中ならば`null`
+- `from`: `String`, 20 Bytes - 送信元のアドレス
+- `to`: `String`, 20 Bytes - 受信先のアドレス。コントラクトの作成トランザクションの場合は`null`
+- `value`: `BigNumber` - 送信したWei単位での量。
+- `gasPrice`: `BigNumber` - 送信者が提供したWei単位でのgas price.
+- `gas`: `Number` - 送信者が提供したgas。
+- `input`: `String` - トランザクションと共に送信したデータ。
 
 
 ##### 使用例
@@ -1371,19 +1370,20 @@ console.log(transaction);
 
 #### web3.eth.getTransactionFromBlock
 
-    getTransactionFromBlock(hashStringOrNumber, indexNumber [, callback])
-
-Returns a transaction based on a block hash or number and the transactions index position.
+```js
+getTransactionFromBlock(hashStringOrNumber, indexNumber [, callback])
+```
+指定したブロック内にあるインデクス番号で指定したトランザクションを一つ返します。
 
 ##### パラメータ
 
-1. `String` - A block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
-2. `Number` - The transactions index position.
+1. `String` - ブロック番号、またはブロックのハッシュを指定します。または、Or the string `"earliest"`, `"latest"` or `"pending"` が指定できます。[default block parameter](#web3ethdefaultblock)を参照してください。
+2. `Number` - トランザクションのインデクス番号。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`Object` - A transaction object, see [web3.eth.getTransaction](#web3ethgettransaction):
+`Object` - トランザクションオブジェクトを返します。[web3.eth.getTransaction](#web3ethgettransaction)を参照してください。:
 
 
 ##### 使用例
@@ -1398,11 +1398,12 @@ console.log(transaction); // see web3.eth.getTransaction
 
 #### web3.eth.getTransactionReceipt
 
-    web3.eth.getTransactionReceipt(hashString [, callback])
+```js
+web3.eth.getTransactionReceipt(hashString [, callback])
+```
+トランザクションハッシュから、トランザクションの受領オブジェクトを取得します。
 
-Returns the receipt of a transaction by transaction hash.
-
-**Note** That the receipt is not available for pending transactions.
+**Note** 受領オブジェクトは保留トランザクションには無効です。
 
 
 ##### パラメータ
@@ -1412,19 +1413,19 @@ Returns the receipt of a transaction by transaction hash.
 
 ##### 戻り値
 
-`Object` - A transaction receipt object, or `null` when no receipt was found:
+`Object` - トランザクションの受領オブジェクト。まだ存在しなければ`null`:
 
-  - `blockHash`: `String`, 32 Bytes - hash of the block where this transaction was in.
-  - `blockNumber`: `Number` - block number where this transaction was in.
-  - `transactionHash`: `String`, 32 Bytes - hash of the transaction.
-  - `transactionIndex`: `Number` - integer of the transactions index position in the block.
-  - `from`: `String`, 20 Bytes - address of the sender.
-  - `to`: `String`, 20 Bytes - address of the receiver. `null` when its a contract creation transaction.
-  - `cumulativeGasUsed `: `Number ` - The total amount of gas used when this transaction was executed in the block.
-  - `gasUsed `: `Number ` -  The amount of gas used by this specific transaction alone.
-  - `contractAddress `: `String` - 20 Bytes - The contract address created, if the transaction was a contract creation, otherwise `null`.
-  - `logs `:  `Array` - Array of log objects, which this transaction generated.
-  - `status `:  `Number` - 0 indicates transaction failure , 1 indicates transaction succeeded. 
+- `blockHash`: `String`, 32 Bytes - トランザクションを含むブロックのハッシュ。
+- `blockNumber`: `Number` - トランザクションを含むブロックの番号
+- `transactionHash`: `String`, 32 Bytes - トランザクションのハッシュ。
+- `transactionIndex`: `Number` - ブロックの中でのトランザクションのインデックス番号。保留中ならば`null`
+- `from`: `String`, 20 Bytes - 送信元のアドレス
+- `to`: `String`, 20 Bytes - 受信先のアドレス。コントラクトの作成トランザクションの場合は`null`
+- `cumulativeGasUsed `: `Number ` - ブロックが実行されたことで消費したgasの総量。
+- `gasUsed `: `Number ` -  このトランザクションのみが使用したgasの量
+- `contractAddress `: `String` - 20 Bytes - コントラクトを作成した場合は、そのアドレス。それ以外は`null`
+- `logs `:  `Array` - トランザクションが生成したログオブジェクトの配列。
+- `status `:  `Number` - 0:トランザクションは失敗した。, 1:トランアクションは成功した。
 
 ##### 使用例
 ```js
