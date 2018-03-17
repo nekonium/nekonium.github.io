@@ -2010,12 +2010,12 @@ var events = myContractInstance.allEvents([additionalFilterObject,] function(err
 ##### パラメータ
 
 1. `Object` - 追加のフィルタオプション。 [filters](#web3ethfilter) のパラメータ１を参照してください。デフォルトでは、filterObjectは'address' にコントラクトのアドレスが指定されています。このメソッドは、トピックをイベントの署名に設定し、追加トピックはサポートしません。
-2. `Function` - (optional) If you pass a callback as the last parameter it will immediately start watching and you don't need to call `myEvent.watch(function(){})`. See [this note](#using-callbacks) for details.
+2. `Function` - (optional) コールバックパラメータを与えた場合は `myEvent.watch(function(){})`を待たず、すぐに監視がスタートします。[this note](#using-callbacks)を参照してください。
 
 ##### Callback return
 
 
-`Object` - See [Contract Events](#contract-events) for more.
+`Object` - [Contract Events](#contract-events)を参照して下さい。
 
 ##### 使用例
 
@@ -2041,7 +2041,7 @@ events.stopWatching();
 ****
 
 #### web3.eth.getCompilers
-## コンパイル機能は将来的に使えなくなります。 https://github.com/ethereum/EIPs/issues/209
+## コンパイル機能は将来使用できなくなります。https://github.com/ethereum/EIPs/issues/209
 
 ```js
 web3.eth.getCompilers([callback])
@@ -2186,13 +2186,15 @@ console.log(code); // "0x603880600c6000396000f3006001600060e060020a600035048063c
 
 #### web3.eth.namereg
 
-    web3.eth.namereg
+```js
+web3.eth.namereg
+```
 
-Returns GlobalRegistrar object.
+GlobalRegistrarオブジェクトを返します。
 
 ##### 使い方
 
-see [namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.html) example.
+詳細は[namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.html)を参照してください。
 
 ***
 
@@ -2318,24 +2320,26 @@ var shh = web3.shh;
 
 #### web3.shh.post
 
-   web3.shh.post(object [, callback])
+```js
+web3.shh.post(object [, callback])
+```
 
 Wisperメッセージをネットワークに送信します。
 
 ##### パラメータ
 
 1. `Object` - 送信オブジェクト(post object):
-  - `from`: `String`, 60 Bytes HEX - (optional) 送信者のID.
-  - `to`: `String`, 60 Bytes  HEX - (optional) 受信者のID。whisperでメッセージを暗号化すると、受信者だけが複合したメッセージを受け取ることができます。
-  - `topics`: `Array of Strings` - Array of topics `Strings`, for the receiver to identify messages.
-  - `payload`: `String|Number|Object` - The payload of the message. Will be autoconverted to a HEX string before.
+  - `from`: `String`, 60 Bytes HEX - (optional) 送信者のID.
+  - `to`: `String`, 60 Bytes  HEX - (optional) 受信者のID。whisperでメッセージを暗号化すると、受信者だけが複合したメッセージを受け取ることができます。
+  - `topics`: `Array of Strings` - 受信者がメッセージを識別するための文字列のトピックの配列。
+  - `payload`: `String|Number|Object` - メッセージのペイロード。事前にHEX文字列に変換されます。
   - `priority`: `Number` - The integer of the priority in a range from ... (?).
-  - `ttl`: `Number` - integer of the time to live in seconds.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+  - `ttl`: `Number` - メッセージの有効時間(sec) integer of the time to live in seconds.
+2. `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### 戻り値
 
-`Boolean` - returns `true` if the message was sent, otherwise `false`.
+`Boolean` - メッセージを送信したら`true`、そうでなければ`false`です。
 
 
 ##### 使用例
@@ -2360,18 +2364,19 @@ web3.shh.post(message);
 
 #### web3.shh.newIdentity
 
-    web3.shh.newIdentity([callback])
+```js
+web3.shh.newIdentity([callback])
+```
 
-Should be called to create new identity.
+新しいIDを作成します。
 
 ##### パラメータ
 
-1. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
-
+1.  `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### 戻り値
 
-`String` - A new identity HEX string.
+`String` - 新しいHEX文字列フォーマットの識別子。
 
 
 ##### 使用例
@@ -2385,18 +2390,20 @@ console.log(identity); // "0xc931d93e97ab07fe42d923478ba2465f283f440fd6cabea4dd7
 
 #### web3.shh.hasIdentity
 
-    web3.shh.hasIdentity(identity, [callback])
+```js
+web3.shh.hasIdentity(identity, [callback])
+```
 
-Should be called, if we want to check if user has given identity.
+指定したIDがユーザーのものかを返します。
 
 ##### パラメータ
 
-1. `String` - The identity to check.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+1. `String` - テストするID
+2. `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### 戻り値
 
-`Boolean` - returns `true` if the identity exists, otherwise `false`.
+`Boolean` - IDが存在すれば`true`、そうでなければ`false`です。
 
 
 ##### 使用例
@@ -2442,30 +2449,30 @@ filter.watch(function(error, result){
 });
 ```
 
-Watch for incoming whisper messages.
+受信したWhisperメッセージを監視します。
 
 ##### パラメータ
 
-1. `Object` - The filter options:
-  * `topics`: `Array of Strings` - Filters messages by this topic(s). You can use the following combinations:
+1. `Object` - フィルタオプションです:
+  * `topics`: `Array of Strings` - トピックのフィルタメッセージ。以下の構文が使えます。:
     - `['topic1', 'topic2'] == 'topic1' && 'topic2'`
     - `['topic1', ['topic2', 'topic3']] == 'topic1' && ('topic2' || 'topic3')`
-    - `[null, 'topic1', 'topic2'] == ANYTHING && 'topic1' && 'topic2'` -> `null` works as a wildcard
-  * `to`: Filter by identity of receiver of the message. If provided and the node has this identity, it will decrypt incoming encrypted messages.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+    - `[null, 'topic1', 'topic2'] == ANYTHING && 'topic1' && 'topic2'` -> `null` 実質ワイルドカードです。
+  * `to`: 受信メッセージのIDでフィルタします。IDを持つノードは受信したメッセージを複合化します。
+2. `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### Callback return
 
 `Object` - The incoming message:
 
-  - `from`: `String`, 60 Bytes - The sender of the message, if a sender was specified.
-  - `to`: `String`, 60 Bytes - The receiver of the message, if a receiver was specified.
-  - `expiry`: `Number` - Integer of the time in seconds when this message should expire (?).
-  - `ttl`: `Number` -  Integer of the time the message should float in the system in seconds (?).
-  - `sent`: `Number` -  Integer of the unix timestamp when the message was sent.
-  - `topics`: `Array of String` - Array of `String` topics the message contained.
-  - `payload`: `String` - The payload of the message.
-  - `workProved`: `Number` - Integer of the work this message required before it was send (?).
+- `from`: `String`, 60 Bytes - メッセージの送信者。送信者が指定されている場合のみ。
+- `to`: `String`, 60 Bytes - メッセージの受信者。受信者が指定されている場合のみ。
+- `expiry`: `Number` - Integer of the time in seconds when this message should expire (?).
+- `ttl`: `Number` -  Integer of the time the message should float in the system in seconds (?).
+- `sent`: `Number` -  メッセージが送信されたUNIX時刻。
+- `topics`: `Array of String` - `String`配列のメッセージを含んだトピック。
+- `payload`: `String` - 目セージのペイロード
+- `workProved`: `Number` - Integer of the work this message required before it was send (?).
 
 ***
 
@@ -2475,13 +2482,13 @@ Watch for incoming whisper messages.
 var txHash = web3.eth.sendIBANTransaction('0x00c5496aee77c1ba1f0854206a26dda82a81d6d8', 'XE81ETHXREGGAVOFYORK', 0x100);
 ```
 
-Sends IBAN transaction from user account to destination IBAN address.
+ユーザーのアカウントからIBAN addressへIBANトランザクションを送信します。
 
 ##### パラメータ
 
-- `string` - address from which we want to send transaction
-- `string` - IBAN address to which we want to send transaction
-- `value` - value that we want to send in IBAN transaction
+- `string` - トランザクションの送信元アドレス。
+- `string` - トランザクションの送信先IBANアドレス。
+- `value` - IBANトランザクションで送信する値
 
 ***
 
