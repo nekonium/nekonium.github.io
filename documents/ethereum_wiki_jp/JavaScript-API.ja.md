@@ -1894,23 +1894,23 @@ var myCallData = myContractInstance.myMethod.getData(param1 [, param2, ...]);
 
 ##### パラメータ
 
-- `String|Number|BigNumber` - (optional) Zero or more parameters of the function. If passing in a string, it must be formatted as a hex number, e.g. "0xdeadbeef" If you have already created BigNumber object, then you can just pass it too.
-- `Object` - (optional) The (previous) last parameter can be a transaction object, see [web3.eth.sendTransaction](#web3ethsendtransaction) parameter 1 for more. **Note**: `data` and `to` properties will not be taken into account.
-- `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
-- `Function` - (optional) If you pass a callback as the last parameter the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+- `String|Number|BigNumber` - (optional) 関数のパラメータはゼロ個以上の複数です。文字列はHEX文字列フォーマットで渡さなければなりません。 例えば、"0xdeadbeef"等です。すでにBigNumberオブジェクトを生成済なら、そのまま引き渡せます。
+- `Object` - (optional) 次のオブジェクトはトランザクションオブジェクトです。詳細は[web3.eth.sendTransaction](#web3ethsendtransaction)のパラメータ１を参照してください。 **Note**: `data` と `to` プロパティは考慮しません。
+- `Number|String` - (optional) `defaultBlock`パラメータを渡すと、デフォルトブロックが使われません。詳細は[web3.eth.defaultBlock](#web3ethdefaultblock)を参照してください。
+- `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### 戻り値
 
-`String` - If its a call the result data, if its a send transaction a created contract address, or the transaction hash, see [web3.eth.sendTransaction](#web3ethsendtransaction) for details.
+`String` - callとして実行した場合は戻り値です。生成済のコントラクトアドレスへのトランザクション送信の場合はトランザクションハッシュです。詳細は、[web3.eth.sendTransaction](#web3ethsendtransaction) を参照してください。
 
 
 ##### 使用例
 
 ```js
-// creation of contract object
+// ABIでコントラクトインタフェイスを生成
 var MyContract = web3.eth.contract(abi);
 
-// initiate contract for an address
+// アドレスを結び付けてコントラクトを初期化
 var myContractInstance = MyContract.at('0x78e97bcc5b5dd9ed228fed7a4887c0d7287344a9');
 
 var result = myContractInstance.myConstantMethod('myParam');
@@ -1927,42 +1927,41 @@ myContractInstance.myStateChangingMethod('someParam1', 23, {value: 200, gas: 200
 ```js
 var event = myContractInstance.MyEvent({valueA: 23} [, additionalFilterObject])
 
-// watch for changes
+// イベントを監視する。
 event.watch(function(error, result){
   if (!error)
     console.log(result);
 });
 
-// Or pass a callback to start watching immediately
+// または、コールバックを渡して即時監視を開始する。
 var event = myContractInstance.MyEvent([{valueA: 23}] [, additionalFilterObject] , function(error, result){
   if (!error)
     console.log(result);
 });
 
 ```
-
-You can use events like [filters](#web3ethfilter) and they have the same methods, but you pass different objects to create the event filter.
+イベントは[filters](#web3ethfilter)と同じメソッドがありますが、イベントフィルタの生成時に渡すオブジェクトは異なります。
 
 ##### パラメータ
 
-1. `Object` - Indexed return values you want to filter the logs by, e.g. `{'valueA': 1, 'valueB': [myFirstAddress, mySecondAddress]}`. By default all filter values are set to `null`. It means, that they will match any event of given type sent from this contract.
-2. `Object` - Additional filter options, see [filters](#web3ethfilter) parameter 1 for more. By default filterObject has field 'address' set to address of the contract. Also first topic is the signature of event.
-3. `Function` - (optional) If you pass a callback as the last parameter it will immediately start watching and you don't need to call `myEvent.watch(function(){})`. See [this note](#using-callbacks) for details.
+1. `Object` - ログのをフィルタする戻り値のインデクス付きの値です。例：`{'valueA': 1, 'valueB': [myFirstAddress, mySecondAddress]}`。初期値はすべてnullです。これはコントラクトから得たすべてのイベントに合致します。
+2. `Object` - フィルタの追加オプションです。[filters](#web3ethfilter)のパラメータ１を参照してください。デフォルトでは、 filterObjectの`address`フィードにコントラクトのアドレスをセットします。Also first topic is the signature of event.
+3. `Function` - (optional)`callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### Callback return
 
 
-`Object` - An event object as follows:
+`Object` - イベントオブジェクトは以下の通りです:
 
-- `address`: `String`, 32 Bytes - address from which this log originated.
-- `args`: `Object` - The arguments coming from the event.
-- `blockHash`: `String`, 32 Bytes - hash of the block where this log was in. `null` when its pending.
-- `blockNumber`: `Number` - the block number where this log was in. `null` when its pending.
-- `logIndex`: `Number` - integer of the log index position in the block.
-- `event`: `String` - The event name.
-- `removed`: `bool` -  indicate if the transaction this event was created from was removed from the blockchain (due to orphaned block) or never get to it (due to rejected transaction).
-- `transactionIndex`: `Number` - integer of the transactions index position log was created from.
-- `transactionHash`: `String`, 32 Bytes - hash of the transactions this log was created from.
+- `address`: `String`, 32 Bytes - ログの送信元アドレス。
+- `args`: `Object` - イベントからの引数
+- `blockHash`: `String`, 32 Bytes - ログを生成したブロックのハッシュ。保留中の場合は`null`
+- `blockNumber`: `Number` - ログを生成したブロック番号。保留中の場合は`null`
+- `logIndex`: `Number` - ブロック中でのログのインデクス位置。
+- `event`: `String` - イベントの名前
+- `removed`: `bool` -  このイベントを生成したトランザクションがブロックチェーンから取り除かれたかどうか。(due to orphaned block) または得られない場合。(due to rejected transaction).
+- `transactionIndex`: `Number` - ログが作られたトランザクションのインデックス位置。
+- `transactionHash`: `String`, 32 Bytes - ログが作られたトランザクションのハッシュ値。
 
 ##### 使用例
 
@@ -1970,18 +1969,18 @@ You can use events like [filters](#web3ethfilter) and they have the same methods
 var MyContract = web3.eth.contract(abi);
 var myContractInstance = MyContract.at('0x78e97bcc5b5dd9ed228fed7a4887c0d7287344a9');
 
-// watch for an event with {some: 'args'}
+// フィルタ条件 {some: 'args'}にマッチしたイベントを監視する。
 var myEvent = myContractInstance.MyEvent({some: 'args'}, {fromBlock: 0, toBlock: 'latest'});
 myEvent.watch(function(error, result){
    ...
 });
 
-// would get all past logs again.
+// ここまで得たログすべてをもう一度得る。
 var myResults = myEvent.get(function(error, logs){ ... });
 
 ...
 
-// would stop and uninstall the filter
+// フィルタを停止してwould stop and uninstall the filter
 myEvent.stopWatching();
 ```
 
@@ -1992,13 +1991,13 @@ myEvent.stopWatching();
 ```js
 var events = myContractInstance.allEvents([additionalFilterObject]);
 
-// watch for changes
+// 変更を監視する
 events.watch(function(error, event){
   if (!error)
     console.log(event);
 });
 
-// Or pass a callback to start watching immediately
+// コールバックを渡してすぐに監視する
 var events = myContractInstance.allEvents([additionalFilterObject,] function(error, log){
   if (!error)
     console.log(log);
@@ -2006,11 +2005,11 @@ var events = myContractInstance.allEvents([additionalFilterObject,] function(err
 
 ```
 
-Will call the callback for all events which are created by this contract.
+コントラクトによって生成されたイベントすべてがコールバックを呼び出します。
 
 ##### パラメータ
 
-1. `Object` - Additional filter options, see [filters](#web3ethfilter) parameter 1 for more. By default filterObject has field 'address' set to address of the contract. This method sets the topic to the signature of event, and does not support additional topics.
+1. `Object` - 追加のフィルタオプション。 [filters](#web3ethfilter) のパラメータ１を参照してください。デフォルトでは、filterObjectは'address' にコントラクトのアドレスが指定されています。このメソッドは、トピックをイベントの署名に設定し、追加トピックはサポートしません。
 2. `Function` - (optional) If you pass a callback as the last parameter it will immediately start watching and you don't need to call `myEvent.watch(function(){})`. See [this note](#using-callbacks) for details.
 
 ##### Callback return
