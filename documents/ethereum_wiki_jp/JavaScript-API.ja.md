@@ -2200,23 +2200,25 @@ see [namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.ht
 
 #### web3.db.putString
 
-    web3.db.putString(db, key, value)
+```js
+web3.db.putString(db, key, value)
+```
 
-This method should be called, when we want to store a string in the local leveldb database.
+このメソッドは、ローカルのleveldbデータベースに文字列を格納します。
 
 ##### パラメータ
 
-1. `String` - The database to store to.
-2. `String` - The name of the store.
-3. `String` - The string value to store.
+1. `String` - 保存先のデータベース。
+2. `String` - 保存する名前。
+3. `String` - 保存する値。
 
 ##### 戻り値
 
-`Boolean` - `true` if successfull, otherwise `false`.
+`Boolean` - 成功したら`true`、それ以外は`false`.
 
 ##### 使用例
 
- param is db name, second is the key, and third is the string value.
+引数は、データベース名、キー名、文字列の値の順番です。
 ```js
 web3.db.putString('testDB', 'key', 'myString') // true
 ```
@@ -2225,21 +2227,23 @@ web3.db.putString('testDB', 'key', 'myString') // true
 
 #### web3.db.getString
 
-    web3.db.getString(db, key)
+```js
+web3.db.getString(db, key)
+```
 
-This method should be called, when we want to get string from the local leveldb database.
+この関数は、ローカルのleveldbから文字列を読み取ります。
 
 ##### パラメータ
 
-1. `String` - The database string name to retrieve from.
-2. `String` - The name of the store.
+1. `String` - 取り出すデータベースの名前。
+2. `String` - 取り出すデータの名前
 
 ##### 戻り値
 
-`String` - The stored value.
+`String` - 取得した値
 
 ##### 使用例
- param is db name and second is the key of string value.
+引数は、データベースの名前、取得するキー名の順です。
 ```js
 var value = web3.db.getString('testDB', 'key');
 console.log(value); // "myString"
@@ -2249,19 +2253,21 @@ console.log(value); // "myString"
 
 #### web3.db.putHex
 
-    web3.db.putHex(db, key, value)
+```js
+web3.db.putHex(db, key, value)
+```
 
-This method should be called, when we want to store binary data in HEX form in the local leveldb database.
+このメソッドは、ローカルのleveldbデータベースにHEX値を格納します。
 
 ##### パラメータ
 
-1. `String` - The database to store to.
-2. `String` - The name of the store.
-3. `String` - The HEX string to store.
+1. `String` - 保存先のデータベース。
+2. `String` - 保存する名前。
+3. `String` - 保存する値。
 
 ##### 戻り値
 
-`Boolean` - `true` if successfull, otherwise `false`.
+`Boolean` - 成功したら`true`、それ以外は`false`.
 
 ##### 使用例
 ```js
@@ -2273,22 +2279,24 @@ web3.db.putHex('testDB', 'key', '0x4f554b443'); // true
 
 #### web3.db.getHex
 
-    web3.db.getHex(db, key)
+```js
+web3.db.getHex(db, key)
+```
 
-This method should be called, when we want to get a binary data in HEX form from the local leveldb database.
+この関数は、ローカルのleveldbからHEX値を読み取ります。
 
 ##### パラメータ
 
-1. `String` - The database to store to.
-2. `String` - The name of the store.
+1. `String` - 取り出すデータベースの名前。
+2. `String` - 取り出すデータの名前
 
 ##### 戻り値
 
-`String` - The stored HEX value.
+`String` - 取得したHEX値
 
 
 ##### 使用例
- param is db name and second is the key of value.
+引数は、データベースの名前、取得するキー名です。
 ```js
 var value = web3.db.getHex('testDB', 'key');
 console.log(value); // "0x4f554b443"
@@ -2298,7 +2306,7 @@ console.log(value); // "0x4f554b443"
 
 ### web3.shh
 
-[Whisper  Overview](https://github.com/ethereum/wiki/wiki/Whisper-Overview)
+[Whisper 概要](https://github.com/ethereum/wiki/wiki/Whisper-Overview)
 
 ##### 使用例
 
