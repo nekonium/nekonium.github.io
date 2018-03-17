@@ -2320,13 +2320,13 @@ var shh = web3.shh;
 
    web3.shh.post(object [, callback])
 
-This method should be called, when we want to post whisper message to the network.
+Wisperメッセージをネットワークに送信します。
 
 ##### パラメータ
 
-1. `Object` - The post object:
-  - `from`: `String`, 60 Bytes HEX - (optional) The identity of the sender.
-  - `to`: `String`, 60 Bytes  HEX - (optional) The identity of the receiver. When present whisper will encrypt the message so that only the receiver can decrypt it.
+1. `Object` - 送信オブジェクト(post object):
+  - `from`: `String`, 60 Bytes HEX - (optional) 送信者のID.
+  - `to`: `String`, 60 Bytes  HEX - (optional) 受信者のID。whisperでメッセージを暗号化すると、受信者だけが複合したメッセージを受け取ることができます。
   - `topics`: `Array of Strings` - Array of topics `Strings`, for the receiver to identify messages.
   - `payload`: `String|Number|Object` - The payload of the message. Will be autoconverted to a HEX string before.
   - `priority`: `Number` - The integer of the priority in a range from ... (?).
