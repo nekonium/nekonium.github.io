@@ -1,5 +1,7 @@
 From: https://github.com/ethereum/wiki/wiki/Useful-%C3%90app-Patterns
 
+作業中
+
 The following page is a collection of useful patterns, Ðapps can use, such as talking to the blockchain reliably.
 
 The example patterns can possibly change, so don't rely fully on them as of yet.
