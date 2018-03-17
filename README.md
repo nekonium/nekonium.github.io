@@ -108,7 +108,7 @@ Android用のモバイルウォレットです。
 * Twitter <a href="https://twitter.com/NekoniumDev">https://twitter.com/NekoniumDev</a>
 * Discord channel <a href="https://discord.gg/C8mJg44">https://discord.gg/C8mJg44</a>
 * ASKmona <a href="http://askmona.org/5387">http://askmona.org/5387</a>
-* Bitcointalk <a href="http://askmona.org/5387">https://bitcointalk.org/index.php?topic=2012213.0</a>
+* Bitcointalk <a href="https://bitcointalk.org/index.php?topic=2012213.0">https://bitcointalk.org/index.php?topic=2012213.0</a>
 
 
 ## etc
