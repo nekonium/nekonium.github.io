@@ -1,19 +1,18 @@
 From: https://github.com/ethereum/wiki/wiki/Useful-%C3%90app-Patterns
 
-作業中
 
-The following page is a collection of useful patterns, Ðapps can use, such as talking to the blockchain reliably.
+以下のページはブロックチェーンとやり取りするDAPPSを使う使用例です。
 
-The example patterns can possibly change, so don't rely fully on them as of yet.
+実装例は完全ではなく、今後変更する可能性があります。
 
 ## Examples
 
-- 3 ways of instantiating web3:   
+- web3をインスタンス化する３つの方法:
 https://gist.github.com/frozeman/fbc7465d0b0e6c1c4c23
 
-- Contract deployment by code:    
-(Outdated, use `web3.contract(abiArray).new({}, function(e, res){...})`)
+- コードからコントラクトをデプロイする。:
+(時代遅れなので、これを使ってください。 `web3.contract(abiArray).new({}, function(e, res){...})`)
 https://gist.github.com/frozeman/655a9325a93ac198416e
 
-- Test a contract transaction with a `call` before actually sending:
+- デプロイする前に`call`でコントラクトをテストする:
 https://gist.github.com/ethers/2d8dfaaf7f7a2a9e4eaa
