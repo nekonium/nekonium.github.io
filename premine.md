@@ -17,7 +17,7 @@ Nekoniumのプレマインの内訳です。
 
 ## 報酬枠
 Bounty制度に使います。
-https://docs.google.com/document/d/e/2PACX-1vQ6BP--R0-qwrVr_R5IdqIHvOupven4OpiktwvkW_BBoVz_lPuLc707mwavH-RD01x0SjDhS-p8FHor/pub
+[Nekonium Bounty制度](https://docs.google.com/document/d/e/2PACX-1vQ6BP--R0-qwrVr_R5IdqIHvOupven4OpiktwvkW_BBoVz_lPuLc707mwavH-RD01x0SjDhS-p8FHor/pub)
 
 ## 再配布枠
 配布単位 1000NUKO+ 
