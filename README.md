@@ -86,7 +86,7 @@ Android用のモバイルウォレットです。
 
 ## Block exproler
 * <a href="http://explorer.nekonium.org/home/home">http://explorer.nekonium.org/home</a>
-* <a href="http://nukoexplorer.oldbeyond.com/">http://nukoexplorer.oldbeyond.com/</a>
+* <s><a href="http://nukoexplorer.oldbeyond.com/">http://nukoexplorer.oldbeyond.com/</a></s>(停止中）
 * <a href="http://nekonium.network/">http://nekonium.network/</a>
 
 
