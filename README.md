@@ -73,6 +73,12 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 <img src="https://github.com/nekonium/nekonium.github.io/blob/master/img/mistpreview.png?raw=true" width="50%"></img>
 
+## ブラウザエクステンション
+
+<a href="https://chrome.google.com/webstore/detail/nukomask/glchbnjfkbkdhhaclogbdbkkkoahcnmf">https://chrome.google.com/webstore/detail/nukomask/glchbnjfkbkdhhaclogbdbkkkoahcnmf</a> 
+
+MetamaskをNekonium用にカスタマイズしたブラウザエクステンションです。
+
 ## モバイルウォレット
 <a href="https://play.google.com/store/apps/details?id=org.nekonium.androidnuko">https://play.google.com/store/apps/details?id=org.nekonium.androidnuko</a>
 
@@ -117,6 +123,7 @@ Android用のモバイルウォレットです。
 * <a href="http://stuff.cuppadev.co.uk/nuko-report.html">http://stuff.cuppadev.co.uk/nuko-report.html</a> rich list
 * <a href="https://minerpool.net/pools/nekonium/">https://minerpool.net/pools/nekonium/</a> Active Pool list
 * <a href="http://nekonium.org/nodewatch/web/summary.html">http://nekonium.org/nodewatch/web/summary.html</a> Node watch
+* <a href="http://nekonium.org/tokenfactory/#/">http://nekonium.org/tokenfactory/#/</a> Token Factory
 
 
 ## QR generator
