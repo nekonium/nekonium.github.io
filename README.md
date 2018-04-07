@@ -142,7 +142,8 @@ Nekoniumは採掘で手に入れることもできますが、事前に確保し
 
 # Bounty制度
 Nekoniumの開発やインフラ設置に対する返礼品制度です。詳細はこちらをご覧ください。
-https://docs.google.com/document/d/e/2PACX-1vQ6BP--R0-qwrVr_R5IdqIHvOupven4OpiktwvkW_BBoVz_lPuLc707mwavH-RD01x0SjDhS-p8FHor/pub
+<a href="https://docs.google.com/document/d/1_Q3AaRrTTatCiDvhoprR1PQLH0hOT97CzcDMHGEv9jE/pub">https://docs.google.com/document/d/1_Q3AaRrTTatCiDvhoprR1PQLH0hOT97CzcDMHGEv9jE/pub</a>
+
 
 
 
