@@ -124,6 +124,8 @@ Android用のモバイルウォレットです。
 * <a href="https://minerpool.net/pools/nekonium/">https://minerpool.net/pools/nekonium/</a> Active Pool list
 * <a href="http://nekonium.org/nodewatch/web/summary.html">http://nekonium.org/nodewatch/web/summary.html</a> Node watch
 * <a href="http://nekonium.org/tokenfactory/#/">http://nekonium.org/tokenfactory/#/</a> Token Factory
+* <a href="http://nekonium.org/nukosousinki/index.html">http://nekonium.org/nukosousinki/index.html</a> ぬこ送信機
+
 
 
 ## QR generator
