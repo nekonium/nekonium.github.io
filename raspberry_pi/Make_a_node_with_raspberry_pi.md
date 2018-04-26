@@ -5,18 +5,19 @@
 
 
 ## 用意するもの
-クライアントPC （この記事ではWindows10を使用します）
-Raspberry Pi 2/3
-ACアダプタ（5V 2.5A以上のもの）
-MicroSDカード（16GB以上のもの）
-LANケーブル
-MicroSDｰSD変換アダプタ
-SDｰUSB変換器
-（その他必要に応じて:ケース、スイッチングハブ）
+- クライアントPC （この記事ではWindows10を使用します）
+- Raspberry Pi 2/3
+- ACアダプタ（5V 2.5A以上のもの）
+- MicroSDカード（16GB以上のもの）
+- LANケーブル
+- MicroSDｰSD変換アダプタ
+- SDｰUSB変換器
+- （その他必要に応じて:ケース、スイッチングハブ）
 
 ## OSイメージのダウンロード
 
 リンク先から、最新のOSイメージの<B>LITE</B>版をダウンロードします。
+
 https://www.raspberrypi.org/downloads/raspbian/
 
 ![Download_os_img](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/download_os_img.jpg)
@@ -102,7 +103,7 @@ teraterm: https://ja.osdn.net/projects/ttssh2/
 
 そうすると、新しく接続されたラズベリーパイがオレンジのマークで表示されているはずなので、そのIPアドレスを控えます。
 
-![wifiguard_seach_ip](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/wifiguard_search_ip.jpg)
+![wifiguard_search_ip](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/wifiguard_search_ip.jpg)
 </div></details>
 
 
