@@ -58,12 +58,17 @@ Nekonium用クライアント。Ethereum クライアントParityからのフォ
 オンラインSolidity開発環境。Ethereum browser-solidityのフォーク。
 > https://github.com/nekonium/browser-solidity
 
+### Token Factory
+ERC20トークンジェネレータ
+> https://github.com/nekonium/Token-Factory
+
+### NukoMask Browser Extension
+Metamask 拡張のNekonium版
+> https://github.com/nekonium/NukoMask
+
 
 ## Contributor Repository
 
-### Nukoja Browser Extension
-Metamask 拡張のNekonium版
-> https://github.com/mike-theminer/nukoja-extension
 
 ### Nem tip-bot-peg-system
 tipnemとのペグトークン交換システム。

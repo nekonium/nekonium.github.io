@@ -34,6 +34,7 @@ Nekoniumは、イーサリウムのパラメータを僅かに調整しただけ
 * DifficultyBoundDivisor 1024
 ```
 
+
 <a href="https://nekonium.github.io/premine.html">Premineについて</a>
 
 
@@ -72,6 +73,12 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 
 <img src="https://github.com/nekonium/nekonium.github.io/blob/master/img/mistpreview.png?raw=true" width="50%"></img>
 
+## ブラウザエクステンション
+
+<a href="https://chrome.google.com/webstore/detail/nukomask/glchbnjfkbkdhhaclogbdbkkkoahcnmf">https://chrome.google.com/webstore/detail/nukomask/glchbnjfkbkdhhaclogbdbkkkoahcnmf</a> 
+
+MetamaskをNekonium用にカスタマイズしたブラウザエクステンションです。
+
 ## モバイルウォレット
 <a href="https://play.google.com/store/apps/details?id=org.nekonium.androidnuko">https://play.google.com/store/apps/details?id=org.nekonium.androidnuko</a>
 
@@ -85,7 +92,7 @@ Android用のモバイルウォレットです。
 
 ## Block exproler
 * <a href="http://explorer.nekonium.org/home/home">http://explorer.nekonium.org/home</a>
-* <a href="http://nukoexplorer.oldbeyond.com/">http://nukoexplorer.oldbeyond.com/</a>
+* <s><a href="http://nukoexplorer.oldbeyond.com/">http://nukoexplorer.oldbeyond.com/</a></s>(停止中）
 * <a href="http://nekonium.network/">http://nekonium.network/</a>
 
 
@@ -108,7 +115,7 @@ Android用のモバイルウォレットです。
 * Twitter <a href="https://twitter.com/NekoniumDev">https://twitter.com/NekoniumDev</a>
 * Discord channel <a href="https://discord.gg/C8mJg44">https://discord.gg/C8mJg44</a>
 * ASKmona <a href="http://askmona.org/5387">http://askmona.org/5387</a>
-* Bitcointalk <a href="http://askmona.org/5387">https://bitcointalk.org/index.php?topic=2012213.0</a>
+* Bitcointalk <a href="https://bitcointalk.org/index.php?topic=2012213.0">https://bitcointalk.org/index.php?topic=2012213.0</a>
 
 
 ## etc
@@ -116,6 +123,9 @@ Android用のモバイルウォレットです。
 * <a href="http://stuff.cuppadev.co.uk/nuko-report.html">http://stuff.cuppadev.co.uk/nuko-report.html</a> rich list
 * <a href="https://minerpool.net/pools/nekonium/">https://minerpool.net/pools/nekonium/</a> Active Pool list
 * <a href="http://nekonium.org/nodewatch/web/summary.html">http://nekonium.org/nodewatch/web/summary.html</a> Node watch
+* <a href="http://nekonium.org/tokenfactory/#/">http://nekonium.org/tokenfactory/#/</a> Token Factory
+* <a href="http://nekonium.org/nukosousinki/index.html">http://nekonium.org/nukosousinki/index.html</a> ぬこ送信機
+
 
 
 ## QR generator
@@ -138,6 +148,13 @@ Nekoniumは採掘で手に入れることもできますが、事前に確保し
 * <a href="https://github.com/nekonium/nekonium.github.io/blob/master/resources.image/resources.md">Logo/Images etc</a>
 * <a href="https://github.com/nekonium/nekonium.github.io/blob/master/software.md">Source codes</a>
 * <a href="https://github.com/nekonium/nekonium.github.io/tree/master/documents/README.md">Documents</a>
+
+# Bounty制度
+Nekoniumの開発やインフラ設置に対する返礼品制度です。詳細はこちらをご覧ください。
+<a href="https://docs.google.com/document/d/1_Q3AaRrTTatCiDvhoprR1PQLH0hOT97CzcDMHGEv9jE/pub">https://docs.google.com/document/d/1_Q3AaRrTTatCiDvhoprR1PQLH0hOT97CzcDMHGEv9jE/pub</a>
+
+
+
 
 # 開発メンバー
 

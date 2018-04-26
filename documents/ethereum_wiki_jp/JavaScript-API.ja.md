@@ -23,15 +23,15 @@ Web3を使ったより実用的なサンプルはこちらです。 [useful app 
 
 ### Adding web3
 
-First you need to get web3.js into your project. This can be done using the following methods:
+web3.jsを自分のプロジェクトにセットアップする方法です。以下の方法を使います。:
 
 - npm: `npm install web3`
 - bower: `bower install web3`
 - meteor: `meteor add ethereum:web3`
 - vanilla: link the `dist./web3.min.js`
 
-Then you need to create a web3 instance, setting a provider.
-To make sure you don't overwrite the already set provider when in mist, check first if the web3 is available:
+つぎに、web3インスタンスを作成してproviderの設定をします。
+Mistでは既にセットアップされているproviderを上書きしないようにしてください。web3をアクティブにする前に確認します。
 
 ```js
 if (typeof web3 !== 'undefined') {
@@ -42,7 +42,7 @@ if (typeof web3 !== 'undefined') {
 }
 ```
 
-After that you can use the [API](web3js-api-reference) of the `web3` object.
+以上で、web3オブジェクトの[API](web3js-api-reference)を使う準備は完了です。
 
 ### Using callbacks
 
@@ -1289,21 +1289,20 @@ console.log(number); // 1
 ```js
 web3.eth.getUncle(blockHashStringOrNumber, uncleNumber [, returnTransactionObjects] [, callback])
 ```
-
-Returns a blocks uncle by a given uncle index position.
+ブロックの持つuncleブロックを得ます。どのuncleを得るかはindexで指定します。
 
 ##### パラメータ
 
-1. `String|Number` - The block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
-2. `Number` - The index position of the uncle.
-3. `Boolean` - (optional, default `false`) If `true`, the returned block will contain all transactions as objects, if `false` it will only contains the transaction hashes.
+1. `String|Number` - Tブロック番号、またはブロックのハッシュ。または定義済の文字列値 `"earliest"`, `"latest"` or `"pending"`  [default block parameter](#web3ethdefaultblock)を参照してください。
+2. `Number` - uncleのインデクス番号を指定します。
+3. `Boolean` - (optional, 省略時 `false`) `true`ならトランザクションオブジェクトを戻り値に含みます。`false`ならトランザクションのハッシュのみを返します。
 4. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`Object` - the returned uncle. For a return value see [web3.eth.getBlock()](#web3ethgetblock).
+`Object` - uncleブロックです。[web3.eth.getBlock()](#web3ethgetblock)を参照してください。
 
-**Note**: An uncle doesn't contain individual transactions.
+**Note**: uncleは個々のトランザクションを含みません。
 
 ##### 使用例
 
@@ -1320,29 +1319,28 @@ console.log(uncle); // see web3.eth.getBlock
 ```js
 web3.eth.getTransaction(transactionHash [, callback])
 ```
-
-Returns a transaction matching the given transaction hash.
+トランザクションハッシュ値に一致するトランザクションを得ます。
 
 ##### パラメータ
 
-1. `String` - The transaction hash.
+1. `String` - トランザクションのハッシュ値
 2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`Object` - A transaction object its hash `transactionHash`:
+`Object` - `transactionHash`のハッシュを持つトランザクション:
 
-- `hash`: `String`, 32 Bytes - hash of the transaction.
-- `nonce`: `Number` - the number of transactions made by the sender prior to this one.
-- `blockHash`: `String`, 32 Bytes - hash of the block where this transaction was in. `null` when its pending.
-- `blockNumber`: `Number` - block number where this transaction was in. `null` when its pending.
-- `transactionIndex`: `Number` - integer of the transactions index position in the block. `null` when its pending.
-- `from`: `String`, 20 Bytes - address of the sender.
-- `to`: `String`, 20 Bytes - address of the receiver. `null` when its a contract creation transaction.
-- `value`: `BigNumber` - value transferred in Wei.
-- `gasPrice`: `BigNumber` - gas price provided by the sender in Wei.
-- `gas`: `Number` - gas provided by the sender.
-- `input`: `String` - the data sent along with the transaction.
+- `hash`: `String`, 32 Bytes - トランザクションのハッシュ値。
+- `nonce`: `Number` - 事前に送信者が作成した数値。
+- `blockHash`: `String`, 32 Bytes - このトランザクションのあるブロックのハッシュ値。保留中ならば`null`。
+- `blockNumber`: `Number` - このトランザクションのあるブロックの番号。保留中ならば`null`
+- `transactionIndex`: `Number` - ブロックの中でのトランザクションのインデックス番号。保留中ならば`null`
+- `from`: `String`, 20 Bytes - 送信元のアドレス
+- `to`: `String`, 20 Bytes - 受信先のアドレス。コントラクトの作成トランザクションの場合は`null`
+- `value`: `BigNumber` - 送信したWei単位での量。
+- `gasPrice`: `BigNumber` - 送信者が提供したWei単位でのgas price.
+- `gas`: `Number` - 送信者が提供したgas。
+- `input`: `String` - トランザクションと共に送信したデータ。
 
 
 ##### 使用例
@@ -1372,19 +1370,20 @@ console.log(transaction);
 
 #### web3.eth.getTransactionFromBlock
 
-    getTransactionFromBlock(hashStringOrNumber, indexNumber [, callback])
-
-Returns a transaction based on a block hash or number and the transactions index position.
+```js
+getTransactionFromBlock(hashStringOrNumber, indexNumber [, callback])
+```
+指定したブロック内にあるインデクス番号で指定したトランザクションを一つ返します。
 
 ##### パラメータ
 
-1. `String` - A block number or hash. Or the string `"earliest"`, `"latest"` or `"pending"` as in the [default block parameter](#web3ethdefaultblock).
-2. `Number` - The transactions index position.
+1. `String` - ブロック番号、またはブロックのハッシュを指定します。または、Or the string `"earliest"`, `"latest"` or `"pending"` が指定できます。[default block parameter](#web3ethdefaultblock)を参照してください。
+2. `Number` - トランザクションのインデクス番号。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`Object` - A transaction object, see [web3.eth.getTransaction](#web3ethgettransaction):
+`Object` - トランザクションオブジェクトを返します。[web3.eth.getTransaction](#web3ethgettransaction)を参照してください。:
 
 
 ##### 使用例
@@ -1399,11 +1398,12 @@ console.log(transaction); // see web3.eth.getTransaction
 
 #### web3.eth.getTransactionReceipt
 
-    web3.eth.getTransactionReceipt(hashString [, callback])
+```js
+web3.eth.getTransactionReceipt(hashString [, callback])
+```
+トランザクションハッシュから、トランザクションの受領オブジェクトを取得します。
 
-Returns the receipt of a transaction by transaction hash.
-
-**Note** That the receipt is not available for pending transactions.
+**Note** 受領オブジェクトは保留トランザクションには無効です。
 
 
 ##### パラメータ
@@ -1413,19 +1413,19 @@ Returns the receipt of a transaction by transaction hash.
 
 ##### 戻り値
 
-`Object` - A transaction receipt object, or `null` when no receipt was found:
+`Object` - トランザクションの受領オブジェクト。まだ存在しなければ`null`:
 
-  - `blockHash`: `String`, 32 Bytes - hash of the block where this transaction was in.
-  - `blockNumber`: `Number` - block number where this transaction was in.
-  - `transactionHash`: `String`, 32 Bytes - hash of the transaction.
-  - `transactionIndex`: `Number` - integer of the transactions index position in the block.
-  - `from`: `String`, 20 Bytes - address of the sender.
-  - `to`: `String`, 20 Bytes - address of the receiver. `null` when its a contract creation transaction.
-  - `cumulativeGasUsed `: `Number ` - The total amount of gas used when this transaction was executed in the block.
-  - `gasUsed `: `Number ` -  The amount of gas used by this specific transaction alone.
-  - `contractAddress `: `String` - 20 Bytes - The contract address created, if the transaction was a contract creation, otherwise `null`.
-  - `logs `:  `Array` - Array of log objects, which this transaction generated.
-  - `status `:  `Number` - 0 indicates transaction failure , 1 indicates transaction succeeded. 
+- `blockHash`: `String`, 32 Bytes - トランザクションを含むブロックのハッシュ。
+- `blockNumber`: `Number` - トランザクションを含むブロックの番号
+- `transactionHash`: `String`, 32 Bytes - トランザクションのハッシュ。
+- `transactionIndex`: `Number` - ブロックの中でのトランザクションのインデックス番号。保留中ならば`null`
+- `from`: `String`, 20 Bytes - 送信元のアドレス
+- `to`: `String`, 20 Bytes - 受信先のアドレス。コントラクトの作成トランザクションの場合は`null`
+- `cumulativeGasUsed `: `Number ` - ブロックが実行されたことで消費したgasの総量。
+- `gasUsed `: `Number ` -  このトランザクションのみが使用したgasの量
+- `contractAddress `: `String` - 20 Bytes - コントラクトを作成した場合は、そのアドレス。それ以外は`null`
+- `logs `:  `Array` - トランザクションが生成したログオブジェクトの配列。
+- `status `:  `Number` - 0:トランザクションは失敗した。, 1:トランアクションは成功した。
 
 ##### 使用例
 ```js
@@ -1450,19 +1450,21 @@ console.log(receipt);
 
 #### web3.eth.getTransactionCount
 
-    web3.eth.getTransactionCount(addressHexString [, defaultBlock] [, callback])
+```js
+web3.eth.getTransactionCount(addressHexString [, defaultBlock] [, callback])
+```
 
-Get the numbers of transactions sent from this address.
+指定したアドレスから送信したトランザクションの数を返します。
 
 ##### パラメータ
 
-1. `String` - The address to get the numbers of transactions from.
-2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
+1. `String` - 送信したトランザクション数を得るアドレス。
+2. `Number|String` - (optional) 調べるブロック番号、またはハッシュを指定します。省略するとデフォルトブロックを使います。[web3.eth.defaultBlock](#web3ethdefaultblock)を参照してください。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`Number` - The number of transactions sent from the given address.
+`Number` - ブロックに含まれる、指定したアドレスから送信されたトランザクションの数。
 
 ##### 使用例
 
@@ -1475,27 +1477,29 @@ console.log(number); // 1
 
 #### web3.eth.sendTransaction
 
-    web3.eth.sendTransaction(transactionObject [, callback])
+```js
+web3.eth.sendTransaction(transactionObject [, callback])
+```
 
-Sends a transaction to the network.
+トランザクションをネットワークに送信します。
 
 ##### パラメータ
 
-1. `Object` - The transaction object to send:
-  - `from`: `String` - The address for the sending account. Uses the [web3.eth.defaultAccount](#web3ethdefaultaccount) property, if not specified.
-  - `to`: `String` - (optional) The destination address of the message, left undefined for a contract-creation transaction.
-  - `value`: `Number|String|BigNumber` - (optional) The value transferred for the transaction in Wei, also the endowment if it's a contract-creation transaction.
-  - `gas`: `Number|String|BigNumber` - (optional, default: To-Be-Determined) The amount of gas to use for the transaction (unused gas is refunded).
-  - `gasPrice`: `Number|String|BigNumber` - (optional, default: To-Be-Determined) The price of gas for this transaction in wei, defaults to the mean network gas price.
-  - `data`: `String` - (optional) Either a [byte string](https://github.com/ethereum/wiki/wiki/Solidity,-Docs-and-ABI) containing the associated data of the message, or in the case of a contract-creation transaction, the initialisation code.
-  - `nonce`: `Number`  - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.
+1. `Object` - 送信するトランザクションオブジェクト:
+- `from`: `String` - 送信先のアドレス。省略時は、[web3.eth.defaultAccount](#web3ethdefaultaccount)プロパティの値を使います。
+- `to`: `String` - (optional) 送信先のアドレス。コントラクト作成の場合は省略します。
+- `value`: `Number|String|BigNumber` - (optional) Wei単位の送信額。コントラクトの作成トランザクションの場合は、付与金額。
+- `gas`: `Number|String|BigNumber` - (optional, default:自動設定) トランザクションで使用するgasの量。(未使用分は返却される。)
+- `gasPrice`: `Number|String|BigNumber` - (optional, default: 自動設定) Wei単位のgas価格。デフォルトではネットワークのガス価格。
+- `data`: `String` - (optional) [byte string](https://github.com/ethereum/wiki/wiki/Solidity,-Docs-and-ABI) メッセージか、コントラクトの作成の場合は初期化コード。
+- `nonce`: `Number`  - (optional) 整数のnonce値。同一な値の保留中のトランザクションを上書きすることができる。
 2. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`String` - The 32 Bytes transaction hash as HEX string.
+`String` - 32BytesのトランザクションハッシュのJEX文字列
 
-If the transaction was a contract creation use [web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) to get the contract address, after the transaction was mined.
+もしトランザクションがコントラクト作成のものであれば、採掘後に[web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) を使ってコントラクトのアドレスを得られる。
 
 ##### 使用例
 
@@ -1514,9 +1518,11 @@ web3.eth.sendTransaction({data: code}, function(err, transactionHash) {
 
 #### web3.eth.sendRawTransaction
 
-    web3.eth.sendRawTransaction(signedTransactionData [, callback])
-
-Sends an already signed transaction. For example can be signed using: https://github.com/SilentCicero/ethereumjs-accounts
+```js
+web3.eth.sendRawTransaction(signedTransactionData [, callback])
+```
+署名済のトランザクションを送信します。署名については以下を参照してください。
+https://github.com/SilentCicero/ethereumjs-accounts
 
 ##### パラメータ
 
@@ -1525,9 +1531,9 @@ Sends an already signed transaction. For example can be signed using: https://gi
 
 ##### 戻り値
 
-`String` - The 32 Bytes transaction hash as HEX string.
+`String` - 32Bytesのトランザクションハッシュ
 
-If the transaction was a contract creation use [web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) to get the contract address, after the transaction was mined.
+もしトランザクションがコントラクト作成のものであれば、採掘後に[web3.eth.getTransactionReceipt()](#web3gettransactionreceipt) を使ってコントラクトのアドレスを得られる。
 
 ##### 使用例
 
@@ -1563,28 +1569,30 @@ web3.eth.sendRawTransaction('0x' + serializedTx.toString('hex'), function(err, h
 
 #### web3.eth.sign
 
-    web3.eth.sign(address, dataToSign, [, callback])
+```js
+web3.eth.sign(address, dataToSign, [, callback])
+```
 
-Signs data from a specific account. This account needs to be unlocked.
+指定したアカウントでデータに署名します。アカウントはアンロックする必要があります。
 
 ##### パラメータ
 
-1. `String` - Address to sign with.
-2. `String` - Data to sign.
+1. `String` - 署名するアカウント。
+2. `String` - 署名するデータ。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`String` - The signed data.
+`String` - 署名済みのデータ。
 
-After the hex prefix, characters correspond to ECDSA values like this:
+HEXプレフィックスの後の文字は、ECDSA値に対応します。
+
 ```
 r = signature[0:64]
 s = signature[64:128]
 v = signature[128:130]
 ```
-
-Note that if you are using `ecrecover`, `v` will be either `"00"` or `"01"`. As a result, in order to use this value, you will have to parse it to an integer and then add `27`. This will result in either a `27` or a `28`.
+`ecrecover`を使用した場合、`v`の値は`"00"`または`"01"`です。この値を使うためには、一度整数に変換してから`27`を加算して、`27`、または`28`にする必要があります。
 
 ##### 使用例
 
@@ -1598,19 +1606,21 @@ console.log(result); // "0x30755ed65396facf86c53e6217c52b4daebe72aa4941d89635409
 
 #### web3.eth.call
 
-    web3.eth.call(callObject [, defaultBlock] [, callback])
+```js
+web3.eth.call(callObject [, defaultBlock] [, callback])
+```
 
-Executes a message call transaction, which is directly executed in the VM of the node, but never mined into the blockchain.
+メッセージ呼び出しトランザクションをノードのVMでで直接実行します。ブロックチェーンでマイニングされることはありません。
 
 ##### パラメータ
 
-1. `Object` - A transaction object see [web3.eth.sendTransaction](#web3ethsendtransaction), with the difference that for calls the `from` property is optional as well.
-2. `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
+1. `Object` - トランザクションオブジェクト。[web3.eth.sendTransaction](#web3ethsendtransaction)を参照してください。, `from`プロパティがオプションである違いがあります。
+2. `Number|String` - (optional) ブロック番号、またはハッシュを指定します。省略時はデフォルトブロックを使います。[web3.eth.defaultBlock](#web3ethdefaultblock)を参照してください。
 3. `Function` -  (optional) HTTPリクエストのコールバックを受け取る関数。指定すると、HTTPリクエストが非同期になります。詳細は[このドキュメント](#using-callbacks)を参照してください。
 
 ##### 戻り値
 
-`String` - The returned data of the call, e.g. a codes functions return value.
+`String` - callの返した値。例：関数の戻り価など。
 
 ##### 使用例
 
@@ -1626,17 +1636,19 @@ console.log(result); // "0x00000000000000000000000000000000000000000000000000000
 
 #### web3.eth.estimateGas
 
-    web3.eth.estimateGas(callObject [, callback])
+```js
+web3.eth.estimateGas(callObject [, callback])
+```
 
-Executes a message call or transaction, which is directly executed in the VM of the node, but never mined into the blockchain and returns the amount of the gas used.
+メッセージ呼び出し、またはトランザクションをノードのVMでで直接実行します。ブロックチェーンではマイニングされず、使用したガスの量を返します。
 
 ##### パラメータ
 
-See [web3.eth.sendTransaction](#web3ethsendtransaction), except that all properties are optional.
+[web3.eth.sendTransaction](#web3ethsendtransaction)と同じです。
 
 ##### 戻り値
 
-`Number` - the used gas for the simulated call/transaction.
+`Number` - トランザクション、または送信につかわれたgasの量。
 
 ##### 使用例
 
@@ -1671,37 +1683,39 @@ web3.eth.filter(options, function(error, result){
 });
 ```
 
+条件に合致したイベントをログとして取り出します。
+
 ##### パラメータ
 
-1. `String|Object` - The string `"latest"` or `"pending"` to watch for changes in the latest block or pending transactions respectively. Or a filter options object as follows:
-  * `fromBlock`: `Number|String` - The number of the earliest block (`latest` may be given to mean the most recent and `pending` currently mining, block). By default `latest`.
-  * `toBlock`: `Number|String` - The number of the latest block (`latest` may be given to mean the most recent and `pending` currently mining, block). By default `latest`.
-  * `address`: `String` - An address or a list of addresses to only get logs from particular account(s).
+1. `String|Object` - `"latest"`か`"pending"`を指定します。 最新のブロック、または保留中のトランザクションを監視します。また、以下のフィルタオプションをもつオブrジェクトを指定できます。:
+  * `fromBlock`: `Number|String` - 最も古いブロックを示すハッシュ、またはブロック番号。(`latest` は最新のブロック、`pending` は現在マイニング中のブロックを示します。). 省略時は`latest`です。
+  * `toBlock`: `Number|String` - もっとも新しいブロックを示すハッシュ、またはブロック番号です。(`latest` は最新のブロック、`pending` は現在マイニング中のブロックを示します。). 省略時は`latest`です。
+  * `address`: `String` - 特定のアカウントからログを得る場合に、アドレスか、アドレスのリストを指定します。
   * `topics`: `Array of Strings` - An array of values which must each appear in the log entries. The order is important, if you want to leave topics out use `null`, e.g. `[null, '0x00...']`. You can also pass another array for each topic with options for that topic e.g. `[null, ['option1', 'option2']]`
 
 ##### 戻り値
 
-`Object` - A filter object with the following methods:
+`Object` - フィルタオブジェクトです。以下のメソッドがあります。:
 
-  * `filter.get(callback)`: Returns all of the log entries that fit the filter.
-  * `filter.watch(callback)`: Watches for state changes that fit the filter and calls the callback. See [this note](#using-callbacks) for details.
-  * `filter.stopWatching()`: Stops the watch and uninstalls the filter in the node. Should always be called once it is done.
-
+* `filter.get(callback)`: フィルタに合致したすべてのログエントリを返します。
+* `filter.watch(callback)`: コールバック関数でフィルタ条件に一致したか、状態の変化を監視します。[this note](#using-callbacks)を参照してください。
+* `filter.stopWatching()`: 監視を停止し、ノード内でのフィルタを削除します。使用後に必ず呼び出してください。
+  
 ##### Watch callback return value
 
-- `String` - When using the `"latest"` parameter, it returns the block hash of the last incoming block.
-- `String` - When using the `"pending"` parameter, it returns a transaction hash of the most recent pending transaction.
-- `Object` - When using manual filter options, it returns a log object as follows:
-    - `logIndex`: `Number` - integer of the log index position in the block. `null` when its pending log.
-    - `transactionIndex`: `Number` - integer of the transactions index position log was created from. `null` when its pending log.
-    - `transactionHash`: `String`, 32 Bytes - hash of the transactions this log was created from. `null` when its pending log.
-    - `blockHash`: `String`, 32 Bytes - hash of the block where this log was in. `null` when its pending. `null` when its pending log.
-    - `blockNumber`: `Number` - the block number where this log was in. `null` when its pending. `null` when its pending log.
-    - `address`: `String`, 32 Bytes - address from which this log originated.
-    - `data`: `String` - contains one or more 32 Bytes non-indexed arguments of the log.
-    - `topics`: `Array of Strings` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. (In *solidity*: The first topic is the *hash* of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except if you declared the event with the `anonymous` specifier.)
+- `String` - `"latest"`をパラメータに指定した場合、最後に得たブロックのハッシュ値です。
+- `String` - `"pending"`をパラメータに設定した場合、最後に得た保留トランザクションの値です。
+- `Object` -マニュアルフィルタオブジェクトをした場合は、以下のログオブジェクトを返します。:
+  - `logIndex`: `Number` - ログの作成したブロック内でのインデクス位置。保留中のログなら`null`。
+  - `transactionIndex`: `Number` - ログを作成したトランザクションのインデクス位置。保留中のログなら`null`。
+  - `transactionHash`: `String`, 32 Bytes - ログを作成したトランザクションのハッシュ値。保留中のログなら`null`
+  - `blockHash`: `String`, 32 Bytes - ログを作成したブロックのハッシュ値。保留中のログなら`null`
+  - `blockNumber`: `Number` - ログを含むブロックの番号。 保留中なら`null`。また、保留中のログでも `null`.
+  - `address`: `String`, 32 Bytes -　このログの発信元アドレス。
+  - `data`: `String` - contains one or more 32 Bytes non-indexed arguments of the log.
+  - `topics`: `Array of Strings` - Array of 0 to 4 32 Bytes `DATA` of indexed log arguments. (In *solidity*: The first topic is the *hash* of the signature of the event (e.g. `Deposit(address,bytes32,uint256)`), except if you declared the event with the `anonymous` specifier.)
 
-**Note** For event filter return values see [Contract Events](#contract-events)
+**Note** イベントフィルタについては、 [Contract Events](#contract-events)を参照。
 
 ##### 使用例
 
@@ -1726,44 +1740,45 @@ filter.stopWatching();
 
 #### web3.eth.contract
 
-    web3.eth.contract(abiArray)
-
-Creates a contract object for a solidity contract, which can be used to initiate contracts on an address.
-You can read more about events [here](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI#example-javascript-usage).
+```js
+web3.eth.contract(abiArray)
+```
+Solidityコントラクトのコントラクトオブジェクトを作成します。アドレスにあるコントラクトを使うために使用できます。
+イベントについての詳細は[here](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI#example-javascript-usage)を参照してください。
 
 ##### パラメータ
 
-1. `Array` - ABI array with descriptions of functions and events of the contract.
+1. `Array` - コントラクトのイベントと関数を記述したABI配列。
 
 ##### 戻り値
 
-`Object` - A contract object, which can be initiated as follows:
+`Object` - コントラクトオブジェクト。ｔ卯木のように使用することができます。:
 
 ```js
 var MyContract = web3.eth.contract(abiArray);
 
-// instantiate by address
+// アドレスで初期化する。
 var contractInstance = MyContract.at(address);
 
-// deploy new contract
+// 新しくコントラクトを作成する。
 var contractInstance = MyContract.new([constructorParam1] [, constructorParam2], {data: '0x12345...', from: myAccount, gas: 1000000});
 
-// Get the data to deploy the contract manually
+// 手作業でコントラクトをデプロイするデータを作成する。
 var contractData = MyContract.new.getData([constructorParam1] [, constructorParam2], {data: '0x12345...'});
 // contractData = '0x12345643213456000000000023434234'
 ```
 
-And then you can either initiate an existing contract on an address,
-or deploy the contract using the compiled byte code:
+既に存在するアドレスのコントラクトや、コンパイルされたバイトコードを使用してコントラクトをデプロイできます。
+
 
 ```js
-// Instantiate from an existing address:
+// 存在するアドレスからコントラクトを作成:
 var myContractInstance = MyContract.at(myContractAddress);
 
 
-// Or deploy a new contract:
+// 新しくコントラクトを作成:
 
-// Deploy the contract asynchronous from Solidity file:
+// Soloidityファイルから非同期でコントラクトを作成（この方法は今は使えない）:
 ...
 const fs = require("fs");
 const solc = require('solc')
@@ -1780,20 +1795,19 @@ var myContractReturned = MyContract.new(param1, param2, {
    data:bytecode,
    gas:gasEstimate}, function(err, myContract){
     if(!err) {
-       // NOTE: The callback will fire twice!
-       // Once the contract has the transactionHash property set and once its deployed on an address.
+       // NOTE: コールバックは2度呼ばれます。
+       // 一度目はコントラクトのトランザクションハッシュがセットされた時で、２度目はデプロイされアドレスされた時です。
 
-       // e.g. check tx hash on the first call (transaction send)
+       // e.g. 一度目の呼び出しでトランザクションのハッシュをチェックする。(transaction send)
        if(!myContract.address) {
-           console.log(myContract.transactionHash) // The hash of the transaction, which deploys the contract
-       
-       // check address on the second call (contract deployed)
+           console.log(myContract.transactionHash) // トランザクションのハッシュが得られれば、コントラクトはデプロイされている。       
+       // ２度目のコールでアドレスをチェックする。(contract deployed)
        } else {
-           console.log(myContract.address) // the contract address
-       }
+           console.log(myContract.address) // コントラクトのアドレス
+       }
 
-       // Note that the returned "myContractReturned" === "myContract",
-       // so the returned "myContractReturned" object will also get the address set.
+       // Note that 戻り値の"myContractReturned" === "myContract"、２つの値は同じです。
+       // "myContractReturned"に返されたオブジェクトにもアドレスを得られます。
     }
   });
 
@@ -1807,7 +1821,7 @@ myContractInstance.address // undefined at start, but will be auto-filled later
 ##### 使用例
 
 ```js
-// contract abi
+// コントラクトの abi
 var abi = [{
      name: 'myConstantMethod',
      type: 'function',
@@ -1826,23 +1840,23 @@ var abi = [{
      inputs: [{name: 'a', type: 'int', indexed: true},{name: 'b', type: 'bool', indexed: false}]
 }];
 
-// creation of contract object
+// コントラクトオブジェクトの作成
 var MyContract = web3.eth.contract(abi);
 
-// initiate contract for an address
+// アドレスでコントラクトを初期化
 var myContractInstance = MyContract.at('0xc4abd0339eb8d57087278718986382264244252f');
 
-// call constant function
+// コントラクトの関数を実行
 var result = myContractInstance.myConstantMethod('myParam');
 console.log(result) // '0x25434534534'
 
-// send a transaction to a function
+// 関数にトランアクションを送信
 myContractInstance.myStateChangingMethod('someParam1', 23, {value: 200, gas: 2000});
 
-// short hand style
+// 短縮表記
 web3.eth.contract(abi).at(address).myAwesomeMethod(...);
 
-// create filter
+// フィルタの作成
 var filter = myContractInstance.myEvent({a: 5}, function (error, result) {
   if (!error)
     console.log(result);
@@ -1862,42 +1876,41 @@ var filter = myContractInstance.myEvent({a: 5}, function (error, result) {
 #### Contract Methods
 
 ```js
-// Automatically determines the use of call or sendTransaction based on the method type
+// call/sendTransactionのどちらを使用するかは、メソッドタイプから自動決定します。
 myContractInstance.myMethod(param1 [, param2, ...] [, transactionObject] [, defaultBlock] [, callback]);
 
-// Explicitly calling this method
+// callを明示的に呼び出す。
 myContractInstance.myMethod.call(param1 [, param2, ...] [, transactionObject] [, defaultBlock] [, callback]);
 
-// Explicitly sending a transaction to this method
+// sendTransactionを明示的に呼び出します。
 myContractInstance.myMethod.sendTransaction(param1 [, param2, ...] [, transactionObject] [, callback]);
 
-// Get the call data, so you can call the contract through some other means
+// callのデータを得ます。コントラクトの呼び出しはいくつかの方法があります。
 // var myCallData = myContractInstance.myMethod.request(param1 [, param2, ...]);
 var myCallData = myContractInstance.myMethod.getData(param1 [, param2, ...]);
 // myCallData = '0x45ff3ff6000000000004545345345345..'
 ```
-
-The contract object exposes the contract's methods, which can be called using parameters and a transaction object.
+コントラクトオブジェクトは、コントラクトのメソッドを公開します。これらは引数とトランザクションオブジェクトを使って呼び出せます。
 
 ##### パラメータ
 
-- `String|Number|BigNumber` - (optional) Zero or more parameters of the function. If passing in a string, it must be formatted as a hex number, e.g. "0xdeadbeef" If you have already created BigNumber object, then you can just pass it too.
-- `Object` - (optional) The (previous) last parameter can be a transaction object, see [web3.eth.sendTransaction](#web3ethsendtransaction) parameter 1 for more. **Note**: `data` and `to` properties will not be taken into account.
-- `Number|String` - (optional) If you pass this parameter it will not use the default block set with [web3.eth.defaultBlock](#web3ethdefaultblock).
-- `Function` - (optional) If you pass a callback as the last parameter the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+- `String|Number|BigNumber` - (optional) 関数のパラメータはゼロ個以上の複数です。文字列はHEX文字列フォーマットで渡さなければなりません。 例えば、"0xdeadbeef"等です。すでにBigNumberオブジェクトを生成済なら、そのまま引き渡せます。
+- `Object` - (optional) 次のオブジェクトはトランザクションオブジェクトです。詳細は[web3.eth.sendTransaction](#web3ethsendtransaction)のパラメータ１を参照してください。 **Note**: `data` と `to` プロパティは考慮しません。
+- `Number|String` - (optional) `defaultBlock`パラメータを渡すと、デフォルトブロックが使われません。詳細は[web3.eth.defaultBlock](#web3ethdefaultblock)を参照してください。
+- `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### 戻り値
 
-`String` - If its a call the result data, if its a send transaction a created contract address, or the transaction hash, see [web3.eth.sendTransaction](#web3ethsendtransaction) for details.
+`String` - callとして実行した場合は戻り値です。生成済のコントラクトアドレスへのトランザクション送信の場合はトランザクションハッシュです。詳細は、[web3.eth.sendTransaction](#web3ethsendtransaction) を参照してください。
 
 
 ##### 使用例
 
 ```js
-// creation of contract object
+// ABIでコントラクトインタフェイスを生成
 var MyContract = web3.eth.contract(abi);
 
-// initiate contract for an address
+// アドレスを結び付けてコントラクトを初期化
 var myContractInstance = MyContract.at('0x78e97bcc5b5dd9ed228fed7a4887c0d7287344a9');
 
 var result = myContractInstance.myConstantMethod('myParam');
@@ -1914,42 +1927,41 @@ myContractInstance.myStateChangingMethod('someParam1', 23, {value: 200, gas: 200
 ```js
 var event = myContractInstance.MyEvent({valueA: 23} [, additionalFilterObject])
 
-// watch for changes
+// イベントを監視する。
 event.watch(function(error, result){
   if (!error)
     console.log(result);
 });
 
-// Or pass a callback to start watching immediately
+// または、コールバックを渡して即時監視を開始する。
 var event = myContractInstance.MyEvent([{valueA: 23}] [, additionalFilterObject] , function(error, result){
   if (!error)
     console.log(result);
 });
 
 ```
-
-You can use events like [filters](#web3ethfilter) and they have the same methods, but you pass different objects to create the event filter.
+イベントは[filters](#web3ethfilter)と同じメソッドがありますが、イベントフィルタの生成時に渡すオブジェクトは異なります。
 
 ##### パラメータ
 
-1. `Object` - Indexed return values you want to filter the logs by, e.g. `{'valueA': 1, 'valueB': [myFirstAddress, mySecondAddress]}`. By default all filter values are set to `null`. It means, that they will match any event of given type sent from this contract.
-2. `Object` - Additional filter options, see [filters](#web3ethfilter) parameter 1 for more. By default filterObject has field 'address' set to address of the contract. Also first topic is the signature of event.
-3. `Function` - (optional) If you pass a callback as the last parameter it will immediately start watching and you don't need to call `myEvent.watch(function(){})`. See [this note](#using-callbacks) for details.
+1. `Object` - ログのをフィルタする戻り値のインデクス付きの値です。例：`{'valueA': 1, 'valueB': [myFirstAddress, mySecondAddress]}`。初期値はすべてnullです。これはコントラクトから得たすべてのイベントに合致します。
+2. `Object` - フィルタの追加オプションです。[filters](#web3ethfilter)のパラメータ１を参照してください。デフォルトでは、 filterObjectの`address`フィードにコントラクトのアドレスをセットします。Also first topic is the signature of event.
+3. `Function` - (optional)`callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### Callback return
 
 
-`Object` - An event object as follows:
+`Object` - イベントオブジェクトは以下の通りです:
 
-- `address`: `String`, 32 Bytes - address from which this log originated.
-- `args`: `Object` - The arguments coming from the event.
-- `blockHash`: `String`, 32 Bytes - hash of the block where this log was in. `null` when its pending.
-- `blockNumber`: `Number` - the block number where this log was in. `null` when its pending.
-- `logIndex`: `Number` - integer of the log index position in the block.
-- `event`: `String` - The event name.
-- `removed`: `bool` -  indicate if the transaction this event was created from was removed from the blockchain (due to orphaned block) or never get to it (due to rejected transaction).
-- `transactionIndex`: `Number` - integer of the transactions index position log was created from.
-- `transactionHash`: `String`, 32 Bytes - hash of the transactions this log was created from.
+- `address`: `String`, 32 Bytes - ログの送信元アドレス。
+- `args`: `Object` - イベントからの引数
+- `blockHash`: `String`, 32 Bytes - ログを生成したブロックのハッシュ。保留中の場合は`null`
+- `blockNumber`: `Number` - ログを生成したブロック番号。保留中の場合は`null`
+- `logIndex`: `Number` - ブロック中でのログのインデクス位置。
+- `event`: `String` - イベントの名前
+- `removed`: `bool` -  このイベントを生成したトランザクションがブロックチェーンから取り除かれたかどうか。(due to orphaned block) または得られない場合。(due to rejected transaction).
+- `transactionIndex`: `Number` - ログが作られたトランザクションのインデックス位置。
+- `transactionHash`: `String`, 32 Bytes - ログが作られたトランザクションのハッシュ値。
 
 ##### 使用例
 
@@ -1957,18 +1969,18 @@ You can use events like [filters](#web3ethfilter) and they have the same methods
 var MyContract = web3.eth.contract(abi);
 var myContractInstance = MyContract.at('0x78e97bcc5b5dd9ed228fed7a4887c0d7287344a9');
 
-// watch for an event with {some: 'args'}
+// フィルタ条件 {some: 'args'}にマッチしたイベントを監視する。
 var myEvent = myContractInstance.MyEvent({some: 'args'}, {fromBlock: 0, toBlock: 'latest'});
 myEvent.watch(function(error, result){
    ...
 });
 
-// would get all past logs again.
+// ここまで得たログすべてをもう一度得る。
 var myResults = myEvent.get(function(error, logs){ ... });
 
 ...
 
-// would stop and uninstall the filter
+// フィルタを停止してwould stop and uninstall the filter
 myEvent.stopWatching();
 ```
 
@@ -1979,13 +1991,13 @@ myEvent.stopWatching();
 ```js
 var events = myContractInstance.allEvents([additionalFilterObject]);
 
-// watch for changes
+// 変更を監視する
 events.watch(function(error, event){
   if (!error)
     console.log(event);
 });
 
-// Or pass a callback to start watching immediately
+// コールバックを渡してすぐに監視する
 var events = myContractInstance.allEvents([additionalFilterObject,] function(error, log){
   if (!error)
     console.log(log);
@@ -1993,17 +2005,17 @@ var events = myContractInstance.allEvents([additionalFilterObject,] function(err
 
 ```
 
-Will call the callback for all events which are created by this contract.
+コントラクトによって生成されたイベントすべてがコールバックを呼び出します。
 
 ##### パラメータ
 
-1. `Object` - Additional filter options, see [filters](#web3ethfilter) parameter 1 for more. By default filterObject has field 'address' set to address of the contract. This method sets the topic to the signature of event, and does not support additional topics.
-2. `Function` - (optional) If you pass a callback as the last parameter it will immediately start watching and you don't need to call `myEvent.watch(function(){})`. See [this note](#using-callbacks) for details.
+1. `Object` - 追加のフィルタオプション。 [filters](#web3ethfilter) のパラメータ１を参照してください。デフォルトでは、filterObjectは'address' にコントラクトのアドレスが指定されています。このメソッドは、トピックをイベントの署名に設定し、追加トピックはサポートしません。
+2. `Function` - (optional) コールバックパラメータを与えた場合は `myEvent.watch(function(){})`を待たず、すぐに監視がスタートします。[this note](#using-callbacks)を参照してください。
 
 ##### Callback return
 
 
-`Object` - See [Contract Events](#contract-events) for more.
+`Object` - [Contract Events](#contract-events)を参照して下さい。
 
 ##### 使用例
 
@@ -2029,9 +2041,11 @@ events.stopWatching();
 ****
 
 #### web3.eth.getCompilers
-## Compiling features being deprecated https://github.com/ethereum/EIPs/issues/209
-    web3.eth.getCompilers([callback])
+## コンパイル機能は将来使用できなくなります。https://github.com/ethereum/EIPs/issues/209
 
+```js
+web3.eth.getCompilers([callback])
+```
 Gets a list of available compilers.
 
 ##### パラメータ
@@ -2172,13 +2186,15 @@ console.log(code); // "0x603880600c6000396000f3006001600060e060020a600035048063c
 
 #### web3.eth.namereg
 
-    web3.eth.namereg
+```js
+web3.eth.namereg
+```
 
-Returns GlobalRegistrar object.
+GlobalRegistrarオブジェクトを返します。
 
 ##### 使い方
 
-see [namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.html) example.
+詳細は[namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.html)を参照してください。
 
 ***
 
@@ -2186,23 +2202,25 @@ see [namereg](https://github.com/ethereum/web3.js/blob/master/example/namereg.ht
 
 #### web3.db.putString
 
-    web3.db.putString(db, key, value)
+```js
+web3.db.putString(db, key, value)
+```
 
-This method should be called, when we want to store a string in the local leveldb database.
+このメソッドは、ローカルのleveldbデータベースに文字列を格納します。
 
 ##### パラメータ
 
-1. `String` - The database to store to.
-2. `String` - The name of the store.
-3. `String` - The string value to store.
+1. `String` - 保存先のデータベース。
+2. `String` - 保存する名前。
+3. `String` - 保存する値。
 
 ##### 戻り値
 
-`Boolean` - `true` if successfull, otherwise `false`.
+`Boolean` - 成功したら`true`、それ以外は`false`.
 
 ##### 使用例
 
- param is db name, second is the key, and third is the string value.
+引数は、データベース名、キー名、文字列の値の順番です。
 ```js
 web3.db.putString('testDB', 'key', 'myString') // true
 ```
@@ -2211,21 +2229,23 @@ web3.db.putString('testDB', 'key', 'myString') // true
 
 #### web3.db.getString
 
-    web3.db.getString(db, key)
+```js
+web3.db.getString(db, key)
+```
 
-This method should be called, when we want to get string from the local leveldb database.
+この関数は、ローカルのleveldbから文字列を読み取ります。
 
 ##### パラメータ
 
-1. `String` - The database string name to retrieve from.
-2. `String` - The name of the store.
+1. `String` - 取り出すデータベースの名前。
+2. `String` - 取り出すデータの名前
 
 ##### 戻り値
 
-`String` - The stored value.
+`String` - 取得した値
 
 ##### 使用例
- param is db name and second is the key of string value.
+引数は、データベースの名前、取得するキー名の順です。
 ```js
 var value = web3.db.getString('testDB', 'key');
 console.log(value); // "myString"
@@ -2235,19 +2255,21 @@ console.log(value); // "myString"
 
 #### web3.db.putHex
 
-    web3.db.putHex(db, key, value)
+```js
+web3.db.putHex(db, key, value)
+```
 
-This method should be called, when we want to store binary data in HEX form in the local leveldb database.
+このメソッドは、ローカルのleveldbデータベースにHEX値を格納します。
 
 ##### パラメータ
 
-1. `String` - The database to store to.
-2. `String` - The name of the store.
-3. `String` - The HEX string to store.
+1. `String` - 保存先のデータベース。
+2. `String` - 保存する名前。
+3. `String` - 保存する値。
 
 ##### 戻り値
 
-`Boolean` - `true` if successfull, otherwise `false`.
+`Boolean` - 成功したら`true`、それ以外は`false`.
 
 ##### 使用例
 ```js
@@ -2259,22 +2281,24 @@ web3.db.putHex('testDB', 'key', '0x4f554b443'); // true
 
 #### web3.db.getHex
 
-    web3.db.getHex(db, key)
+```js
+web3.db.getHex(db, key)
+```
 
-This method should be called, when we want to get a binary data in HEX form from the local leveldb database.
+この関数は、ローカルのleveldbからHEX値を読み取ります。
 
 ##### パラメータ
 
-1. `String` - The database to store to.
-2. `String` - The name of the store.
+1. `String` - 取り出すデータベースの名前。
+2. `String` - 取り出すデータの名前
 
 ##### 戻り値
 
-`String` - The stored HEX value.
+`String` - 取得したHEX値
 
 
 ##### 使用例
- param is db name and second is the key of value.
+引数は、データベースの名前、取得するキー名です。
 ```js
 var value = web3.db.getHex('testDB', 'key');
 console.log(value); // "0x4f554b443"
@@ -2284,7 +2308,7 @@ console.log(value); // "0x4f554b443"
 
 ### web3.shh
 
-[Whisper  Overview](https://github.com/ethereum/wiki/wiki/Whisper-Overview)
+[Whisper 概要](https://github.com/ethereum/wiki/wiki/Whisper-Overview)
 
 ##### 使用例
 
@@ -2296,24 +2320,26 @@ var shh = web3.shh;
 
 #### web3.shh.post
 
-   web3.shh.post(object [, callback])
+```js
+web3.shh.post(object [, callback])
+```
 
-This method should be called, when we want to post whisper message to the network.
+Wisperメッセージをネットワークに送信します。
 
 ##### パラメータ
 
-1. `Object` - The post object:
-  - `from`: `String`, 60 Bytes HEX - (optional) The identity of the sender.
-  - `to`: `String`, 60 Bytes  HEX - (optional) The identity of the receiver. When present whisper will encrypt the message so that only the receiver can decrypt it.
-  - `topics`: `Array of Strings` - Array of topics `Strings`, for the receiver to identify messages.
-  - `payload`: `String|Number|Object` - The payload of the message. Will be autoconverted to a HEX string before.
+1. `Object` - 送信オブジェクト(post object):
+  - `from`: `String`, 60 Bytes HEX - (optional) 送信者のID.
+  - `to`: `String`, 60 Bytes  HEX - (optional) 受信者のID。whisperでメッセージを暗号化すると、受信者だけが複合したメッセージを受け取ることができます。
+  - `topics`: `Array of Strings` - 受信者がメッセージを識別するための文字列のトピックの配列。
+  - `payload`: `String|Number|Object` - メッセージのペイロード。事前にHEX文字列に変換されます。
   - `priority`: `Number` - The integer of the priority in a range from ... (?).
-  - `ttl`: `Number` - integer of the time to live in seconds.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+  - `ttl`: `Number` - メッセージの有効時間(sec) integer of the time to live in seconds.
+2. `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### 戻り値
 
-`Boolean` - returns `true` if the message was sent, otherwise `false`.
+`Boolean` - メッセージを送信したら`true`、そうでなければ`false`です。
 
 
 ##### 使用例
@@ -2338,18 +2364,19 @@ web3.shh.post(message);
 
 #### web3.shh.newIdentity
 
-    web3.shh.newIdentity([callback])
+```js
+web3.shh.newIdentity([callback])
+```
 
-Should be called to create new identity.
+新しいIDを作成します。
 
 ##### パラメータ
 
-1. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
-
+1.  `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### 戻り値
 
-`String` - A new identity HEX string.
+`String` - 新しいHEX文字列フォーマットの識別子。
 
 
 ##### 使用例
@@ -2363,18 +2390,20 @@ console.log(identity); // "0xc931d93e97ab07fe42d923478ba2465f283f440fd6cabea4dd7
 
 #### web3.shh.hasIdentity
 
-    web3.shh.hasIdentity(identity, [callback])
+```js
+web3.shh.hasIdentity(identity, [callback])
+```
 
-Should be called, if we want to check if user has given identity.
+指定したIDがユーザーのものかを返します。
 
 ##### パラメータ
 
-1. `String` - The identity to check.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+1. `String` - テストするID
+2. `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### 戻り値
 
-`Boolean` - returns `true` if the identity exists, otherwise `false`.
+`Boolean` - IDが存在すれば`true`、そうでなければ`false`です。
 
 
 ##### 使用例
@@ -2420,30 +2449,30 @@ filter.watch(function(error, result){
 });
 ```
 
-Watch for incoming whisper messages.
+受信したWhisperメッセージを監視します。
 
 ##### パラメータ
 
-1. `Object` - The filter options:
-  * `topics`: `Array of Strings` - Filters messages by this topic(s). You can use the following combinations:
+1. `Object` - フィルタオプションです:
+  * `topics`: `Array of Strings` - トピックのフィルタメッセージ。以下の構文が使えます。:
     - `['topic1', 'topic2'] == 'topic1' && 'topic2'`
     - `['topic1', ['topic2', 'topic3']] == 'topic1' && ('topic2' || 'topic3')`
-    - `[null, 'topic1', 'topic2'] == ANYTHING && 'topic1' && 'topic2'` -> `null` works as a wildcard
-  * `to`: Filter by identity of receiver of the message. If provided and the node has this identity, it will decrypt incoming encrypted messages.
-2. `Function` - (optional) If you pass a callback the HTTP request is made asynchronous. See [this note](#using-callbacks) for details.
+    - `[null, 'topic1', 'topic2'] == ANYTHING && 'topic1' && 'topic2'` -> `null` 実質ワイルドカードです。
+  * `to`: 受信メッセージのIDでフィルタします。IDを持つノードは受信したメッセージを複合化します。
+2. `Function` - (optional) `callback`パラメータを渡すと、 HTTPリクエストが非同期になります。詳細は [this note](#using-callbacks) を参照してください。
 
 ##### Callback return
 
 `Object` - The incoming message:
 
-  - `from`: `String`, 60 Bytes - The sender of the message, if a sender was specified.
-  - `to`: `String`, 60 Bytes - The receiver of the message, if a receiver was specified.
-  - `expiry`: `Number` - Integer of the time in seconds when this message should expire (?).
-  - `ttl`: `Number` -  Integer of the time the message should float in the system in seconds (?).
-  - `sent`: `Number` -  Integer of the unix timestamp when the message was sent.
-  - `topics`: `Array of String` - Array of `String` topics the message contained.
-  - `payload`: `String` - The payload of the message.
-  - `workProved`: `Number` - Integer of the work this message required before it was send (?).
+- `from`: `String`, 60 Bytes - メッセージの送信者。送信者が指定されている場合のみ。
+- `to`: `String`, 60 Bytes - メッセージの受信者。受信者が指定されている場合のみ。
+- `expiry`: `Number` - Integer of the time in seconds when this message should expire (?).
+- `ttl`: `Number` -  Integer of the time the message should float in the system in seconds (?).
+- `sent`: `Number` -  メッセージが送信されたUNIX時刻。
+- `topics`: `Array of String` - `String`配列のメッセージを含んだトピック。
+- `payload`: `String` - 目セージのペイロード
+- `workProved`: `Number` - Integer of the work this message required before it was send (?).
 
 ***
 
@@ -2453,13 +2482,13 @@ Watch for incoming whisper messages.
 var txHash = web3.eth.sendIBANTransaction('0x00c5496aee77c1ba1f0854206a26dda82a81d6d8', 'XE81ETHXREGGAVOFYORK', 0x100);
 ```
 
-Sends IBAN transaction from user account to destination IBAN address.
+ユーザーのアカウントからIBAN addressへIBANトランザクションを送信します。
 
 ##### パラメータ
 
-- `string` - address from which we want to send transaction
-- `string` - IBAN address to which we want to send transaction
-- `value` - value that we want to send in IBAN transaction
+- `string` - トランザクションの送信元アドレス。
+- `string` - トランザクションの送信先IBANアドレス。
+- `value` - IBANトランザクションで送信する値
 
 ***
 
