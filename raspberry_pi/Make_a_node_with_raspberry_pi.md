@@ -30,6 +30,7 @@ win32diskimagerというソフト等を使ってイメージをディスクに�
 
 <b>免責事項 - SDカードをフォーマットあるいはイメージを書き込む場合、そのカードに保存されているすべての情報が削除されることに注意してください。nekonium開発チームは 、フォーマットあるいはイメージの書き込みに伴い発生する可能性のあるデータ損失について責任を負いません。</b>
 
+
 <details><summary>win32diskimagerのダウンロード</summary><div>
 
 https://ja.osdn.net/projects/sfnet_win32diskimager/releases/
@@ -45,6 +46,8 @@ https://ja.osdn.net/projects/sfnet_win32diskimager/releases/
 
 ![diskimager](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/diskimager.jpg)
 </div></details>
+
+
 書き込みが終わったら、書き込んだドライブのルートディレクトリに、SSHという名前のファイル（拡張子なし）を作ります。
 
 <details><summary>SSHというファイルを作る方法</summary><div>
@@ -98,6 +101,7 @@ https://www.softperfect.com/download/
 ![wifiguard_check](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/wifiguard_check.jpg)
 </div></details>
 
+
 マーキングが終わったら、1.で書き込んだMicroSDカードをラズペリーパイに差し込み、LANケーブルをつなげ、最後にACアダプタをつないでラズペリーパイを起動させます。
 
 ## SSHでの接続
@@ -121,6 +125,7 @@ teraterm: https://ja.osdn.net/projects/ttssh2/
 
 
 
+
 "IPアドレスの確認”で控えたIPアドレスにターミナルソフトで接続します。
 
 TCP/IPを選択し、Host（先ほど控えたIPアドレス）とポート番号（デフォルトで22になっていると思います）を入力します。
@@ -136,7 +141,9 @@ OKを押して進みます。
 初めて接続するとき、security_warningというごちゃごちゃっとした文字列が表示されると思いますが、してcontinueを押して次に進みます。
 
 ![teraterm_security_warning](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/teraterm_security_warn.jpg)
+
 User nameとPassphraseを入力します。
+
 この時点ではUsernameにpi, Passphraseにraspberryを入力します。
 
 ![terminal_auth](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/terminal_auth.jpg)
@@ -309,7 +316,7 @@ $gnekonium console
 
 以下を参照してください。
 
-https://github.com/nekonium/nekonium.github.io/blob/master/documents/browser-solidity/solidity.JP.md#%E3%83%86%E3%82%B9%E3%83%88%E7%92%B0%E5%A2%83%E3%81%A7%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B
+https://github.com/nekonium/nekonium.github.io/blob/master/documents/browser-solidity/solidity.JP.md#%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88%E3%83%8D%E3%83%83%E3%83%88%E3%81%AE%E6%BA%96%E5%82%99
 
 
 
