@@ -1,10 +1,10 @@
-﻿#ラズベリーパイでNekoniumノードを作る手順
+﻿# ラズベリーパイでNekoniumノードを作る手順
 
-###概要
+### 概要
 クライアントPCにWindowsを使い、raspbianをヘッドレスモードで（ラズベリーパイにディスプレイをつながずに）インストールし、gnekoniumをビルドし動作させます。
 
 
-##0.用意するもの
+## 用意するもの
 クライアントPC （この記事ではWindows10を使用します）
 Raspberry Pi 2/3
 ACアダプタ（5V 2.5A以上のもの）
@@ -14,7 +14,7 @@ MicroSDｰSD変換アダプタ
 SDｰUSB変換器
 （その他必要に応じて:ケース、スイッチングハブ）
 
-##1.OSイメージのダウンロード
+## OSイメージのダウンロード
 
 リンク先から、最新のOSイメージの<B>LITE</B>版をダウンロードします。
 https://www.raspberrypi.org/downloads/raspbian/
@@ -22,7 +22,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 ![Download_os_img](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/download_os_img.jpg)
 
 
-##2.OSイメージの書き込み
+## OSイメージの書き込み
 ダウンロードしたものは、ディスクイメージと呼ばれるものなので、そのままコピーしても動作させることはできません。
 win32diskimagerというソフト等を使ってイメージをディスクに展開します。
 <b>免責事項 - SDカードをフォーマットあるいはイメージを書き込む場合、そのカードに保存されているすべての情報が削除されることに注意してください。nekonium開発チームは 、フォーマットあるいはイメージの書き込みに伴い発生する可能性のあるデータ損失について責任を負いません。</b>
@@ -65,7 +65,7 @@ SSHというファイルを作り終わったら、USBメモリ型のアイコ�
 ![safe_eject](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/safe_eject.jpg)
 ![safe_eject_hardware](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/safe_eject_hardware.jpg)
 
-##3.ラズベリーパイの起動とローカルIPアドレスの取得
+## ラズベリーパイの起動とローカルIPアドレスの取得
 
 OSイメージを書き込んだばかりのラズベリーパイを起動するときは、DHCPによってIPアドレスが決定されます。
 そのため、新規インストールした（DHCP接続の）ラズベリーパイを探せるソフトwifiguardをダウンロードして展開します。
@@ -82,12 +82,12 @@ https://www.softperfect.com/download/
 3.IPアドレスの左側のオレンジ色のIPアドレスを選択してプロパティを開く
 4.この機器に問題はありませんにチェックを入れる
 
-![wifiguard_1st](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/wifiguard_check.jpg)
+![wifiguard_check](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/wifiguard_check.jpg)
 </div></details>
 
 マーキングが終わったら、1.で書き込んだMicroSDカードをラズペリーパイに差し込み、LANケーブルをつなげ、最後にACアダプタをつないでラズペリーパイを起動させます。
 
-##4.SSHでの接続
+## SSHでの接続
 
 <details><summary>ターミナルソフトのダウンロード</summary><div>
 
@@ -102,7 +102,7 @@ teraterm: https://ja.osdn.net/projects/ttssh2/
 
 そうすると、新しく接続されたラズベリーパイがオレンジのマークで表示されているはずなので、そのIPアドレスを控えます。
 
-![wifiguard_seach_ip](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/wifiguard_search_ip..jpg)
+![wifiguard_seach_ip](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/wifiguard_search_ip.jpg)
 </div></details>
 
 
@@ -112,7 +112,7 @@ teraterm: https://ja.osdn.net/projects/ttssh2/
 TCP/IPを選択し、Host（先ほど控えたIPアドレス）とポート番号（デフォルトで22になっていると思います）を入力します。
 サービスはSSHを、SSHバージョンはSSH2を選択します。
 
-![terminal_connect](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/terminal_connect..jpg)
+![terminal_connect](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/terminal_connect.jpg)
 OKを押して進みます。
 
 この時点で控えたIPアドレスに接続できそうにないときは、1－3をやり直してみてください。特にOSイメージを書き込んだ後にSSHというファイルを作っているかを確認してください。
@@ -122,14 +122,14 @@ OKを押して進みます。
 User nameとPassphraseを入力します。
 この時点ではUsernameにpi, Passphraseにraspberryを入力します。
 
-![terminal_auth](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/terminal_auth..jpg)
+![terminal_auth](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/terminal_auth.jpg)
 
 OKを押して進みます。
 
 この画面のようになれば成功です。
-![terminal_connected](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/terminal_connected..jpg)
+![terminal_connected](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/terminal_connected.jpg)
 
-###パスワードの変更
+### パスワードの変更
 
 続いてパスワードを変更します。（IoTデバイスに対する攻撃が急増していますので、必ず変更してください）
 パスワードには推測されやすい単語を利用しないようにして10文字以上のランダムな文字・数字・記号を使いましょう。大文字、小文字は区別されます。
@@ -143,9 +143,9 @@ $passwd
 ここで入力したパスワードは忘れないようにしてください。
 次回からのログイン時に必要になります。
 
-![change_password](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/change_password..jpg)
+![change_password](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/change_password.jpg)
 
-###タイムゾーンの変更
+### タイムゾーンの変更
 デフォルト設定だとタイムゾーンがUTCなので、JSTに変更したい場合は次のコマンドを実行します。
 ```bash
 $sudo dpkg-reconfigure tzdata
@@ -155,7 +155,7 @@ $sudo dpkg-reconfigure tzdata
 ![tz_tokyo](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/tz_tokyo.jpg)
 
 
-###IPアドレスの固定
+### IPアドレスの固定
 現在の設定だと電源を入れるたびに違うIPアドレスになる可能性があるので、IPアドレスを固定します。
 
 まず、現在のネットワークの設定を見るために、次のコマンドを実行します。
@@ -210,7 +210,7 @@ $sudo shutdown -r now
 ラズベリーパイが再起動しますので、接続しているteraterm等のターミナルソフトも接続がいったん切れます。
 設定したIPアドレスに、ユーザー名piと新しく設定したパスワードを入力して再接続します。
 
-###gnekoniumのダウンロードとビルド
+### gnekoniumのダウンロードとビルド
 
 コンパイルしてネイティブバイナリを作る場合
 もしネイティブなバイナリを必要とするなら、ラズペリーパイ上でgnekoniumをコンパイルすることが出来ます。
@@ -245,14 +245,14 @@ $cp build/bin/gnekonium ~/bin
 ```
 
 
-###gnekoniumの起動
+### gnekoniumの起動
 nekoniumのメインネットに接続してブロックチェーンをダウンロードします。
 ```bash
 $cd
 $gnekonium console
 ```
 
-####プライベートネットの起動方法
+#### プライベートネットの起動方法
 以下を参照してください。
 https://github.com/nekonium/nekonium.github.io/blob/master/documents/browser-solidity/solidity.JP.md#%E3%83%86%E3%82%B9%E3%83%88%E7%92%B0%E5%A2%83%E3%81%A7%E8%A9%A6%E3%81%97%E3%81%A6%E3%81%BF%E3%82%8B
 
