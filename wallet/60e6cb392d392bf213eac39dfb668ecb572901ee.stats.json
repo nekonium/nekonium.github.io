@@ -3,8 +3,8 @@
     "name": "standard-minifier-js",
     "version": "2.3.3"
   },
-  "totalMinifiedBytes": 2709643,
-  "totalMinifiedGzipBytes": 686889,
+  "totalMinifiedBytes": 2708890,
+  "totalMinifiedGzipBytes": 686692,
   "minifiedBytesByPackage": {
     "packages/meteor.js": 8958,
     "packages/standard-minifiers.js": 38,
@@ -1085,7 +1085,7 @@
     "app/client/templates/elements/template.vulnerabilities.js": 2283,
     "app/client/templates/layout/template.header.js": 6148,
     "app/client/templates/layout/template.notFound.js": 248,
-    "app/client/templates/views/template.account.js": 16905,
+    "app/client/templates/views/template.account.js": 16152,
     "app/client/templates/views/template.account_create.js": 7353,
     "app/client/templates/views/template.contracts.js": 2834,
     "app/client/templates/views/template.dashboard.js": 5781,
