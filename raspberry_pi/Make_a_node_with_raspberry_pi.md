@@ -4,7 +4,7 @@
 クライアントPCにWindowsを使い、raspbianをヘッドレスモードで（ラズベリーパイにディスプレイをつながずに）インストールし、gnekoniumをビルドし動作させます。
 
 
-## 用意するもの
+## 0.用意するもの
 - クライアントPC （この記事ではWindows10を使用します）
 - Raspberry Pi 2/3
 - ACアダプタ（5V 2.5A以上のもの）
@@ -14,7 +14,7 @@
 - SDｰUSB変換器
 - （その他必要に応じて:ケース、スイッチングハブ）
 
-## OSイメージのダウンロード
+## 1.OSイメージのダウンロード
 
 リンク先から、最新のOSイメージの<B>LITE</B>版をダウンロードします。
 
@@ -23,7 +23,7 @@ https://www.raspberrypi.org/downloads/raspbian/
 ![Download_os_img](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/download_os_img.jpg)
 
 
-## OSイメージの書き込み
+## 2.OSイメージの書き込み
 ダウンロードしたものは、ディスクイメージと呼ばれるものなので、そのままコピーしても動作させることはできません。
 
 win32diskimagerというソフト等を使ってイメージをディスクに展開します。
@@ -76,7 +76,7 @@ SSHというファイルを作り終わったら、USBメモリ型のアイコ�
 
 ![safe_eject_hardware](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/safe_eject_hardware.jpg)
 
-## ラズベリーパイの起動とローカルIPアドレスの取得
+## 3.ラズベリーパイの起動とローカルIPアドレスの取得
 
 OSイメージを書き込んだばかりのラズベリーパイを起動するときは、DHCPによってIPアドレスが決定されます。
 
@@ -104,7 +104,7 @@ https://www.softperfect.com/download/
 
 マーキングが終わったら、1.で書き込んだMicroSDカードをラズペリーパイに差し込み、LANケーブルをつなげ、最後にACアダプタをつないでラズペリーパイを起動させます。
 
-## SSHでの接続
+## 4.SSHでの接続
 
 <details><summary>ターミナルソフトのダウンロード</summary><div>
 
@@ -154,7 +154,7 @@ OKを押して進みます。
 
 ![terminal_connected](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/terminal_connected.jpg)
 
-### パスワードの変更
+### 5.パスワードの変更
 
 続いてパスワードを変更します。（IoTデバイスに対する攻撃が急増していますので、必ず変更してください）
 
@@ -176,7 +176,7 @@ $passwd
 
 ![change_password](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/change_password.jpg)
 
-### タイムゾーンの変更
+### 6.タイムゾーンの変更
 
 デフォルト設定だとタイムゾーンがUTCなので、JSTに変更したい場合は次のコマンドを実行します。
 
@@ -191,7 +191,7 @@ $sudo dpkg-reconfigure tzdata
 ![tz_tokyo](https://github.com/nekonium/nekonium.github.io/blob/master/raspberry_pi/image/tz_tokyo.jpg)
 
 
-### IPアドレスの固定
+### 7.IPアドレスの固定
 
 現在の設定だと電源を入れるたびに違うIPアドレスになる可能性があるので、IPアドレスを固定します。
 
@@ -263,7 +263,7 @@ $sudo shutdown -r now
 
 設定したIPアドレスに、ユーザー名piと新しく設定したパスワードを入力して再接続します。
 
-### gnekoniumのダウンロードとビルド
+### 8.gnekoniumのダウンロードとビルド
 
 gnekoniumはGoを使って書かれていますので、Goをコンパイルできる環境を作る必要があります。
 
@@ -303,7 +303,7 @@ $cp build/bin/gnekonium ~/bin
 ```
 
 
-### gnekoniumの起動
+### 9.gnekoniumの起動
 
 nekoniumのメインネットに接続してブロックチェーンをダウンロードします。
 
