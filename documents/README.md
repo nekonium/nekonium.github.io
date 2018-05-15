@@ -6,8 +6,8 @@
 Solidityの使い方
 > https://github.com/nekonium/nekonium.github.io/blob/master/documents/browser-solidity/solidity.JP.md
 
-
-
+ラズベリーパイでNekoniumノードを作る手順
+> https://github.com/nekonium/nekonium.github.io/blob/master/documents/raspberry_pi/Make_a_node_with_raspberry_pi.md
 
 ## Contributor Repository
 Nekoniumのパブリックノードを立ててみよう その1
