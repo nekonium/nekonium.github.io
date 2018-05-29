@@ -44,12 +44,12 @@ if (typeof web3 !== 'undefined') {
 
 以上で、web3オブジェクトの[API](web3js-api-reference)を使う準備は完了です。
 
-### Using callbacks
+### コールバックの使用
 
-As this API is designed to work with a local RPC node, all its functions use synchronous HTTP requests by default.
-
-If you want to make an asynchronous request, you can pass an optional callback as the last parameter to most functions.
-All callbacks are using an [error first callback](http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/) style:
+このAPIはローカルRPCと連携するように設計されています。すべての関数は、デフォルトで同期HTTPリクエストを使用します。
+非同期リクエストを作成する場合は、ほとんどは、関数の最後のバラメーターとしてオプションを渡します。
+すべてのコールバックは[エラーファーストコールバック]]（http://fredkschott.com/post/2014/03/understanding-error-first-callbacks-in-node-js/
+を使用しています。
 
 ```js
 web3.eth.getBlock(48, function(error, result){
