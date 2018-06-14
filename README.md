@@ -116,7 +116,7 @@ Android用のモバイルウォレットです。
 * Discord channel <a href="https://discord.gg/C8mJg44">https://discord.gg/C8mJg44</a>
 * ASKmona <a href="http://askmona.org/5387">http://askmona.org/5387</a>
 * Bitcointalk <a href="https://bitcointalk.org/index.php?topic=2012213.0">https://bitcointalk.org/index.php?topic=2012213.0</a>
-
+* Wiki <a href="https://nekonium.tk/wiki/">https://nekonium.tk/wiki/</a>
 
 ## etc
 * <a href="http://stats.nekonium.io/">http://stats.nekonium.io/</a> Network status
