@@ -16,8 +16,8 @@ Nekoniumのプレマインの内訳です。
 当面の投機抑制・モチベーション維持、リリースまでにお世話になった人へのお礼に使います。
 
 ## 報酬枠
-Bounty制度に使います。
-[Nekonium Bounty制度](https://docs.google.com/document/d/e/2PACX-1vQ6BP--R0-qwrVr_R5IdqIHvOupven4OpiktwvkW_BBoVz_lPuLc707mwavH-RD01x0SjDhS-p8FHor/pub)
+返礼品制度に使います。
+[Nekonium 返礼品制度](https://docs.google.com/document/d/e/2PACX-1vQ6BP--R0-qwrVr_R5IdqIHvOupven4OpiktwvkW_BBoVz_lPuLc707mwavH-RD01x0SjDhS-p8FHor/pub)
 
 ## 再配布枠
 配布単位 1000NUKO+ 
@@ -35,5 +35,5 @@ hxcoinさん、なむやんぐさん、かばやきさんが、ネットワー�
 割り当ては、hxcoinさん400K,なむやんぐさん、かばやきさんに300K NUKOです。
 
 
-# 報酬の価値について
-Nekoniumは上場を目指していませんので、報酬のNekoniumは<u>全くの無価値</u>なものとお考え下さい。有価物での報酬をご希望の場合は、MONAなどで支給することも可能ですが、開発チームのお財布と相談となります。事前にご相談をお願いいたします。
+# 返礼品の価値について
+Nekoniumは上場を目指していませんので、返礼品のNekoniumは<u>全くの無価値</u>なものとお考え下さい。有価物での報酬をご希望の場合は、MONAなどで支給することも可能ですが、開発チームのお財布と相談となります。事前にご相談をお願いいたします。
