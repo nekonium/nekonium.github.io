@@ -4,6 +4,14 @@
 <br/>
 <br/>
 
+# 注意喚起
+<p>
+日本国内の利用者向けに注意喚起を掲載しました。ソフトウェアの使用状態を確認して、場合によっては使用を停止してください。
+https://github.com/nekonium/nekonium.github.io/blob/master/pr/pr2018061501.md
+</p>
+    
+---
+
 
 NekoniumはEthereumクローンの分散型アプリケーションプラットフォームです。Ethereumコピーコインの実装例の提示と、Ethereumの機能を学習する目的で起動されました。Nekoniumの送受信や採掘を通して、Ethereumと仮想通貨のシステムを学んでいただければ幸いです。
 
