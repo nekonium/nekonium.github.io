@@ -112,6 +112,7 @@ Android用のモバイルウォレットです。
 * <a href="http://nuko.cep-k.work/">http://nuko.cep-k.work/</a>
 * <a href="http://nuko.mofumofu.me/">http://nuko.mofumofu.me/</a>
 * <a href="https://minerpool.net/">https://minerpool.net/</a>
+* <a href="https://nuko.solopool.org/">https://nuko.solopool.org/</a>
 
 ## Faucet
 * <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
