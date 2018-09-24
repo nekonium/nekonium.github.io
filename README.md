@@ -96,12 +96,12 @@ Android用のモバイルウォレットです。
 
 # サービス
 ## Wallet
-* <a href="http://www.nukowallet.com/">http://www.nukowallet.com/</a> officiall webwallet
+* <s href="http://www.nukowallet.com/">http://www.nukowallet.com/</s> officiall webwallet</s>(ドメイン失効)
 * <a href="https://monya-wallet.github.io/">https://monya-wallet.github.io/</a> もにゃ
 
 ## Block exproler
 * <a href="http://explorer.nekonium.org/home/home">http://explorer.nekonium.org/home</a>
-* <s><a href="http://nukoexplorer.oldbeyond.com/">http://nukoexplorer.oldbeyond.com/</a></s>(停止中）
+* <s href="http://nukoexplorer.oldbeyond.com/">http://nukoexplorer.oldbeyond.com/</s>(停止中）
 * <a href="http://nekonium.network/">http://nekonium.network/</a>
 
 
