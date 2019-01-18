@@ -109,16 +109,16 @@ Android用のモバイルウォレットです。
 * <s href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</s>(停止中)
 * <a href="http://nuko.ftlpool.com/#/">http://nuko.ftlpool.com/#/</a>
 * <a href="http://nuko.coinminer.space/#/">http://nuko.coinminer.space/#/</a>
-* <a href="http://www.nekonium-pool.com/">http://www.nekonium-pool.com/</a>(ドメイン失効中)
+* <s href="http://www.nekonium-pool.com/">http://www.nekonium-pool.com/</s>(ドメイン失効)
 * <s href="http://nuko.cep-k.work/">http://nuko.cep-k.work/</s>(接続不可)
-* <a href="http://nuko.mofumofu.me/">http://nuko.mofumofu.me/</a>
+* <a href="https://nuko.mofumofu.me/">https://nuko.mofumofu.me/</a>
 * <a href="https://minerpool.net/">https://minerpool.net/</a>
 * <a href="https://nuko.solopool.org/">https://nuko.solopool.org/</a>
 
 ## Faucet
 * <s href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</s>(停止中)
 * <a href="http://namuyan.dip.jp/nekoniumFaucet.php">http://namuyan.dip.jp/nekoniumFaucet.php</a>
-* <s href="https://faucet.nekonium.net/">https://faucet.nekonium.net/</s>(ドメイン失効中？)
+* <s href="https://faucet.nekonium.net/">https://faucet.nekonium.net/</s>(ドメイン失効)
 * <a href="http://faucet.nekonium.network/">http://faucet.nekonium.network/</a>
 
 ## SNS
