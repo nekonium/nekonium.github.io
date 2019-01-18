@@ -96,7 +96,7 @@ Android用のモバイルウォレットです。
 
 # サービス
 ## Wallet
-* <s href="http://www.nukowallet.com/">http://www.nukowallet.com/</s> officiall webwallet</s>(ドメイン失効)
+* <s href="http://www.nukowallet.com/">http://www.nukowallet.com/</s> officiall webwallet(ドメイン失効)
 * <a href="https://monya-wallet.github.io/">https://monya-wallet.github.io/</a> もにゃ
 
 ## Block exproler
