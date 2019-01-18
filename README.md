@@ -106,19 +106,19 @@ Android用のモバイルウォレットです。
 
 
 ## Pool
-* <a href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</a>
+* <s href="http://nuko.oldbeyond.com/">http://nuko.oldbeyond.com/</s>(停止中)
 * <a href="http://nuko.ftlpool.com/#/">http://nuko.ftlpool.com/#/</a>
 * <a href="http://nuko.coinminer.space/#/">http://nuko.coinminer.space/#/</a>
-* <a href="http://www.nekonium-pool.com/">http://www.nekonium-pool.com/</a>
-* <a href="http://nuko.cep-k.work/">http://nuko.cep-k.work/</a>
+* <a href="http://www.nekonium-pool.com/">http://www.nekonium-pool.com/</a>(ドメイン失効中)
+* <s href="http://nuko.cep-k.work/">http://nuko.cep-k.work/</s>(接続不可)
 * <a href="http://nuko.mofumofu.me/">http://nuko.mofumofu.me/</a>
 * <a href="https://minerpool.net/">https://minerpool.net/</a>
 * <a href="https://nuko.solopool.org/">https://nuko.solopool.org/</a>
 
 ## Faucet
-* <a href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</a>
+* <s href="http://nuko.oldbeyond.com/#/faucet">http://nuko.oldbeyond.com/#/faucet</s>(停止中)
 * <a href="http://namuyan.dip.jp/nekoniumFaucet.php">http://namuyan.dip.jp/nekoniumFaucet.php</a>
-* <a href="https://faucet.nekonium.net/">https://faucet.nekonium.net/</a>
+* <s href="https://faucet.nekonium.net/">https://faucet.nekonium.net/</s>(ドメイン失効中？)
 * <a href="http://faucet.nekonium.network/">http://faucet.nekonium.network/</a>
 
 ## SNS
@@ -129,7 +129,8 @@ Android用のモバイルウォレットです。
 * Wiki <a href="https://nekonium.tk/wiki/">https://nekonium.tk/wiki/</a>
 
 ## etc
-* <a href="http://stats.nekonium.io/">http://stats.nekonium.io/</a> Network status
+* <s href="http://stats.nekonium.io/">http://stats.nekonium.io/</s> Network status(停止中)
+* <a href="https://stats.mofumofu.me/">https://stats.mofumofu.me/</a> Network status
 * <a href="http://stuff.cuppadev.co.uk/nuko-report.html">http://stuff.cuppadev.co.uk/nuko-report.html</a> rich list
 * <a href="https://minerpool.net/pools/nekonium/">https://minerpool.net/pools/nekonium/</a> Active Pool list
 * <a href="http://nekonium.org/nodewatch/web/summary.html">http://nekonium.org/nodewatch/web/summary.html</a> Node watch
