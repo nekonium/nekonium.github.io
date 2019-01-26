@@ -24,3 +24,6 @@ Nekoniumのパブリックノードを立ててみよう その4 Let's Encrypt+C
 
 Nekoniumのマイニングプールを立ててみよう
 > https://qiita.com/ROZ-mofumofu-me/items/a43eb7ba12d7a6da8fa4
+
+Nekoniumのマイニングプールを立ててみよう その2 Parity-nekonium編
+> https://qiita.com/ROZ-mofumofu-me/items/4b98864b48b47607c547
