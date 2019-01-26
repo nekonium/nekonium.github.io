@@ -150,7 +150,8 @@ Android用のモバイルウォレットです。
 * <a href="https://github.com/nekonium/nekonium.github.io/blob/master/documents/browser-solidity/solidity.JP.md">Nekoniumのコントラクトの作り方</a>
 
 # 配布について
-Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布を実施しております。ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファーセット）の設置にも返礼品があります。配布と返礼品については<b>Premineについて</b>を参照してください。
+Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布を実施しております。<s>ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファーセット）の設置にも返礼品があります。配布と返礼品については<b>Premineについて</b>を参照してください。</s>
+
 
 <a href="https://github.com/nekonium/nekonium.github.io/blob/master/premine.md">Premineについて</a>
 
