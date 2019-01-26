@@ -160,9 +160,11 @@ Nekoniumは採掘で手に入れることもできますが、事前に確保し
 * <a href="https://github.com/nekonium/nekonium.github.io/blob/master/software.md">Source codes</a>
 * <a href="https://github.com/nekonium/nekonium.github.io/tree/master/documents/README.md">Documents</a>
 
+
 # 返礼品制度
-Nekoniumの開発やインフラ設置に対する返礼品制度です。詳細はこちらをご覧ください。
-<a href="https://docs.google.com/document/d/1_Q3AaRrTTatCiDvhoprR1PQLH0hOT97CzcDMHGEv9jE/pub">https://docs.google.com/document/d/1_Q3AaRrTTatCiDvhoprR1PQLH0hOT97CzcDMHGEv9jE/pub</a>
+返礼品制度は現在行っておりません。
+<s>Nekoniumの開発やインフラ設置に対する返礼品制度です。詳細はこちらをご覧ください。
+<a href="https://docs.google.com/document/d/1_Q3AaRrTTatCiDvhoprR1PQLH0hOT97CzcDMHGEv9jE/pub">https://docs.google.com/document/d/1_Q3AaRrTTatCiDvhoprR1PQLH0hOT97CzcDMHGEv9jE/pub</a></s>
 
 
 
