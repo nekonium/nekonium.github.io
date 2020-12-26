@@ -152,7 +152,7 @@ Android用のモバイルウォレットです。~~
 # 配布について
 
 Nekoniumは採掘行為、個人間での譲渡で手に入れることができます。
-海外のCEXでの取り扱い、相対取引での入手についての取り扱いについての質問にはお答えできません。
+海外のCEXでの取り扱い、相対取引での入手についての質問にはお答えできません。
 
 [Premineについて](https://github.com/nekonium/nekonium.github.io/blob/master/premine.md)
 
