@@ -85,12 +85,10 @@ Ethereum Mistベースのウォレットです。マイニングはできませ�
 MetamaskをNekonium用にカスタマイズしたブラウザエクステンションです。
 
 ## モバイルウォレット
+モバイルウォレットは停止しました。
+~~<https://play.google.com/store/apps/details?id=org.nekonium.androidnuko>
+Android用のモバイルウォレットです。~~
 
-<https://play.google.com/store/apps/details?id=org.nekonium.androidnuko>
-
-Android用のモバイルウォレットです。
-
-<img src="https://nekonium.github.io/pr/imgs/cp01-1.png" width="33%"/>
 
 # サービス
 
@@ -130,7 +128,7 @@ Android用のモバイルウォレットです。
 * Discord channel <https://discord.gg/C8mJg44>
 * ASKmona <http://askmona.org/5387>
 * Bitcointalk <https://bitcointalk.org/index.php?topic=2012213.0>
-* Wiki <https://nekonium.tk/wiki/>
+* ~~Wiki https://nekonium.tk/wiki/~~
 
 ## etc
 
@@ -142,10 +140,8 @@ Android用のモバイルウォレットです。
 * <http://nekonium.org/tokenfactory/#/> Token Factory
 * <http://nekonium.org/nukosousinki/index.html> ぬこ送信機
 
-## QR generator
 
-* <http://qr.nekonium.info/>
-* <https://nuko-qr.azurewebsites.net/>
+
 
 ## Contract-Dev
 
@@ -155,7 +151,8 @@ Android用のモバイルウォレットです。
 
 # 配布について
 
-Nekoniumは採掘で手に入れることもできますが、事前に確保したNekoniumの配布を実施しております。~~ネットワーク維持のためのマイニングや常設ノードの起動、その他サービス（プールやファーセット）の設置にも返礼品があります。配布と返礼品については**Premineについて**を参照してください。~~
+Nekoniumは採掘行為、個人間での譲渡で手に入れることができます。
+海外のCEXでの取り扱い、相対取引での入手についての取り扱いについての質問にはお答えできません。
 
 [Premineについて](https://github.com/nekonium/nekonium.github.io/blob/master/premine.md)
 
