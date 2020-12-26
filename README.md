@@ -100,26 +100,17 @@ Android用のモバイルウォレットです。~~
 ## Block exproler
 
 * <http://explorer.nekonium.org/home>
-* ~~http[]()://nukoexplorer.oldbeyond.com/~~ (停止中）
-* <http://nekonium.network/>
-* <https://scout.paws.pink/> Nekoscout
 
 ## Pool
 
-* ~~http[]()://nuko.oldbeyond.com/~~ (停止中)
 * <http://nuko.ftlpool.com/#/>
 * <http://nuko.coinminer.space/#/>
-* ~~http[]()://www.nekonium-pool.com/~~(ドメイン失効)
-* ~~http[]()://nuko.cep-k.work/~~(接続不可)
 * <https://nuko.mofumofu.me/>
 * <https://minerpool.net/>
-* ~~https[]()://nuko.solopool.org/~~
 
 ## Faucet
 
-* ~~http[]()://nuko.oldbeyond.com/#/faucet~~(停止中)
 * <http://namuyan.dip.jp/nekoniumFaucet.php>
-* ~~https[]()://faucet.nekonium.net/~~(ドメイン失効)
 * <http://faucet.nekonium.network/>
 
 ## SNS
@@ -128,11 +119,9 @@ Android用のモバイルウォレットです。~~
 * Discord channel <https://discord.gg/C8mJg44>
 * ASKmona <http://askmona.org/5387>
 * Bitcointalk <https://bitcointalk.org/index.php?topic=2012213.0>
-* ~~Wiki https://nekonium.tk/wiki/~~
 
 ## etc
 
-* ~~http[]()://stats.nekonium.io/~~ Network status(停止中)
 * <https://stats.mofumofu.me/> Network status
 * <http://stuff.cuppadev.co.uk/nuko-report.html> rich list
 * <https://minerpool.net/pools/nekonium/> Active Pool list
