@@ -111,7 +111,6 @@ Android用のモバイルウォレットです。~~
 ## Faucet
 
 * <http://namuyan.dip.jp/nekoniumFaucet.php>
-* <http://faucet.nekonium.network/>
 
 ## SNS
 
